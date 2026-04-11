@@ -1,505 +1,1084 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>PCCOE PYQ's | Dark Edition</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="app-wrapper">
-    <!-- Hero Section with Neon Glow -->
-    <div class="hero">
-      <div class="hero-content">
-        <div class="title-section">
-          <h1>
-            <i class="fas fa-skull"></i> 
-            PCCOE PYQ's
-          </h1>
-          <p>Previous year question bank · semester & subject wise · dark realm</p>
-        </div>
-        <div class="stats-badge">
-          <i class="fas fa-dragon"></i>
-          <span id="paperCount">18</span> Arcane Papers
-        </div>
-      </div>
-    </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>PCCOE PYQ's | Dark Edition</title>
+    <!-- Google Fonts -->
+    <link href="images/pccoe_logo.png" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="images/pccoe_logo.png"
+    />
+    <style>
+      /* style.css - Dark Theme with Neon Accents */
+      @import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap");
 
-    <!-- Search & Filter Section -->
-    <div class="search-section">
-      <div class="search-box">
-        <i class="fas fa-search"></i>
-        <input type="text" id="searchInput" placeholder="Search by subject, code or paper title...">
-      </div>
-      <div class="filter-group">
-        <div class="filter-chip" data-filter="all">
-          <i class="fas fa-layer-group"></i> All
-        </div>
-        <div class="filter-chip" data-filter="Computer Engineering">
-          <i class="fas fa-code"></i> Computer Engineering
-        </div>
-        <div class="filter-chip" data-filter="ECE">
-          <i class="fas fa-microchip"></i> ECE
-        </div>
-        <div class="filter-chip" data-filter="MECH">
-          <i class="fas fa-cogs"></i> MECH
-        </div>
-        <div class="filter-chip" data-filter="CIVIL">
-          <i class="fas fa-hard-hat"></i> CIVIL
-        </div>
-      </div>
-    </div>
-
-    <!-- Year Tabs -->
-    <div class="category-tabs" id="yearTabs">
-      <button class="cat-btn active-cat" data-year="all"><i class="far fa-calendar-alt"></i> All Years</button>
-      <button class="cat-btn" data-year="2025"><i class="fas fa-calendar"></i> 2025</button>
-      <button class="cat-btn" data-year="2023"><i class="fas fa-calendar"></i> 2023</button>
-      <button class="cat-btn" data-year="2022"><i class="fas fa-calendar"></i> 2022</button>
-      <button class="cat-btn" data-year="2021"><i class="fas fa-calendar"></i> 2021</button>
-    </div>
-
-    <!-- Papers Grid -->
-    <div id="papersContainer" class="papers-grid">
-      <!-- Static Papers Data -->
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2025">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · BSH21BS01</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2025</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-code-branch"></i>Linear Algebra & Univariate Calculus 
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2025">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · BCE21ES01</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2025</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-database"></i> Computer Programming and Problem Solving I
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2023">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · BCE21ES02 </span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2023</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-window-maximize"></i> Digital Electronics and Computer Organization 
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2023">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · CS401</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2023</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-network-wired"></i> English
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2025">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · EC201</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2025</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-microchip"></i> BST
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2023">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · EC303</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2023</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-waveform"></i> Japnese
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2022">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · EC302</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2022</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-bolt"></i> German
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2025">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · ME201</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2025</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-fire"></i> chemistry
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2023">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · ME304</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2023</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-water"></i> Physics
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2022">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · ME202</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2022</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-cubes"></i> CPPS II
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2025">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · CV301</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2025</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-draw-polygon"></i> DM
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2023">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · CV401</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2023</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-mountain"></i> MC
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2023">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · MA201</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2023</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-square-root-alt"></i> OOP
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2025">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · EC401</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2025</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-sliders-h"></i> Python
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2021">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · ME401</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2021</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-industry"></i> IKS
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2021">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · CV202</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2021</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-leaf"></i> C++
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2022">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · CS402</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2022</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-brain"></i> DEL
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-      <div class="paper-card" data-branch="Computer Engineering" data-year="2022">
-        <div class="card-header">
-          <span class="subject-badge">Computer Engineering · EC202</span>
-          <span class="year-badge"><i class="far fa-calendar-alt"></i> 2022</span>
-        </div>
-        <div class="paper-title">
-          <i class="fas fa-microchip"></i> Life Skill
-        </div>
-        <div class="meta-info">
-          <span><i class="fas fa-graduation-cap"></i> Summative Assessment</span>
-          <span><i class="fas fa-chalkboard-user"></i> Computer Engineering</span>
-        </div>
-        <div class="download-btn">
-          <i class="fas fa-download"></i> Download PDF
-        </div>
-      </div>
-    </div>
-    <div class="footer-note">
-      <i class="fas fa-skull"></i> Forged in darkness · all papers for educational reference
-    </div>
-  </div>
-  <script>
-    // Interactive filters with pure JS
-    const searchInput = document.getElementById('searchInput');
-    const filterChips = document.querySelectorAll('.filter-chip');
-    const yearBtns = document.querySelectorAll('.cat-btn');
-    const papersContainer = document.getElementById('papersContainer');
-    const paperCountSpan = document.getElementById('paperCount');
-
-    let activeBranch = 'all';
-    let activeYear = 'all';
-    let searchQuery = '';
-
-    function filterPapers() {
-      const cards = document.querySelectorAll('.paper-card');
-      let visibleCount = 0;
-
-      cards.forEach(card => {
-        const branch = card.getAttribute('data-branch');
-        const year = card.getAttribute('data-year');
-        const title = card.querySelector('.paper-title')?.innerText.toLowerCase() || '';
-        const subjectCode = card.querySelector('.subject-badge')?.innerText.toLowerCase() || '';
-        
-        let matchesBranch = activeBranch === 'all' || branch === activeBranch;
-        let matchesYear = activeYear === 'all' || year === activeYear;
-        let matchesSearch = true;
-        
-        if (searchQuery.trim() !== '') {
-          const query = searchQuery.trim().toLowerCase();
-          matchesSearch = title.includes(query) || subjectCode.includes(query) || branch.toLowerCase().includes(query);
-        }
-        
-        if (matchesBranch && matchesYear && matchesSearch) {
-          card.style.display = '';
-          visibleCount++;
-        } else {
-          card.style.display = 'none';
-        }
-      });
-      
-      paperCountSpan.innerText = visibleCount;
-      
-      if (visibleCount === 0) {
-        if (!document.querySelector('.empty-message-custom')) {
-          const emptyDiv = document.createElement('div');
-          emptyDiv.className = 'empty-message-custom';
-          emptyDiv.innerHTML = `<div class="empty-message"><i class="fas fa-ghost fa-2x"></i><br />No forbidden texts match your ritual.<br />Adjust the dark filters.</div>`;
-          papersContainer.appendChild(emptyDiv);
-        }
-      } else {
-        const existingEmpty = document.querySelector('.empty-message-custom');
-        if (existingEmpty) existingEmpty.remove();
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
-    
-    function setActiveBranch(branch) {
-      activeBranch = branch;
-      filterChips.forEach(chip => {
-        const val = chip.getAttribute('data-filter');
-        if (val === branch) {
-          chip.classList.add('active');
-        } else {
-          chip.classList.remove('active');
-        }
-      });
-      filterPapers();
-    }
-    
-    function setActiveYear(year) {
-      activeYear = year;
-      yearBtns.forEach(btn => {
-        const btnYear = btn.getAttribute('data-year');
-        if (btnYear === year) {
-          btn.classList.add('active-cat');
-        } else {
-          btn.classList.remove('active-cat');
-        }
-      });
-      filterPapers();
-    }
-    
-    filterChips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        const val = chip.getAttribute('data-filter');
-        setActiveBranch(val);
-      });
-    });
-    
-    yearBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const year = btn.getAttribute('data-year');
-        setActiveYear(year);
-      });
-    });
-    
-    searchInput.addEventListener('input', (e) => {
-      searchQuery = e.target.value;
-      filterPapers();
-    });
-    
-    // Download toast effect
-    function showDarkToast(message) {
-      let toast = document.getElementById('darkToast');
-      if (toast) toast.remove();
-      const toastDiv = document.createElement('div');
-      toastDiv.id = 'darkToast';
-      toastDiv.innerHTML = `<i class="fas fa-skull"></i> ${message}`;
-      Object.assign(toastDiv.style, {
-        position: 'fixed',
-        bottom: '30px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        background: '#000000cc',
-        backdropFilter: 'blur(12px)',
-        color: '#0ff',
-        padding: '12px 28px',
-        borderRadius: '60px',
-        fontWeight: '600',
-        fontSize: '0.85rem',
-        zIndex: '1000',
-        boxShadow: '0 0 20px rgba(0,255,255,0.3), 0 4px 15px rgba(0,0,0,0.6)',
-        fontFamily: "'Inter', monospace",
-        display: 'flex',
-        alignItems: 'center',
-        gap: '10px',
-        border: '1px solid #0ff',
-        letterSpacing: '0.5px'
-      });
-      document.body.appendChild(toastDiv);
-      setTimeout(() => toastDiv.remove(), 2200);
-    }
-    
-    document.addEventListener('click', (e) => {
-      const btn = e.target.closest('.download-btn');
-      if (btn) {
-        const card = btn.closest('.paper-card');
-        const title = card?.querySelector('.paper-title')?.innerText || 'Document';
-        showDarkToast(`⬇️ Summoning ${title} (dark PDF)`);
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #0a0a0f;
+        background-image:
+          radial-gradient(
+            circle at 25% 0%,
+            rgba(0, 255, 255, 0.03) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 75% 100%,
+            rgba(255, 0, 255, 0.03) 0%,
+            transparent 50%
+          );
+        color: #e2e8f0;
+        line-height: 1.4;
+        min-height: 100vh;
       }
-    });
-    
-    filterPapers();
-  </script>
-</body>
+
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #1a1a2e;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #00ffcc, #ff00cc);
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #ff00cc, #00ffcc);
+      }
+
+      .app-wrapper {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 24px 48px;
+        position: relative;
+      }
+
+      /* --- NEW: Top-right auth buttons container --- */
+      .auth-buttons {
+        position: absolute;
+        top: 20px;
+        right: 24px;
+        display: flex;
+        gap: 12px;
+        z-index: 100;
+      }
+
+      .auth-btn {
+        background: rgba(10, 10, 20, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        padding: 8px 20px;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-family: "Inter", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #e2e8f0;
+        letter-spacing: 0.3px;
+      }
+
+      .auth-btn i {
+        font-size: 0.9rem;
+        color: #00ffcc;
+      }
+
+      .auth-btn.login-btn {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 255, 255, 0.15),
+          rgba(0, 200, 200, 0.1)
+        );
+        border-color: #00ffcc;
+        box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+      }
+
+      .auth-btn.signup-btn {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 0, 204, 0.15),
+          rgba(180, 0, 150, 0.1)
+        );
+        border-color: #ff00cc;
+      }
+
+      .auth-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        border-color: #0ff;
+      }
+
+      .auth-btn.login-btn:hover {
+        background: linear-gradient(135deg, #00ffcc, #00ccaa);
+        color: #0a0a0f;
+      }
+
+      .auth-btn.signup-btn:hover {
+        background: linear-gradient(135deg, #ff00cc, #cc0099);
+        color: #0a0a0f;
+      }
+
+      .auth-btn:hover i {
+        color: #0a0a0f;
+      }
+
+      /* Hero Section - Cyberpunk Glow */
+      .hero {
+        background: linear-gradient(135deg, #05050a 0%, #0f0f1a 100%);
+        border-radius: 2rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow:
+          0 0 30px rgba(0, 255, 255, 0.1),
+          0 20px 35px -12px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(0, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(0, 255, 255, 0.05) 0%,
+          transparent 70%
+        );
+        animation: rotateGlow 20s linear infinite;
+        pointer-events: none;
+      }
+
+      @keyframes rotateGlow {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        top: -30%;
+        right: -20%;
+        width: 280px;
+        height: 280px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 0, 255, 0.1),
+          transparent 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+        animation: pulseGlow 3s ease-in-out infinite;
+      }
+
+      @keyframes pulseGlow {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.6;
+          transform: scale(1.1);
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .title-section h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #00ffcc, #ff00cc);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        letter-spacing: -0.3px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+      }
+
+      .title-section h1 i {
+        background: rgba(0, 255, 255, 0.1);
+        padding: 12px;
+        border-radius: 30px;
+        font-size: 1.5rem;
+        color: #00ffcc;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      }
+
+      .title-section p {
+        color: #8a8aa8;
+        margin-top: 8px;
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .stats-badge {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(12px);
+        padding: 8px 18px;
+        border-radius: 60px;
+        font-weight: 600;
+        color: #00ffcc;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      }
+
+      /* Search Section - Glassmorphism Dark */
+      .search-section {
+        background: rgba(15, 15, 26, 0.8);
+        backdrop-filter: blur(12px);
+        border-radius: 2rem;
+        padding: 0.8rem 1.2rem;
+        margin-bottom: 2rem;
+        box-shadow:
+          0 8px 20px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(0, 255, 255, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .search-box {
+        flex: 2;
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 60px;
+        padding: 0.6rem 1.2rem;
+        gap: 12px;
+        transition: all 0.2s;
+        border: 1px solid rgba(0, 255, 255, 0.2);
+      }
+
+      .search-box:focus-within {
+        border-color: #00ffcc;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      }
+
+      .search-box i {
+        color: #00ffcc;
+        font-size: 1.1rem;
+      }
+
+      .search-box input {
+        border: none;
+        background: transparent;
+        font-size: 0.95rem;
+        width: 100%;
+        outline: none;
+        font-weight: 500;
+        color: #e2e8f0;
+      }
+
+      .search-box input::placeholder {
+        color: #5a5a7a;
+      }
+
+      .filter-group {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .filter-chip {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 0.5rem 1.2rem;
+        border-radius: 40px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: #00ffcc;
+        cursor: pointer;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid rgba(0, 255, 255, 0.2);
+      }
+
+      .filter-chip i {
+        font-size: 0.8rem;
+      }
+
+      .filter-chip.active,
+      .filter-chip:hover {
+        background: linear-gradient(135deg, #00ffcc, #ff00cc);
+        color: #0a0a0f;
+        border-color: transparent;
+        box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      /* Category Tabs */
+      .category-tabs {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        padding-bottom: 12px;
+      }
+
+      .cat-btn {
+        background: transparent;
+        border: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        padding: 8px 16px;
+        border-radius: 40px;
+        cursor: pointer;
+        color: #8a8aa8;
+        transition: all 0.3s ease;
+        font-family: "Inter", sans-serif;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cat-btn i {
+        margin-right: 8px;
+      }
+
+      .cat-btn::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #00ffcc, #ff00cc);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .cat-btn:hover::before,
+      .cat-btn.active-cat::before {
+        width: 80%;
+      }
+
+      .cat-btn.active-cat {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 255, 255, 0.2),
+          rgba(255, 0, 204, 0.2)
+        );
+        color: #00ffcc;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+      }
+
+      /* Papers Grid */
+      .papers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 24px;
+        margin-top: 8px;
+      }
+
+      .paper-card {
+        background: rgba(15, 15, 26, 0.7);
+        backdrop-filter: blur(8px);
+        border-radius: 1.5rem;
+        padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 255, 255, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .paper-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(0, 255, 255, 0.1),
+          transparent
+        );
+        transition: left 0.6s ease;
+      }
+
+      .paper-card:hover::before {
+        left: 100%;
+      }
+
+      .paper-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow:
+          0 20px 35px -12px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(0, 255, 255, 0.3);
+        border-color: rgba(0, 255, 255, 0.5);
+      }
+
+      .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .subject-badge {
+        background: linear-gradient(
+          135deg,
+          rgba(0, 255, 255, 0.2),
+          rgba(255, 0, 204, 0.2)
+        );
+        padding: 4px 12px;
+        border-radius: 50px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        color: #00ffcc;
+        letter-spacing: 0.3px;
+        border: 1px solid rgba(0, 255, 255, 0.3);
+      }
+
+      .year-badge {
+        background: rgba(0, 0, 0, 0.5);
+        font-weight: 600;
+        font-size: 0.7rem;
+        padding: 4px 10px;
+        border-radius: 50px;
+        color: #ff00cc;
+        border: 1px solid rgba(255, 0, 204, 0.3);
+      }
+
+      .paper-title {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #e2e8f0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .paper-title i {
+        color: #00ffcc;
+        font-size: 1rem;
+        text-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+      }
+
+      .meta-info {
+        display: flex;
+        gap: 16px;
+        font-size: 0.75rem;
+        color: #8a8aa8;
+        border-top: 1px solid rgba(0, 255, 255, 0.1);
+        padding-top: 10px;
+        margin-top: 4px;
+      }
+
+      .meta-info span i {
+        margin-right: 5px;
+        width: 14px;
+        color: #ff00cc;
+      }
+
+      .download-btn {
+        margin-top: 8px;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(0, 255, 255, 0.3);
+        border-radius: 40px;
+        padding: 8px 0;
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.8rem;
+        color: #00ffcc;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .download-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: rgba(0, 255, 255, 0.3);
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s,
+          height 0.6s;
+      }
+
+      .download-btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .download-btn:hover {
+        background: linear-gradient(135deg, #00ffcc, #ff00cc);
+        color: #0a0a0f;
+        border-color: transparent;
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .empty-message {
+        text-align: center;
+        padding: 3rem;
+        background: rgba(15, 15, 26, 0.7);
+        backdrop-filter: blur(8px);
+        border-radius: 2rem;
+        color: #8a8aa8;
+        font-weight: 500;
+        border: 1px solid rgba(0, 255, 255, 0.2);
+      }
+
+      .empty-message-custom {
+        grid-column: 1 / -1;
+      }
+
+      /* Footer */
+      .footer-note {
+        margin-top: 48px;
+        text-align: center;
+        font-size: 0.75rem;
+        color: #5a5a7a;
+        border-top: 1px solid rgba(0, 255, 255, 0.1);
+        padding-top: 24px;
+      }
+
+      /* Animations */
+      @keyframes glowPulse {
+        0%,
+        100% {
+          text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+        }
+        50% {
+          text-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 640px) {
+        .app-wrapper {
+          padding: 16px;
+        }
+        .hero-content {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+        }
+        .search-section {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .papers-grid {
+          grid-template-columns: 1fr;
+        }
+        .paper-card:hover {
+          transform: translateY(-4px) scale(1.01);
+        }
+        .auth-buttons {
+          position: static;
+          justify-content: flex-end;
+          margin-bottom: 16px;
+          padding-top: 4px;
+        }
+      }
+
+      /* Loading/Glow Effects */
+      .paper-card {
+        animation: fadeInUp 0.5s ease backwards;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .paper-card:nth-child(1) {
+        animation-delay: 0.05s;
+      }
+      .paper-card:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .paper-card:nth-child(3) {
+        animation-delay: 0.15s;
+      }
+      .paper-card:nth-child(4) {
+        animation-delay: 0.2s;
+      }
+      .paper-card:nth-child(5) {
+        animation-delay: 0.25s;
+      }
+      .paper-card:nth-child(6) {
+        animation-delay: 0.3s;
+      }
+
+      /* Dark toast style (already defined) */
+      #darkToast {
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #000000cc;
+        backdrop-filter: blur(12px);
+        color: #0ff;
+        padding: 12px 28px;
+        border-radius: 60px;
+        font-weight: 600;
+        font-size: 0.85rem;
+        z-index: 1000;
+        box-shadow:
+          0 0 20px rgba(0, 255, 255, 0.3),
+          0 4px 15px rgba(0, 0, 0, 0.6);
+        font-family: "Inter", monospace;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #0ff;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+      }
+      @media (max-width: 540px) {
+        #darkToast {
+          font-size: 0.7rem;
+          padding: 8px 16px;
+          white-space: nowrap;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app-wrapper">
+      <!-- AUTH BUTTONS - upper right corner -->
+      <div class="auth-buttons">
+        <button class="auth-btn login-btn" id="loginBtn">
+          <i class="fas fa-key"></i> Login
+        </button>
+        <button class="auth-btn signup-btn" id="signupBtn">
+          <i class="fas fa-user-plus"></i> Sign Up
+        </button>
+      </div>
+
+      <div class="hero">
+        <div class="hero-content">
+          <div class="title-section">
+            <h1>
+              <i class="fas fa-skull"></i>
+              PCCOE PYQ's
+            </h1>
+            <p>
+              Previous year question bank · semester & subject wise · dark realm
+            </p>
+          </div>
+          <div class="stats-badge">
+            <i class="fas fa-dragon"></i>
+            <span id="paperCount"></span> FA and SA Papers
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filter Section -->
+      <div class="search-section">
+        <div class="search-box">
+          <i class="fas fa-search"></i>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search by subject, code or paper title..."
+          />
+        </div>
+        <div class="filter-group">
+          <div class="filter-chip" data-filter="all">
+            <i class="fas fa-layer-group"></i> All
+          </div>
+          <div class="filter-chip" data-filter="Computer Engineering">
+            <i class="fas fa-code"></i> Computer Engineering
+          </div>
+          <div class="filter-chip" data-filter="ECE">
+            <i class="fas fa-microchip"></i> ECE
+          </div>
+          <div class="filter-chip" data-filter="MECH">
+            <i class="fas fa-cogs"></i> MECH
+          </div>
+          <div class="filter-chip" data-filter="CIVIL">
+            <i class="fas fa-hard-hat"></i> CIVIL
+          </div>
+        </div>
+      </div>
+
+      <!-- Year Tabs -->
+      <div class="category-tabs" id="yearTabs">
+        <button class="cat-btn active-cat" data-year="all">
+          <i class="far fa-calendar-alt"></i> All Years
+        </button>
+        <button class="cat-btn" data-year="2025">
+          <i class="fas fa-calendar"></i> 2025
+        </button>
+        <button class="cat-btn" data-year="2023">
+          <i class="fas fa-calendar"></i> 2023
+        </button>
+        <button class="cat-btn" data-year="2022">
+          <i class="fas fa-calendar"></i> 2022
+        </button>
+        <button class="cat-btn" data-year="2021">
+          <i class="fas fa-calendar"></i> 2021
+        </button>
+      </div>
+
+      <!-- Papers Grid -->
+      <div id="papersContainer" class="papers-grid">
+        <!-- Static Papers Data -->
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2025"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · BSH21BS01</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2025</span
+            >
+          </div>
+          <div class="paper-title">
+            <i class="fas fa-code-branch"></i>Linear Algebra & Univariate
+            Calculus
+          </div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2025"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · BCE21ES01</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2025</span
+            >
+          </div>
+          <div class="paper-title">
+            <i class="fas fa-database"></i> Computer Programming and Problem
+            Solving I
+          </div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2023"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · BCE21ES02 </span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2023</span
+            >
+          </div>
+          <div class="paper-title">
+            <i class="fas fa-window-maximize"></i> Digital Electronics and
+            Computer Organization
+          </div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2023"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · CS401</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2023</span
+            >
+          </div>
+          <div class="paper-title">
+            <i class="fas fa-network-wired"></i> English
+          </div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2025"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · EC201</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2025</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-microchip"></i> BST</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2023"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · EC303</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2023</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-waveform"></i> Japnese</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2022"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · EC302</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2022</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-bolt"></i> German</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2025"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · ME201</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2025</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-fire"></i> chemistry</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2023"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · ME304</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2023</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-water"></i> Physics</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2022"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · ME202</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2022</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-cubes"></i> CPPS II</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2025"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · CV301</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2025</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-draw-polygon"></i> DM</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+        <div
+          class="paper-card"
+          data-branch="Computer Engineering"
+          data-year="2023"
+        >
+          <div class="card-header">
+            <span class="subject-badge">Computer Engineering · CV401</span>
+            <span class="year-badge"
+              ><i class="far fa-calendar-alt"></i> 2023</span
+            >
+          </div>
+          <div class="paper-title"><i class="fas fa-mountain"></i> MC</div>
+          <div class="meta-info">
+            <span
+              ><i class="fas fa-graduation-cap"></i> Summative Assessment</span
+            >
+            <span
+              ><i class="fas fa-chalkboard-user"></i> Computer Engineering</span
+            >
+          </div>
+          <div class="download-btn">
+            <i class="fas fa-download"></i> Download PDF
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
+
