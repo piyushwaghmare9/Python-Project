@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>LearnFlow | Engineering Chemistry, Linear Algebra & Digital Electronics PYQ</title>
+  <title>LearnFlow | Engineering Chemistry, Linear Algebra, Digital Electronics & C Programming PYQ</title>
   <style>
     * {
       margin: 0;
@@ -881,7 +881,7 @@
   <div class="login-container">
     <div class="login-card">
       <h1>📚 LearnFlow</h1>
-      <p class="subtitle">Engineering Chemistry, Linear Algebra & Digital Electronics PYQ Platform</p>
+      <p class="subtitle">Engineering Chemistry, Linear Algebra, Digital Electronics & C Programming PYQ Platform</p>
       <form id="loginForm">
         <div class="input-group"><label>Username</label><input type="text" id="loginUsername" placeholder="Enter your name" required></div>
         <div class="input-group"><label>Password</label><input type="password" placeholder="Enter your password" required></div>
@@ -1019,7 +1019,7 @@
     { A: "A circuit with L=0.3 H, R=8 Ω, C=0.02 F is driven by v=15e^(-t)sin6t. Form the DE for the charge.", B: "0.3q″ + 8q′ + 50q = 15e^(-t)sin6t", C: "0.3q″ + 8q′ + 0.02q = 15e^(-t)sin6t", D: "0.3q″ + 8q′ + 50q = 15sin6t", E: "3q″ + 8q′ + 50q = 15e^(-t)cos6t", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" }
   ];
 
-  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 1 (LOGIC GATES & MINIMIZATION) ====================
+  // ==================== DIGITAL ELECTRONICS PYQ DATA ====================
   const digitalElectronicsUnit1Data = [
     { A: "Convert the boolean expression F(A,B,C,D)=ABC+AB+ABCD into standard SOP (Sum of Products) form.", B: "ABCD+ABCD′+ABC′D+ABC′D′", C: "ABC+ABCD+A′B′C′D′", D: "AB+CD", E: "A′B′C′D′+A′B′CD+AB′C′D′", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
     { A: "Given voltage waveforms for inputs A and B, which 2-input logic gate will produce a HIGH (1) output waveform ONLY when both input A and input B are HIGH (1)?", B: "OR Gate", C: "AND Gate", D: "NAND Gate", E: "NOR Gate", F: "Option B", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
@@ -1033,7 +1033,6 @@
     { A: "Find the minimized POS (Product of Sums) expression for F(P,Q,R,S)=ΠM(2,4,6,11,15)+d(1,8,12).", B: "(P+Q+R)(P′+Q′+S)(P+R+S)", C: "(P′+Q′+R′)(P+Q+S′)(P′+R′+S′)", D: "(P+Q+R′)(P+Q′+S)(P′+R+S′)", E: "(P′+Q+R)(P′+Q′+S′)(P+R′+S)", F: "Option C", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" }
   ];
 
-  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 2 (DESIGN OF COMBINATIONAL LOGIC) ====================
   const digitalElectronicsUnit2Data = [
     { A: "How many 1:4 DEMUX blocks are required to construct a single 1:16 DEMUX circuit for a streetlight control system?", B: "5", C: "4", D: "3", E: "6", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
     { A: "In an 8:1 MUX implementation of F(A,B,C,D)=Σm(0,2,3,7,11,14,15) where A, B, and C are the select lines (S2,S1,S0), what is the data input for I1?", B: "1", C: "0", D: "D", E: "D'", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
@@ -1049,7 +1048,6 @@
     { A: "Find the minimized expression for F(P,Q,R,S)=Σm(2,4,8,11,15)+d(1,10,12,13).", B: "P′Q′RS′+P′QR′S′+PQ′R′S′+PQS", C: "PQ+RS+P′R′", D: "P′Q′R+PQS+Q′R′S", E: "P′Q′RS′+PQ′R′+P′Q′S′", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" }
   ];
 
-  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 3 (DESIGN OF SEQUENTIAL LOGIC) ====================
   const digitalElectronicsUnit3Data = [
     { A: "What is the characteristic equation of a D flip-flop?", B: "Q(n+1) = D", C: "Q(n+1) = D'", D: "Q(n+1) = D ⊕ Q", E: "Q(n+1) = JQ' + K'Q", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
     { A: "How many J-K flip-flops are required to design a MOD-8 asynchronous counter?", B: "2", C: "3", D: "4", E: "8", F: "Option B", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
@@ -1063,7 +1061,6 @@
     { A: "To convert an SR flip-flop into a JK flip-flop, what should the combinational logic driving the S and R inputs be?", B: "S = JQ' and R = KQ", C: "S = J'Q and R = K'Q", D: "S = J and R = K", E: "S = JQ and R = KQ'", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" }
   ];
 
-  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 4 (REGISTERS AND COUNTERS) ====================
   const digitalElectronicsUnit4Data = [
     { A: "How many clock pulses are required to completely shift a 4-bit data word serially into a 4-bit SISO (Serial-In Serial-Out) register?", B: "4", C: "1", D: "8", E: "2", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
     { A: "In a MOD-8 synchronous DOWN counter constructed with J-K flip-flops, what is the next logical state after the count reaches binary 000?", B: "111", C: "1", D: "100", E: "000 (Counter Halts)", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
@@ -1075,7 +1072,7 @@
     { A: "In an asynchronous MOD-8 ripple counter, what serves as the clock input for the second flip-flop in the sequence?", B: "The Q or Q' output of the first flip-flop", C: "The main external clock signal", D: "A constant logic HIGH", E: "A constant logic LOW", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" }
   ];
 
-  // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 1 ====================
+  // ==================== ENGINEERING CHEMISTRY PYQ DATA ====================
   const chemistryWaterQuestionsData = [
     { A: "50 ml of alkaline water sample titrated with N/50 HCl: Phenolphthalein endpoint = 5.2 ml. Additional acid required = 15.4 ml. Identify the type of alkalinity and determine its extent.", B: "Carbonate = 208 ppm, Bicarbonate = 204 ppm", C: "Hydroxide = 208 ppm, Carbonate = 204 ppm", D: "Carbonate = 104 ppm, Bicarbonate = 102 ppm", E: "Hydroxide = 104 ppm, Carbonate = 102 ppm", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
     { A: "Which of the following best describes the shape of the conductometric titration curve for a strong acid versus a strong base?", B: "V-shaped (conductance decreases to a minimum, then increases)", C: "U-shaped (conductance decreases slightly, then plateaus)", D: "Linear continuous decrease", E: "Linear continuous increase", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
@@ -1099,7 +1096,6 @@
     { A: "In the ion-exchange process, what is the correct representation of the cation exchange reaction when softening water containing calcium chloride (CaCl2) impurities?", B: "R−H2 + CaCl2 → R−Ca + 2HCl", C: "R−Na2 + CaCl2 → R−Ca + 2NaCl", D: "R−OH + CaCl2 → R−Cl2 + Ca(OH)2", E: "R−H2 + CaCl2 → R−Cl2 + CaH2", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" }
   ];
 
-  // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 2 (FUELS & COMBUSTION) ====================
   const chemistryFuelsQuestionsData = [
     { A: "Which of the following describes the standard conditions for determining volatile matter in coal during proximate analysis?", B: "Heating at 925±20°C for exactly 7 minutes in a covered crucible", C: "Heating at 105-110°C for 1 hour", D: "Heating at 700-750°C for 30 minutes in an open crucible", E: "Washing with solvent and evaporating", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
     { A: "Boy's gas calorimeter is primarily used to determine the calorific value of which type of fuels?", B: "Gaseous and highly volatile liquid fuels", C: "Solid fuels like coal and wood", D: "Non-volatile thick liquid fuels", E: "Nuclear fuels", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
@@ -1119,7 +1115,6 @@
     { A: "What catalyst is typically utilized in the industrial steam reforming of methane to produce hydrogen gas?", B: "Nickel (Ni)", C: "Iron (Fe)", D: "Platinum (Pt)", E: "Vanadium pentoxide (V2O5)", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" }
   ];
 
-  // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 3 (CORROSION) ====================
   const chemistryCorrosionQuestionsData = [
     { A: "Which of the following describes the fundamental principle of sacrificial anodic protection for a metal structure?", B: "The metal to be protected is connected to a more chemically active metal, which corrodes in its place.", C: "An external direct current is applied to make the structure act as an anode.", D: "The metal is coated with a thick layer of non-conductive paint.", E: "The metal is heated to form a protective oxide scale.", F: "Option A", G: "Unit III Assessment", H: "Corrosion and Corrosion Control", I: "Chemistry" },
     { A: "Why is an anodic coating like galvanizing (Zn on Fe) considered more protective than a cathodic coating like tinning (Sn on Fe) if the coating is scratched?", B: "Zinc is anodic to iron; if scratched, Zinc forms a galvanic cell and corrodes first, protecting the exposed iron.", C: "Tin is anodic to iron; if scratched, it accelerates the corrosion of the underlying iron.", D: "Zinc forms a volatile oxide layer that seals scratches instantly.", E: "Tinning requires a thicker layer, making it prone to large-scale flaking.", F: "Option A", G: "Unit III Assessment", H: "Corrosion and Corrosion Control", I: "Chemistry" },
@@ -1137,7 +1132,6 @@
     { A: "During the electroplating of gold onto a steel spoon, where should the steel spoon be placed in the electrolytic cell?", B: "At the cathode (the negative electrode)", C: "At the anode (the positive electrode)", D: "In the salt bridge", E: "It depends on the voltage applied", F: "Option A", G: "Unit III Assessment", H: "Corrosion and Corrosion Control", I: "Chemistry" }
   ];
 
-  // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 4 (POLYMERS & NANOMATERIALS) ====================
   const chemistryPolymersQuestionsData = [
     { A: "Which advanced polymer is most commonly utilized in the manufacturing of bulletproof vests and high-strength helmets?", B: "Kevlar (Poly-paraphenylene terephthalamide)", C: "Polyacetylene", D: "Polyethylene terephthalate (PET)", E: "Poly(p-phenylene vinylene) (PPV)", F: "Option A", G: "Unit IV Assessment", H: "Polymers & Nanomaterials", I: "Chemistry" },
     { A: "Which polymer is well-known for its electroluminescent properties, making it highly useful in manufacturing modern TV, monitor displays, and OLEDs?", B: "Poly(p-phenylene vinylene) (PPV)", C: "Polyvinyl chloride (PVC)", D: "Polytetrafluoroethylene (Teflon)", E: "Kevlar", F: "Option A", G: "Unit IV Assessment", H: "Polymers & Nanomaterials", I: "Chemistry" },
@@ -1153,6 +1147,80 @@
     { A: "What does the \"Degree of Polymerization\" (DP) refer to in polymer chemistry?", B: "The total number of repeating basic monomeric units present in a single polymer chain.", C: "The temperature required to initiate the polymerization reaction.", D: "The percentage of cross-links between adjacent polymer chains.", E: "The number of different types of monomers used in a copolymer.", F: "Option A", G: "Unit IV Assessment", H: "Polymers & Nanomaterials", I: "Chemistry" },
     { A: "Which type of conducting polymer is famously utilized in developing modern flexible solar cells and advanced battery technologies?", B: "Polyacetylene", C: "Polypropylene (PP)", D: "High-Density Polyethylene (HDPE)", E: "Polystyrene (PS)", F: "Option A", G: "Unit IV Assessment", H: "Polymers & Nanomaterials", I: "Chemistry" },
     { A: "What structural feature allows PHBV (Biopol) to be biodegradable while standard polyethylene is not?", B: "The presence of ester linkages in the polymer backbone, which can be hydrolyzed by moisture and microbial enzymes.", C: "It has a much higher density than standard plastics.", D: "It contains radioactive isotopes that break it down.", E: "It has a lower melting point allowing it to evaporate rapidly.", F: "Option A", G: "Unit IV Assessment", H: "Polymers & Nanomaterials", I: "Chemistry" }
+  ];
+
+  // ==================== COMPUTER PROGRAMMING PYQ DATA ====================
+  const programmingUnit1Data = [
+    { A: "What is the primary characteristic of a top-down design approach in problem-solving?", B: "Breaking a complex problem into smaller, manageable sub-problems", C: "Combining small existing modules into a large system", D: "Writing the actual code before planning", E: "Focusing exclusively on the hardware requirements", F: "Option A", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "In an algorithm to check whether a given number is even or odd, which mathematical operator is most commonly used to test the condition?", B: "Addition (+)", C: "Modulo (%)", D: "Division (/)", E: "Multiplication (*)", F: "Option B", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "Which flowchart symbol is used to evaluate a condition (e.g., Is A > B?) when finding the greatest of three numbers?", B: "Rectangle", C: "Parallelogram", D: "Diamond", E: "Oval", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "During the compilation process of a C program, which step immediately follows the preprocessing phase?", B: "Linking the object code", C: "Assembling into machine code", D: "Compilation to assembly code", E: "Program execution", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "Which of the following is the best example of a semantic error rather than a syntax error?", B: "Missing a semicolon at the end of a statement", C: "Spelling a keyword like \"int\" incorrectly", D: "Dividing a variable by zero", E: "Unmatched curly braces in a function", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "Which of the following data types is best suited to store a continuous real value like Pi (3.14159) in C?", B: "int", C: "char", D: "float", E: "boolean", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "What is the typical initialization value for a variable used to store the running product in a factorial calculation algorithm?", B: "0", C: "1", D: "-1", E: "10", F: "Option B", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "Which of the following is NOT considered a characteristic of a good algorithm?", B: "Finiteness", C: "Definiteness", D: "Ambiguity", E: "Effectiveness", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "In a flowchart representing the process of borrowing a library book, what shape would represent the action \"Issue the book\"?", B: "Diamond", C: "Rectangle", D: "Oval", E: "Arrow", F: "Option B", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "Which mathematical logic successfully swaps two integer variables (A and B) without using a third temporary variable?", B: "A = A + B; B = A - B; A = A - B", C: "A = A * B; B = A / B; A = A * B", D: "A = A - B; B = B - A; A = A + B", E: "A = A + B; B = B - A; A = B - A", F: "Option A", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "What is the purpose of an oval (pill-shaped) symbol in a standard algorithm flowchart?", B: "Process or Action", C: "Input or Output", D: "Decision making", E: "Start or End of the program", F: "Option D", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "In an algorithm designed to control traffic lights, what function is essential to ensure the lights change colors after a specific duration?", B: "Infinite loop iteration", C: "Time delay or sleep function", D: "Random number generation", E: "String manipulation", F: "Option B", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "What is the octal equivalent of the binary number 1101011₂?", B: "153₈", C: "133₈", D: "351₈", E: "105₈", F: "Option A", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "Which of the following basic hardware components is considered the \"brain\" of the computer system where actual processing occurs?", B: "RAM (Random Access Memory)", C: "Hard Drive", D: "CPU (Central Processing Unit)", E: "Motherboard", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "What is the correct mathematical formula to compute the area of a circle in an algorithm, given the radius 'r'?", B: "2∗π∗r", C: "π∗r∗r", D: "π∗d", E: "2∗r", F: "Option B", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "Which of the following is the correct relational operator in the C programming language for checking if two values are exactly equal?", B: "=", C: "!=", D: "==", E: "<>", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "What is the primary purpose of a nested if-else statement in a C program?", B: "To execute a loop multiple times", C: "To define a new user function", D: "To check multiple, dependent conditions sequentially", E: "To include a header file", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" },
+    { A: "What happens when a continue statement is executed inside a loop?", B: "The loop terminates completely", C: "The program crashes", D: "The current iteration ends and the loop proceeds to the next iteration", E: "The loop pauses and waits for user input", F: "Option C", G: "Topic I Assessment", H: "Introduction to Problem Solving", I: "Computer Programming" }
+  ];
+
+  const programmingUnit2Data = [
+    { A: "Which mathematical relationship is fundamentally used to compute the LCM of two numbers A and B once their GCD is found?", B: "LCM = (A * B) / GCD", C: "LCM = (A + B) * GCD", D: "LCM = (A / B) + GCD", E: "LCM = GCD / (A * B)", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "Which numerical method is most commonly implemented in an algorithm to find the square root of a number efficiently?", B: "Newton-Raphson Method", C: "Bubble Sort", D: "Depth-First Search", E: "Euclidean Algorithm", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "In a pseudocode algorithm for factorial computation of 'n', what is the appropriate initial value for the variable storing the result, and what is the typical loop condition?", B: "Initial value 1, loop from 1 to n", C: "Initial value 0, loop from 1 to n", D: "Initial value 1, loop from 0 to n-1", E: "Initial value n, loop from 1 to 2n", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "When designing an algorithm to check if a number N is prime, what is the most optimized upper limit for the loop checking for divisors?", B: "Square root of N", C: "N / 2", D: "N - 1", E: "N squared", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "What is the core recurrence relation used in an algorithm to generate the Fibonacci sequence?", B: "F(n) = F(n-1) + F(n-2)", C: "F(n) = F(n-1) * F(n-2)", D: "F(n) = F(n-1) + n", E: "F(n) = 2 * F(n-1)", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "For any integer N > 1, if the smallest divisor (greater than 1) is found, what mathematical property must that divisor possess?", B: "It must be a prime number", C: "It must be an even number", D: "It must be a perfect square", E: "It must be equal to the square root of N", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "Which highly efficient ancient algorithm is typically designed to establish all prime numbers up to a given positive integer 'n'?", B: "Sieve of Eratosthenes", C: "Dijkstra's Algorithm", D: "Euclidean Algorithm", E: "Horner's Method", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "What is the first smallest divisor (greater than 1) outputted by a standard divisor-finding algorithm for the number n=48?", B: "2", C: "3", D: "4", E: "6", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "In a C program using a 'for' loop to print even numbers from 1 to 10, which loop definition is the most direct and efficient?", B: "for(int i=2; i<=10; i+=2)", C: "for(int i=1; i<=10; i+=2)", D: "for(int i=1; i<10; i++) if(i%2!=0)", E: "for(int i=0; i<=10; i++)", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" },
+    { A: "In a C program to reverse the digits of an integer 'num', what is the standard operation used to extract the last digit in each loop iteration?", B: "num % 10", C: "num / 10", D: "num & 10", E: "num >> 10", F: "Option A", G: "Topic II", H: "Complex Problem Solving", I: "Computer Programming" }
+  ];
+
+  const programmingUnit3Data = [
+    { A: "What mathematical condition must be satisfied to perform the addition of two matrices?", B: "Both matrices must have the exact same dimensions (m x n)", C: "Both matrices must be square matrices", D: "Matrix A's columns must equal Matrix B's rows", E: "Both matrices must have the same number of total elements", F: "Option A", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "When finding the maximum number in an unsorted array of size N, what is the worst-case time complexity?", B: "O(1)", C: "O(log N)", D: "O(N)", E: "O(N^2)", F: "Option C", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "For matrix multiplication C = A * B, if Matrix A has dimensions m x n, what must be the dimensions of Matrix B?", B: "m x p", C: "n x p", D: "p x m", E: "n x m", F: "Option B", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "In an in-place array order reversal algorithm using a two-pointer approach (start and end), what is the correct loop termination condition?", B: "start == end", C: "start >= end", D: "start < end", E: "start > end", F: "Option C", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "Which of the following best describes the 'intersection' of two arrays A and B?", B: "Elements present in A but not in B", C: "Elements present in B but not in A", D: "Elements present in both A and B", E: "All unique elements from both A and B combined", F: "Option C", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "What is the most robust initial value for a 'max' variable when finding the maximum number in an array of unknown positive and negative integers?", B: "0", C: "1000", D: "The first element of the array (arr[0])", E: "-1", F: "Option C", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "When removing duplicates from a sorted (ordered) array in-place, which algorithmic approach is the most time-efficient?", B: "Nested loops checking every element O(N^2)", C: "Two-pointer technique O(N)", D: "Sorting the array again O(N log N)", E: "Randomized checking O(N!)", F: "Option B", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "In the C programming language, how are elements of a 2D matrix typically accessed within a nested loop for addition?", B: "matrix[i, j]", C: "matrix(i)(j)", D: "matrix[i][j]", E: "matrix{i}{j}", F: "Option C", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "What is the optimal time complexity to merge two sorted arrays of sizes M and N into a new completely sorted array?", B: "O(M * N)", C: "O(M + N)", D: "O(log(M+N))", E: "O(M log N)", F: "Option B", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "If an integer array 'arr' has 5 elements, which for-loop correctly iterates through to sum all its elements in C?", B: "for(int i=1; i<=5; i++)", C: "for(int i=0; i<5; i++)", D: "for(int i=0; i<=5; i++)", E: "for(int i=1; i<5; i++)", F: "Option B", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "Which of the following represents the correct syntax for declaring and initializing a one-dimensional array in C?", B: "int arr[5] = {1, 2, 3, 4, 5};", C: "int arr(5) = {1, 2, 3, 4, 5};", D: "array int arr[5] = {1,2};", E: "int arr[] = [1, 2, 3, 4, 5];", F: "Option A", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" },
+    { A: "To correctly find the minimum element in an array, what should the initial 'min' variable be set to before iterating?", B: "0", C: "The first element of the array (or a system maximum value)", D: "The last element of the array only", E: "-1", F: "Option B", G: "Unit 3 Assessment", H: "Array Techniques", I: "Computer Programming" }
+  ];
+
+  const programmingUnit4Data = [
+    { A: "Which sorting algorithm repeatedly selects the smallest (or largest) element from the unsorted portion and swaps it with the first unsorted element?", B: "Selection Sort", C: "Insertion Sort", D: "Bubble Sort", E: "Merge Sort", F: "Option A", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "In the context of sorting a small array of student records by percentage, which algorithm builds the final sorted array one item at a time by comparing and shifting elements?", B: "Insertion Sort", C: "Binary Search", D: "Selection Sort", E: "Radix Sort", F: "Option A", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "What is the worst-case time complexity of a Linear Search algorithm used to find a specific roll number in an unsorted array of N elements?", B: "O(1)", C: "O(log N)", D: "O(N)", E: "O(N^2)", F: "Option C", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "What is a fundamental prerequisite for successfully applying the Binary Search algorithm on an array?", B: "The array must contain only positive integers", C: "The array must be completely sorted", D: "The array size must be a power of 2", E: "The array must have no duplicate elements", F: "Option B", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "In Binary Search, if the target element is greater than the value at the current middle index, which portion of the array is searched next?", B: "The left half", C: "The right half", D: "The entire array again", E: "The middle element only", F: "Option B", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "In an array of N elements, what is the maximum number of swaps performed by Selection Sort in the worst-case scenario?", B: "O(N^2)", C: "O(log N)", D: "O(N)", E: "O(1)", F: "Option C", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "Which sorting algorithm, also known as 'sorting by exchange', works by repeatedly stepping through the list, comparing adjacent elements, and swapping them if they are in the wrong order?", B: "Bubble Sort", C: "Insertion Sort", D: "Selection Sort", E: "Binary Search", F: "Option A", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "Which of the following is a key operational difference between Selection Sort and Insertion Sort?", B: "Insertion sort is generally much faster and more efficient for nearly sorted data", C: "Selection sort uses extra memory for another array", D: "Insertion sort cannot handle strings", E: "Selection sort has an O(N log N) worst-case time complexity", F: "Option A", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "When searching for the number 81 in the array [15, 22, 39, 42, 55, 60, 74, 81, 92] using Binary Search, what is the value of the very first middle element checked? (Assuming mid = (low + high)/2)", B: "42", C: "55", D: "60", E: "39", F: "Option B", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" },
+    { A: "What will be the state of the array [29, 10, 14, 37, 13] after exactly one complete pass of the Selection Sort algorithm (sorting in ascending order)?", B: "[10, 29, 14, 37, 13]", C: "[10, 14, 29, 37, 13]", D: "[29, 10, 14, 13, 37]", E: "[13, 10, 14, 37, 29]", F: "Option A", G: "Unit IV Assessment", H: "Searching and Sorting Techniques", I: "Computer Programming" }
+  ];
+
+  const programmingUnit5Data = [
+    { A: "Which of the following is a classic real-world application of a Queue data structure?", B: "Undo mechanism in a text editor", C: "Handling print jobs in a printer spooler", D: "Evaluating postfix mathematical expressions", E: "Reversing the characters in a string", F: "Option B", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" },
+    { A: "In a Stack data structure, which standard operation is used to retrieve the top element without removing it from the stack?", B: "pop()", C: "push()", D: "peek() / top()", E: "isEmpty()", F: "Option C", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" },
+    { A: "If a Stack is used to manage the 'Undo' feature during an online shopping cart checkout process, which data processing principle does it strictly follow?", B: "FIFO (First In, First Out)", C: "LIFO (Last In, First Out)", D: "Random Access", E: "Priority-based processing", F: "Option B", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" },
+    { A: "An online bookstore uses a Queue to handle a surge in incoming orders. If orders A, B, and C arrive in that exact sequence, which order will be processed first?", B: "Order C", C: "Order B", D: "Order A", E: "Whichever order has the highest value", F: "Option C", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" },
+    { A: "Trace the status of an initially empty stack after the following operations: PUSH(5), PUSH(10), PUSH(15), POP(), PUSH(20), POP(), PUSH(25). What is the final top element of the stack?", B: "10", C: "15", D: "20", E: "25", F: "Option D", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" },
+    { A: "When implementing a standard linear Queue using a fixed-size array (0-indexed), under what specific condition does a 'Queue Overflow' occur?", B: "When front == -1", C: "When rear == MAX_SIZE - 1", D: "When front == rear", E: "When top == MAX_SIZE - 1", F: "Option B", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" },
+    { A: "When writing pseudocode for a stack implemented via an array, what condition does the isEmpty() function typically check?", B: "If top == MAX_SIZE - 1", C: "If top == 0", D: "If top == -1", E: "If front == rear", F: "Option C", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" },
+    { A: "What is the primary difference between a Stack and a Queue?", B: "A stack allows insertion at both ends, a queue does not", C: "A stack is FIFO, a queue is LIFO", D: "A stack is LIFO, a queue is FIFO", E: "A queue can only hold integers, a stack can hold any data type", F: "Option C", G: "Unit V Assessment", H: "Introduction to Data Structures", I: "Computer Programming" }
   ];
 
   function parseQuestions(dataArray) {
@@ -1187,6 +1255,11 @@
   const fuelsQuestions = parseQuestions(chemistryFuelsQuestionsData);
   const corrosionQuestions = parseQuestions(chemistryCorrosionQuestionsData);
   const polymersQuestions = parseQuestions(chemistryPolymersQuestionsData);
+  const programmingUnit1 = parseQuestions(programmingUnit1Data);
+  const programmingUnit2 = parseQuestions(programmingUnit2Data);
+  const programmingUnit3 = parseQuestions(programmingUnit3Data);
+  const programmingUnit4 = parseQuestions(programmingUnit4Data);
+  const programmingUnit5 = parseQuestions(programmingUnit5Data);
   
   // Create subjects
   const linearAlgebraSubject = {
@@ -1210,11 +1283,19 @@
     chapters: ["Unit 1: Water Technology", "Unit 2: Fuels and Combustion", "Unit 3: Corrosion and Corrosion Control", "Unit 4: Chemistry of Polymers and Nanomaterials"]
   };
 
+  const programmingSubject = {
+    id: 14,
+    name: "Computer Programming & Problem Solving",
+    icon: "💻",
+    chapters: ["Unit 1: Introduction to Problem Solving", "Unit 2: Complex Problem Solving", "Unit 3: Array Techniques", "Unit 4: Searching and Sorting Techniques", "Unit 5: Introduction to Data Structures"]
+  };
+
   // Subjects array
   const subjectsData = [
     linearAlgebraSubject,
     chemistrySubject,
-    digitalElectronicsSubject
+    digitalElectronicsSubject,
+    programmingSubject
   ];
 
   let bookmarks = JSON.parse(localStorage.getItem('learnflow_bookmarks') || '[]');
@@ -1268,6 +1349,11 @@
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 2: Fuels and Combustion") qCount = fuelsQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 3: Corrosion and Corrosion Control") qCount = corrosionQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 4: Chemistry of Polymers and Nanomaterials") qCount = polymersQuestions.length;
+      else if (currentSubject.name === "Computer Programming & Problem Solving" && chapter === "Unit 1: Introduction to Problem Solving") qCount = programmingUnit1.length;
+      else if (currentSubject.name === "Computer Programming & Problem Solving" && chapter === "Unit 2: Complex Problem Solving") qCount = programmingUnit2.length;
+      else if (currentSubject.name === "Computer Programming & Problem Solving" && chapter === "Unit 3: Array Techniques") qCount = programmingUnit3.length;
+      else if (currentSubject.name === "Computer Programming & Problem Solving" && chapter === "Unit 4: Searching and Sorting Techniques") qCount = programmingUnit4.length;
+      else if (currentSubject.name === "Computer Programming & Problem Solving" && chapter === "Unit 5: Introduction to Data Structures") qCount = programmingUnit5.length;
       html += `<div class="chapter-row" data-chapter="${chapter}"><div class="chapter-info"><div class="chapter-name">${idx+1}. ${chapter}</div><div class="chapter-meta"><span>📚 ${qCount} Questions</span></div></div><div class="question-stats"><div class="qs-count">${qCount} Qs</div></div></div>`;
     });
     html += `</div>`;
@@ -1299,6 +1385,16 @@
           currentQuestions = [...corrosionQuestions];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 4: Chemistry of Polymers and Nanomaterials") {
           currentQuestions = [...polymersQuestions];
+        } else if (currentSubject.name === "Computer Programming & Problem Solving" && currentChapter === "Unit 1: Introduction to Problem Solving") {
+          currentQuestions = [...programmingUnit1];
+        } else if (currentSubject.name === "Computer Programming & Problem Solving" && currentChapter === "Unit 2: Complex Problem Solving") {
+          currentQuestions = [...programmingUnit2];
+        } else if (currentSubject.name === "Computer Programming & Problem Solving" && currentChapter === "Unit 3: Array Techniques") {
+          currentQuestions = [...programmingUnit3];
+        } else if (currentSubject.name === "Computer Programming & Problem Solving" && currentChapter === "Unit 4: Searching and Sorting Techniques") {
+          currentQuestions = [...programmingUnit4];
+        } else if (currentSubject.name === "Computer Programming & Problem Solving" && currentChapter === "Unit 5: Introduction to Data Structures") {
+          currentQuestions = [...programmingUnit5];
         } else {
           currentQuestions = [];
           for (let i = 1; i <= 100; i++) {
@@ -1365,7 +1461,7 @@
       html+=`</div></div>`; }
     html+=`</div>`; mainContent.innerHTML=html;
   }
-  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 4: Linear Differential Equations") currentQuestions=[...linearDifferentialQuestions]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 1: Logic Gates & Minimization") currentQuestions=[...digitalElectronicsUnit1]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 2: Design of Combinational Logic") currentQuestions=[...digitalElectronicsUnit2]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 3: Design of Sequential Logic") currentQuestions=[...digitalElectronicsUnit3]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 4: Registers and Counters") currentQuestions=[...digitalElectronicsUnit4]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
+  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 4: Linear Differential Equations") currentQuestions=[...linearDifferentialQuestions]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 1: Logic Gates & Minimization") currentQuestions=[...digitalElectronicsUnit1]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 2: Design of Combinational Logic") currentQuestions=[...digitalElectronicsUnit2]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 3: Design of Sequential Logic") currentQuestions=[...digitalElectronicsUnit3]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 4: Registers and Counters") currentQuestions=[...digitalElectronicsUnit4]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else if(sub==="Computer Programming & Problem Solving" && chap==="Unit 1: Introduction to Problem Solving") currentQuestions=[...programmingUnit1]; else if(sub==="Computer Programming & Problem Solving" && chap==="Unit 2: Complex Problem Solving") currentQuestions=[...programmingUnit2]; else if(sub==="Computer Programming & Problem Solving" && chap==="Unit 3: Array Techniques") currentQuestions=[...programmingUnit3]; else if(sub==="Computer Programming & Problem Solving" && chap==="Unit 4: Searching and Sorting Techniques") currentQuestions=[...programmingUnit4]; else if(sub==="Computer Programming & Problem Solving" && chap==="Unit 5: Introduction to Data Structures") currentQuestions=[...programmingUnit5]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
   window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
 
   document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Performance analytics coming soon!</div>'; }); });
