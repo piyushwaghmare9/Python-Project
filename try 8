@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>LearnFlow | Linear Algebra & Calculus PYQ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* ========= THEME VARIABLES ========= */
+    :root {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #ffffff;
+      --text-primary: #0f172a;
+      --text-secondary: #64748b;
+      --border-color: #e2e8f0;
+      --card-bg: #ffffff;
+      --sidebar-bg: #ffffff;
+      --nav-hover: #f1f5f9;
+      --nav-active: linear-gradient(135deg, #1e1b4b15, #4c1d9515);
+      --progress-bg: #e2e8f0;
+      --option-bg: #f8fafc;
+      --option-hover: #f1f5f9;
+      --btn-secondary-bg: #f1f5f9;
+      --btn-secondary-hover: #e2e8f0;
+      --chip-bg: #f1f5f9;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.navy-theme {
+      --bg-primary: #0a0e27;
+      --bg-secondary: #111837;
+      --text-primary: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --border-color: #1e293b;
+      --card-bg: #111837;
+      --sidebar-bg: #0d1430;
+      --nav-hover: #1e293b;
+      --nav-active: linear-gradient(135deg, #4c1d9530, #1e1b4b30);
+      --progress-bg: #1e293b;
+      --option-bg: #0f172a;
+      --option-hover: #1e293b;
+      --btn-secondary-bg: #1e293b;
+      --btn-secondary-hover: #334155;
+      --chip-bg: #1e293b;
+    }
+
+    /* ========= LOGIN PAGE ========= */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+    }
+
+    .login-card {
+      background: white;
+      border-radius: 32px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    body.navy-theme .login-card {
+      background: #111837;
+    }
+
+    .login-card h1 {
+      font-size: 36px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .login-card .subtitle {
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    body.navy-theme .input-group label {
+      color: #cbd5e1;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      font-size: 15px;
+      transition: all 0.2s;
+      background: white;
+    }
+
+    body.navy-theme .input-group input {
+      background: #0f172a;
+      border-color: #1e293b;
+      color: #e2e8f0;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #4c1d95;
+      box-shadow: 0 0 0 3px rgba(76, 29, 149, 0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      color: white;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(76, 29, 149, 0.3);
+    }
+
+    /* ========= DASHBOARD LAYOUT ========= */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background: var(--sidebar-bg);
+      padding: 28px 20px;
+      position: fixed;
+      height: 100vh;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+      overflow-y: auto;
+      transition: background 0.3s ease, border-color 0.3s ease;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 32px;
+      padding-left: 12px;
+    }
+
+    .nav-menu {
+      flex: 1;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      margin: 4px 0;
+      border-radius: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: all 0.2s;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .nav-item:hover {
+      background: var(--nav-hover);
+      color: #4c1d95;
+    }
+
+    .nav-item.active {
+      background: var(--nav-active);
+      color: #4c1d95;
+    }
+
+    .nav-item .emoji {
+      margin-right: 12px;
+      font-size: 20px;
+    }
+
+    .theme-toggle {
+      margin-top: auto;
+      padding: 16px 12px;
+      border-top: 1px solid var(--border-color);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: 14px;
+      transition: all 0.2s;
+      color: var(--text-secondary);
+    }
+
+    .theme-toggle:hover {
+      background: var(--nav-hover);
+      color: #4c1d95;
+    }
+
+    .theme-toggle .toggle-icon {
+      font-size: 20px;
+    }
+
+    .user-section {
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+      margin-top: 16px;
+    }
+
+    .user-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+
+    .user-role {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: 280px;
+      padding: 28px 36px;
+      transition: background 0.3s ease;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .page-title h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .page-title p {
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .subject-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      border-color: #4c1d95;
+    }
+
+    .subject-icon {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .subject-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+    }
+
+    .subject-card p {
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .chapter-count {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #4c1d95;
+      font-weight: 500;
+    }
+
+    .chapters-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chapter-row {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid var(--border-color);
+    }
+
+    .chapter-row:hover {
+      transform: translateX(6px);
+      border-color: #4c1d95;
+      box-shadow: 0 4px 12px rgba(76, 29, 149, 0.1);
+    }
+
+    .chapter-info {
+      flex: 1;
+    }
+
+    .chapter-name {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+
+    .chapter-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .question-stats {
+      text-align: right;
+    }
+
+    .qs-count {
+      font-weight: 700;
+      font-size: 20px;
+      color: #4c1d95;
+    }
+
+    .bookmarks-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .bookmark-group {
+      background: var(--card-bg);
+      border-radius: 24px;
+      margin-bottom: 24px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .bookmark-group-header {
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      color: white;
+      padding: 18px 24px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bookmark-group-header h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .bookmark-chapter-list {
+      padding: 8px 0;
+    }
+
+    .bookmark-chapter-item {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .bookmark-chapter-title {
+      background: var(--option-bg);
+      padding: 14px 24px;
+      font-weight: 600;
+      color: #4c1d95;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .bookmark-chapter-title:hover {
+      background: var(--option-hover);
+    }
+
+    .bookmark-question-item {
+      padding: 14px 24px 14px 48px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .bookmark-question-item:hover {
+      background: #fef3c7;
+      border-left-color: #fbbf24;
+    }
+
+    body.navy-theme .bookmark-question-item:hover {
+      background: #1e293b;
+    }
+
+    .bookmark-question-text {
+      font-size: 14px;
+      color: var(--text-primary);
+      flex: 1;
+    }
+
+    .remove-bookmark {
+      background: none;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #ef4444;
+      padding: 4px 8px;
+      border-radius: 8px;
+      transition: all 0.2s;
+    }
+
+    .remove-bookmark:hover {
+      background: #fee2e2;
+      transform: scale(1.1);
+    }
+
+    .empty-bookmarks {
+      text-align: center;
+      padding: 60px;
+      background: var(--card-bg);
+      border-radius: 24px;
+      color: var(--text-secondary);
+    }
+
+    .question-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .progress-wrapper {
+      margin-bottom: 24px;
+      background: var(--card-bg);
+      padding: 20px 24px;
+      border-radius: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .progress-label {
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .progress-count {
+      color: #4c1d95;
+      font-weight: 700;
+    }
+
+    .progress-bar-bg {
+      height: 8px;
+      background: var(--progress-bg);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #1e1b4b, #4c1d95);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: #4c1d95;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .back-btn {
+      background: none;
+      border: none;
+      color: #4c1d95;
+      cursor: pointer;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      padding: 8px 0;
+    }
+
+    .question-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .question-badge {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .question-number {
+      font-weight: 700;
+      color: #4c1d95;
+      background: #f3e8ff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    .exam-tag {
+      color: var(--text-secondary);
+      font-size: 13px;
+      background: var(--chip-bg);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .question-text {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      color: var(--text-primary);
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      background: var(--option-bg);
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1.5px solid var(--border-color);
+    }
+
+    .option:hover {
+      background: var(--option-hover);
+      transform: translateX(4px);
+    }
+
+    .option.correct-highlight {
+      background: #10b981;
+      border-color: #059669;
+      color: white;
+    }
+    .option.correct-highlight span,
+    .option.correct-highlight strong {
+      color: white;
+    }
+    .option.wrong-highlight {
+      background: #ef4444;
+      border-color: #dc2626;
+      color: white;
+    }
+    .option.wrong-highlight span,
+    .option.wrong-highlight strong {
+      color: white;
+    }
+    .option input {
+      margin-right: 14px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #4c1d95;
+    }
+    .option span {
+      font-size: 15px;
+      color: var(--text-primary);
+    }
+    .option strong {
+      margin-right: 8px;
+      color: #4c1d95;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-check {
+      background: #7dd3fc;
+      color: #0c4a6e;
+      width: auto;
+      padding: 12px 28px;
+      border: none;
+    }
+    .btn-check:hover {
+      background: #38bdf8;
+      transform: translateY(-2px);
+    }
+
+    .btn-bookmark {
+      background: #fef3c7;
+      color: #b45309;
+      width: auto;
+      padding: 12px 28px;
+      border: none;
+    }
+    .btn-bookmark:hover {
+      background: #fde68a;
+      transform: translateY(-2px);
+    }
+    .btn-bookmark.bookmarked {
+      background: #fbbf24;
+      color: #78350f;
+    }
+
+    .question-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-secondary {
+      background: var(--btn-secondary-bg);
+      color: var(--text-primary);
+      width: auto;
+      padding: 12px 24px;
+    }
+
+    .btn-secondary:hover {
+      background: var(--btn-secondary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .feedback-message {
+      margin: 16px 0;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .feedback-correct {
+      background: #d1fae5;
+      color: #065f46;
+      border-left: 4px solid #10b981;
+    }
+
+    .feedback-wrong {
+      background: #fee2e2;
+      color: #991b1b;
+      border-left: 4px solid #ef4444;
+    }
+
+    .question-dots-section {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .dots-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .q-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--chip-bg);
+      color: var(--text-primary);
+    }
+
+    .q-dot.current {
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(76, 29, 149, 0.4);
+    }
+
+    .q-dot.answered {
+      background: #10b981;
+      color: white;
+    }
+
+    .q-dot.checked-correct {
+      background: #10b981;
+      color: white;
+      box-shadow: 0 0 0 2px #059669;
+    }
+
+    .q-dot.checked-wrong {
+      background: #ef4444;
+      color: white;
+      box-shadow: 0 0 0 2px #dc2626;
+    }
+
+    .q-dot.unanswered {
+      background: var(--chip-bg);
+      color: var(--text-secondary);
+    }
+
+    .q-dot:hover {
+      transform: scale(1.08);
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 12px;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .result-card {
+      background: var(--card-bg);
+      border-radius: 32px;
+      padding: 48px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid var(--border-color);
+    }
+
+    .result-icon {
+      font-size: 64px;
+      margin-bottom: 24px;
+    }
+
+    .score {
+      font-size: 56px;
+      font-weight: 800;
+      color: #4c1d95;
+      margin: 24px 0;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      .q-dot {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+      }
+    }
+
+    .page {
+      display: none;
+    }
+    .page.active-page {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loginPage" class="page active-page">
+  <div class="login-container">
+    <div class="login-card">
+      <h1>📚 LearnFlow</h1>
+      <p class="subtitle">Linear Algebra & Calculus PYQ Platform</p>
+      <form id="loginForm">
+        <div class="input-group"><label>Username</label><input type="text" id="loginUsername" placeholder="Enter your name" required></div>
+        <div class="input-group"><label>Password</label><input type="password" placeholder="Enter your password" required></div>
+        <button type="submit" class="btn btn-primary">Start Learning →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="appWrapper" style="display: none;">
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="logo">📖 LearnFlow</div>
+      <nav class="nav-menu">
+        <div class="nav-item" data-view="subjects"><span class="emoji">📚</span> Subjects</div>
+        <div class="nav-item" data-view="bookmarks"><span class="emoji">🔖</span> Bookmarks</div>
+        <div class="nav-item" data-view="analysis"><span class="emoji">📊</span> Analysis</div>
+      </nav>
+      <div class="theme-toggle" id="themeToggle">
+        <span class="toggle-icon" id="themeIcon">🌙</span>
+        <span id="themeText">Dark Mode</span>
+      </div>
+      <div class="user-section"><div class="user-name" id="sidebarUserName">Student</div><div class="user-role">PYQ Practice</div></div>
+    </aside>
+    <main class="main-content" id="mainContent"></main>
+  </div>
+</div>
+
+<script>
+  // ==================== THEME TOGGLE ====================
+  function initTheme() {
+    const savedTheme = localStorage.getItem('learnflow_theme');
+    if (savedTheme === 'navy') {
+      document.body.classList.add('navy-theme');
+      updateThemeButton('navy');
+    } else {
+      document.body.classList.remove('navy-theme');
+      updateThemeButton('light');
+    }
+  }
+  function updateThemeButton(theme) {
+    const themeIcon = document.getElementById('themeIcon');
+    const themeText = document.getElementById('themeText');
+    if (theme === 'navy') {
+      themeIcon.textContent = '☀️';
+      themeText.textContent = 'Light Mode';
+    } else {
+      themeIcon.textContent = '🌙';
+      themeText.textContent = 'Dark Mode';
+    }
+  }
+  function toggleTheme() {
+    if (document.body.classList.contains('navy-theme')) {
+      document.body.classList.remove('navy-theme');
+      localStorage.setItem('learnflow_theme', 'light');
+      updateThemeButton('light');
+    } else {
+      document.body.classList.add('navy-theme');
+      localStorage.setItem('learnflow_theme', 'navy');
+      updateThemeButton('navy');
+    }
+  }
+
+  // ==================== IMPORTED PYQ DATA ====================
+  const rawQuestions = [
+    { A: "Under what condition is the system 3x+4y+5z=α, 4x+5y+6z=β, 5x+6y+7z=γ consistent?", B: "α,β,γ are in Arithmetic Progression (AP)", C: "α,β,γ are in Geometric Progression (GP)", D: "α,β,γ are in Harmonic Progression (HP)", E: "α+β+γ=0", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "System of Linear Equations", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Examine for linear dependence, the system of vectors X1=[1,1,1,3], X2=[1,2,3,4], X3=[2,3,4,7]. If dependent, find the relation.", B: "Linearly independent", C: "Dependent, X1+X2=X3", D: "Dependent, X1−2X2+X3=0", E: "Dependent, 2X1+X2=X3", F: "Option B", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Vector Spaces & Linear Dependence", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Solve the system: x+y+z=6, x−y+2z=5, 3x+y+z=8, 2x−2y+3z=7.", B: "x=1,y=2,z=3", C: "x=2,y=1,z=3", D: "x=3,y=2,z=1", E: "Inconsistent system", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "System of Linear Equations", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Find Eigen values of A=[3,-1,1;-1,5,-1;1,-1,3].", B: "2,3,6", C: "1,4,6", D: "-2,-3,-6", E: "1,2,3", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Eigenvalues & Eigenvectors", I: "Linear Algebra and Univariate Calculus" },
+    { A: "In Fourier series of f(x)=e^x in [0,2π], constant term a0?", B: "(e^{2π}-1)/π", C: "(e^{π}-1)/π", D: "(e^{2π}+1)/π", E: "(e^{-π})/π", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Fourier Series", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Obtain constant term in Fourier expansion. X:0,1,2,3,4,5; Y:9,18,24,28,26,20.", B: "20.83", C: "15.5", D: "25", E: "30.2", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Harmonic Analysis", I: "Linear Algebra and Univariate Calculus" },
+    { A: "If f(x)=x for -1≤x≤0 and f(x)=x+2 for 0≤x≤1, find bn.", B: "(2-4(-1)^n)/(nπ)", C: "(2+4(-1)^n)/(nπ)", D: "(4-2(-1)^n)/(nπ)", E: "0", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Fourier Series", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Sum of series 1/1^2 - 1/2^2 + 1/3^2 - ... from Fourier of f(x)=π^2 - x^2?", B: "π^2/12", C: "π^2/6", D: "π^2/8", E: "π^2/4", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Fourier Series", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Expand 2x^3+7x^2+x-6 in powers of (x-2).", B: "2(x-2)^3+19(x-2)^2+53(x-2)+40", C: "2(x-2)^3+17(x-2)^2+40(x-2)+30", D: "2(x-2)^3+12(x-2)^2+24(x-2)+16", E: "(x-2)^3+19(x-2)^2+53(x-2)+20", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Taylor/Maclaurin Series", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Maclaurin series of log(1+tan x) up to x^3 term?", B: "x - x^2/2 + 2x^3/3", C: "x + x^2/2 + x^3/3", D: "x - x^2/2 - 2x^3/3", E: "1+x - x^2/2", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Series Expansion", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Evaluate lim_{x→0} (cot x)^{sin x}.", B: "1", C: "0", D: "e", E: "∞", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Limits and Continuity", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Properties of nth derivative of y=x^2 e^x cos x?", B: "Terms with 2^{n/2} and angles (x+nπ/4)", C: "Terms with 2^n and angles (x+2nπ)", D: "Purely e^{nx}", E: "x^2 e^x cos(x+2nπ)", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Successive Differentiation", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Solve: (x^4 e^x - 2mxy^2)dx + (2mx^2 y)dy=0.", B: "e^x + x^{-2m} y^2 = C", C: "e^x - x^{-2m} y^2 = C", D: "x e^x + m y^2 = C", E: "e^x + m y^2 x^2 = C", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Ordinary Differential Equations", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Solve: (1+x^2) dy/dx + xy = 1.", B: "y√(1+x^2) = ln(x+√(1+x^2)) + C", C: "y(1+x^2)=tan^{-1}x+C", D: "y=ln(1+x^2)+C", E: "y√(1+x^2)=x+C", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Ordinary Differential Equations", I: "Linear Algebra and Univariate Calculus" },
+    { A: "Body cools 85°C to 65°C in 25 min, air 40°C. Temp after 40 min?", B: "57.6°C", C: "55.0°C", D: "60.5°C", E: "52.3°C", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Applications of Differential Equations", I: "Linear Algebra and Univariate Calculus" },
+    { A: "RC circuit with EMF E, voltage across condenser at time t?", B: "E(1-e^{-t/RC})", C: "E e^{-t/RC}", D: "E(1-e^{-Rt/C})", E: "E(1+e^{-t/RC})", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Applications of Differential Equations", I: "Linear Algebra and Univariate Calculus" }
+  ];
+
+  function parseQuestions() {
+    return rawQuestions.map((q, idx) => {
+      const opts = [q.B, q.C, q.D, q.E];
+      let correctIdx = 0;
+      if (q.F === "Option A") correctIdx = 0;
+      else if (q.F === "Option B") correctIdx = 1;
+      else if (q.F === "Option C") correctIdx = 2;
+      else if (q.F === "Option D") correctIdx = 3;
+      return {
+        id: idx + 1,
+        text: q.A,
+        options: opts,
+        correct: correctIdx,
+        exam: q.G,
+        chapter: q.H,
+        subject: q.I
+      };
+    });
+  }
+  const allQuestions = parseQuestions();
+  const chaptersMap = new Map();
+  allQuestions.forEach(q => { if(!chaptersMap.has(q.chapter)) chaptersMap.set(q.chapter, []); chaptersMap.get(q.chapter).push(q); });
+  const uniqueChapters = Array.from(chaptersMap.keys());
+
+  let currentSubject = { id: 1, name: "Linear Algebra and Univariate Calculus", icon: "📐", chapters: uniqueChapters };
+  let currentChapter = null;
+  let currentQuestions = [];
+  let currentQuestionIndex = 0;
+  let userAnswers = {}, answerChecked = {}, answerResult = {};
+  let bookmarks = JSON.parse(localStorage.getItem('learnflow_bookmarks') || '[]');
+  function saveBookmarks() { localStorage.setItem('learnflow_bookmarks', JSON.stringify(bookmarks)); }
+  function addBookmark(sub, chap, qid, qtext, idx) { if(!bookmarks.some(b=>b.subjectName===sub && b.chapterName===chap && b.questionId===qid)){ bookmarks.push({subjectName:sub, chapterName:chap, questionId:qid, questionText:qtext, questionIndex:idx}); saveBookmarks();} }
+  function removeBookmark(sub, chap, qid) { bookmarks = bookmarks.filter(b=>!(b.subjectName===sub && b.chapterName===chap && b.questionId===qid)); saveBookmarks(); }
+  function isBookmarked(sub, chap, qid) { return bookmarks.some(b=>b.subjectName===sub && b.chapterName===chap && b.questionId===qid); }
+
+  const mainContent = document.getElementById('mainContent');
+  document.getElementById('loginForm').addEventListener('submit', (e) => { e.preventDefault(); document.getElementById('sidebarUserName').innerText = document.getElementById('loginUsername').value.trim() || "Student"; document.getElementById('loginPage').classList.remove('active-page'); document.getElementById('appWrapper').style.display = 'block'; renderSubjects(); });
+  function showPage(){}
+  function renderSubjects() {
+    let html = `<div class="top-bar"><div class="page-title"><h1>📚 All Subjects</h1><p>Choose a subject to practice PYQs</p></div></div><div class="subjects-grid"><div class="subject-card" data-subject="la"><div class="subject-icon">📐</div><h3>Linear Algebra & Univariate Calculus</h3><p>${uniqueChapters.length} chapters • ${allQuestions.length} PYQs</p><div class="chapter-count">📖 ${uniqueChapters.length} Chapters →</div></div></div>`;
+    mainContent.innerHTML = html;
+    document.querySelector('.subject-card')?.addEventListener('click', () => renderChapters());
+  }
+  function renderChapters() {
+    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">All Subjects</a> › <span>${currentSubject.name}</span></div><div class="top-bar"><div class="page-title"><h1>📐 ${currentSubject.name} PYQs</h1><p>Chapter-wise previous year questions</p></div></div><div class="chapters-grid">`;
+    uniqueChapters.forEach((ch, idx) => { let qCount = chaptersMap.get(ch).length; html += `<div class="chapter-row" data-chapter="${ch}"><div class="chapter-info"><div class="chapter-name">${idx+1}. ${ch}</div><div class="chapter-meta"><span>📚 ${qCount} Questions</span></div></div><div class="question-stats"><div class="qs-count">${qCount} Qs</div></div></div>`; });
+    html += `</div>`;
+    mainContent.innerHTML = html;
+    document.querySelectorAll('.chapter-row').forEach(row => { row.addEventListener('click', () => { currentChapter = row.dataset.chapter; currentQuestions = chaptersMap.get(currentChapter); currentQuestionIndex = 0; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); }); });
+  }
+  function renderSingleQuestion() {
+    if(!currentQuestions.length) return;
+    const q = currentQuestions[currentQuestionIndex];
+    const total = currentQuestions.length;
+    const progressPercent = ((currentQuestionIndex+1)/total)*100;
+    const selected = userAnswers[currentQuestionIndex];
+    const isChecked = answerChecked[currentQuestionIndex];
+    const isCorrect = answerResult[currentQuestionIndex];
+    const bookmarked = isBookmarked(currentSubject.name, currentChapter, q.id);
+    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>${currentChapter}</span></div><button class="back-btn" onclick="renderChapters()">← Back to Chapters</button><div class="question-container"><div class="progress-wrapper"><div class="progress-header"><span class="progress-label">Your Progress</span><span class="progress-count">Q${currentQuestionIndex+1} of ${total}</span></div><div class="progress-bar-bg"><div class="progress-fill" style="width:${progressPercent}%"></div></div></div><div class="question-card"><div class="question-header"><div class="question-badge"><span class="question-number">Question ${currentQuestionIndex+1}</span><span class="exam-tag">${q.exam}</span></div></div><div class="question-text">${q.text}</div><div class="options" id="optionsContainer">`;
+    q.options.forEach((opt, idx) => { let letter = String.fromCharCode(65+idx); let addClass = (isChecked && selected===idx) ? (isCorrect ? 'correct-highlight' : 'wrong-highlight') : ''; html += `<label class="option ${addClass}"><input type="radio" name="question" value="${idx}" ${selected===idx ? 'checked' : ''} onchange="selectOption(${idx})"><span><strong>${letter}.</strong> ${opt}</span></label>`; });
+    html += `</div><div class="action-buttons"><button class="btn btn-check" id="checkAnswerBtn">✅ Check Answer</button><button class="btn btn-bookmark ${bookmarked ? 'bookmarked' : ''}" id="bookmarkBtn">${bookmarked ? '★ Bookmarked' : '☆ Add Bookmark'}</button></div><div id="feedbackMsg" class="feedback-message"></div><div class="question-nav"><button class="btn btn-secondary" onclick="prevQuestion()" ${currentQuestionIndex===0 ? 'disabled' : ''}>← Previous</button><div class="nav-buttons"><button class="btn btn-primary" onclick="nextQuestion()">Next →</button></div></div><div class="question-dots-section"><div class="dots-grid" id="dotsGrid"></div><div class="legend"><span><i class="legend-dot" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95);"></i> Current</span><span><i class="legend-dot" style="background:#10b981;"></i> Correct</span><span><i class="legend-dot" style="background:#ef4444;"></i> Wrong</span><span><i class="legend-dot" style="background:var(--chip-bg);"></i> Not Checked</span></div></div></div></div>`;
+    mainContent.innerHTML = html;
+    const grid = document.getElementById('dotsGrid');
+    if(grid) for(let i=0;i<total;i++){ let cls='q-dot'; if(i===currentQuestionIndex) cls+=' current'; else if(answerChecked[i]) cls+= answerResult[i] ? ' checked-correct' : ' checked-wrong'; else if(userAnswers[i]!==undefined) cls+=' answered'; else cls+=' unanswered'; grid.innerHTML += `<button class="${cls}" onclick="jumpToQuestion(${i})">${i+1}</button>`; }
+    document.getElementById('checkAnswerBtn')?.addEventListener('click',()=>checkAnswer()); document.getElementById('bookmarkBtn')?.addEventListener('click',()=>toggleBookmark());
+  }
+  window.selectOption = function(optIndex){ userAnswers[currentQuestionIndex]=optIndex; answerChecked[currentQuestionIndex]=false; answerResult[currentQuestionIndex]=undefined; renderSingleQuestion(); };
+  window.checkAnswer = function(){ let selected=userAnswers[currentQuestionIndex]; if(selected===undefined){ alert("Select an option"); return; } let q=currentQuestions[currentQuestionIndex]; let isCorrect=(selected===q.correct); answerChecked[currentQuestionIndex]=true; answerResult[currentQuestionIndex]=isCorrect; let fb=document.getElementById('feedbackMsg'); fb.style.display='block'; fb.className=`feedback-message ${isCorrect?'feedback-correct':'feedback-wrong'}`; fb.innerHTML=isCorrect?'✅ Correct! Great job!':`❌ Incorrect. Correct: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}`; renderSingleQuestion(); };
+  window.toggleBookmark = function(){ let q=currentQuestions[currentQuestionIndex]; if(isBookmarked(currentSubject.name,currentChapter,q.id)) removeBookmark(currentSubject.name,currentChapter,q.id); else addBookmark(currentSubject.name,currentChapter,q.id,q.text,currentQuestionIndex); renderSingleQuestion(); };
+  window.prevQuestion = function(){ if(currentQuestionIndex>0){ currentQuestionIndex--; renderSingleQuestion(); } };
+  window.nextQuestion = function(){ if(currentQuestionIndex<currentQuestions.length-1){ currentQuestionIndex++; renderSingleQuestion(); } else { let correct=0; for(let i=0;i<currentQuestions.length;i++) if(answerChecked[i] && answerResult[i]) correct++; showResult(correct); } };
+  window.jumpToQuestion = function(idx){ currentQuestionIndex=idx; renderSingleQuestion(); };
+  function showResult(correct){ mainContent.innerHTML=`<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>Result</span></div><div class="result-card"><div class="result-icon">🏆</div><h2>Chapter Completed!</h2><div class="score">${correct}<span>/${currentQuestions.length}</span></div><p>Percentage: ${Math.round((correct/currentQuestions.length)*100)}%</p><div class="result-actions"><button class="btn btn-primary" onclick="renderSubjects()">🏠 Go Home</button><button class="btn btn-secondary" onclick="renderChapters()">📖 Back to Chapters</button><button class="btn btn-secondary" onclick="location.reload()">🔄 Retake</button></div></div>`; }
+  function renderBookmarksPage() {
+    if(bookmarks.length===0){ mainContent.innerHTML=`<div class="empty-bookmarks"><div style="font-size:64px">🔖</div><h3>No Bookmarks Yet</h3><p>Bookmark questions to review later.</p><button class="btn btn-primary" onclick="renderSubjects()">Browse Subjects</button></div>`; return; }
+    let grouped={}; bookmarks.forEach(bm=>{ if(!grouped[bm.subjectName]) grouped[bm.subjectName]={}; if(!grouped[bm.subjectName][bm.chapterName]) grouped[bm.subjectName][bm.chapterName]=[]; grouped[bm.subjectName][bm.chapterName].push(bm); });
+    let html=`<div class="top-bar"><div class="page-title"><h1>🔖 My Bookmarks</h1></div></div><div class="bookmarks-container">`;
+    for(let sub in grouped){ html+=`<div class="bookmark-group"><div class="bookmark-group-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><h3>📘 ${sub}</h3><span>▼</span></div><div class="bookmark-chapter-list">`;
+      for(let chap in grouped[sub]){ html+=`<div class="bookmark-chapter-item"><div class="bookmark-chapter-title" onclick="let el=document.getElementById('ch-${sub.replace(/\s/g,'')}-${chap.replace(/\s/g,'')}'); if(el) el.style.display=el.style.display==='none'?'block':'none'"><span>📖</span> ${chap} (${grouped[sub][chap].length})<span style="margin-left:auto;">▼</span></div><div id="ch-${sub.replace(/\s/g,'')}-${chap.replace(/\s/g,'')}" class="bookmark-questions-list" style="display:none">`;
+        grouped[sub][chap].forEach(bm=>{ html+=`<div class="bookmark-question-item" onclick="navigateToBookmark('${sub}','${chap}',${bm.questionId},${bm.questionIndex})"><div style="flex:1">Q${bm.questionId}: ${bm.questionText.substring(0,70)}...</div><button class="remove-bookmark" onclick="event.stopPropagation(); removeBookmarkAndRefresh('${sub}','${chap}',${bm.questionId})">🗑️</button></div>`; });
+        html+=`</div></div>`; }
+      html+=`</div></div>`; }
+    html+=`</div>`; mainContent.innerHTML=html;
+  }
+  window.navigateToBookmark = function(sub, chap, qid, idx){ currentSubject={name:sub, icon:"📐", chapters:uniqueChapters}; currentChapter=chap; currentQuestions=chaptersMap.get(chap); let foundIdx=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=foundIdx!==-1?foundIdx:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); };
+  window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
+  document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Detailed analytics coming soon!</div>'; }); });
+  document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+  initTheme();
+  window.renderSubjects = renderSubjects; window.renderChapters = renderChapters;
+</script>
+</body>
+</html>
