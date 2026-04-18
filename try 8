@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>LearnFlow | PYQ Practice Platform</title>
+  <title>LearnFlow | Engineering Chemistry & Linear Algebra PYQ</title>
   <style>
     * {
       margin: 0;
@@ -28,9 +28,6 @@
       --btn-secondary-bg: #f1f5f9;
       --btn-secondary-hover: #e2e8f0;
       --chip-bg: #f1f5f9;
-      --stat-correct: #10b981;
-      --stat-wrong: #ef4444;
-      --stat-attempted: #3b82f6;
     }
 
     body {
@@ -40,7 +37,6 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* Navy Blue Theme */
     body.navy-theme {
       --bg-primary: #0a0e27;
       --bg-secondary: #111837;
@@ -95,10 +91,6 @@
     .login-card .subtitle {
       color: #64748b;
       margin-bottom: 32px;
-    }
-
-    body.navy-theme .login-card .subtitle {
-      color: #94a3b8;
     }
 
     .input-group {
@@ -180,7 +172,6 @@
       flex-direction: column;
       z-index: 10;
       overflow-y: auto;
-      transition: background 0.3s ease, border-color 0.3s ease;
     }
 
     .logo {
@@ -205,7 +196,6 @@
       margin: 4px 0;
       border-radius: 14px;
       color: var(--text-secondary);
-      text-decoration: none;
       transition: all 0.2s;
       font-weight: 500;
       cursor: pointer;
@@ -226,7 +216,6 @@
       font-size: 20px;
     }
 
-    /* Theme Toggle Button - Bottom Left */
     .theme-toggle {
       margin-top: auto;
       padding: 16px 12px;
@@ -236,7 +225,6 @@
       align-items: center;
       gap: 12px;
       border-radius: 14px;
-      transition: all 0.2s;
       color: var(--text-secondary);
     }
 
@@ -270,7 +258,6 @@
       flex: 1;
       margin-left: 280px;
       padding: 28px 36px;
-      transition: background 0.3s ease;
     }
 
     .top-bar {
@@ -293,7 +280,6 @@
       margin-top: 4px;
     }
 
-    /* SUBJECTS GRID */
     .subjects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -339,7 +325,6 @@
       font-weight: 500;
     }
 
-    /* CHAPTERS LIST */
     .chapters-grid {
       display: flex;
       flex-direction: column;
@@ -392,7 +377,6 @@
       color: #4c1d95;
     }
 
-    /* BOOKMARKS PAGE */
     .bookmarks-container {
       max-width: 900px;
       margin: 0 auto;
@@ -419,11 +403,6 @@
     .bookmark-group-header h3 {
       font-size: 18px;
       font-weight: 600;
-    }
-
-    .bookmark-group-header span {
-      font-size: 14px;
-      opacity: 0.9;
     }
 
     .bookmark-chapter-list {
@@ -474,12 +453,6 @@
       flex: 1;
     }
 
-    .bookmark-question-id {
-      font-size: 12px;
-      color: var(--text-secondary);
-      margin-right: 16px;
-    }
-
     .remove-bookmark {
       background: none;
       border: none;
@@ -504,7 +477,6 @@
       color: var(--text-secondary);
     }
 
-    /* ========= SINGLE QUESTION PAGE ========= */
     .question-container {
       max-width: 900px;
       margin: 0 auto;
@@ -515,7 +487,6 @@
       background: var(--card-bg);
       padding: 20px 24px;
       border-radius: 20px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
       border: 1px solid var(--border-color);
     }
 
@@ -562,12 +533,7 @@
 
     .breadcrumb a {
       color: #4c1d95;
-      text-decoration: none;
       cursor: pointer;
-    }
-
-    .breadcrumb a:hover {
-      text-decoration: underline;
     }
 
     .back-btn {
@@ -584,15 +550,10 @@
       padding: 8px 0;
     }
 
-    .back-btn:hover {
-      transform: translateX(-4px);
-    }
-
     .question-card {
       background: var(--card-bg);
       border-radius: 24px;
       padding: 32px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
       border: 1px solid var(--border-color);
     }
 
@@ -817,11 +778,6 @@
       box-shadow: 0 4px 12px rgba(76, 29, 149, 0.4);
     }
 
-    .q-dot.answered {
-      background: #10b981;
-      color: white;
-    }
-
     .q-dot.checked-correct {
       background: #10b981;
       color: white;
@@ -832,6 +788,11 @@
       background: #ef4444;
       color: white;
       box-shadow: 0 0 0 2px #dc2626;
+    }
+
+    .q-dot.answered {
+      background: #3b82f6;
+      color: white;
     }
 
     .q-dot.unanswered {
@@ -873,11 +834,6 @@
       max-width: 600px;
       margin: 0 auto;
       border: 1px solid var(--border-color);
-    }
-
-    .result-icon {
-      font-size: 64px;
-      margin-bottom: 24px;
     }
 
     .score {
@@ -925,7 +881,7 @@
   <div class="login-container">
     <div class="login-card">
       <h1>📚 LearnFlow</h1>
-      <p class="subtitle">PYQ Practice Platform</p>
+      <p class="subtitle">Engineering Chemistry & Linear Algebra PYQ Platform</p>
       <form id="loginForm">
         <div class="input-group"><label>Username</label><input type="text" id="loginUsername" placeholder="Enter your name" required></div>
         <div class="input-group"><label>Password</label><input type="password" placeholder="Enter your password" required></div>
@@ -944,7 +900,6 @@
         <div class="nav-item" data-view="bookmarks"><span class="emoji">🔖</span> Bookmarks</div>
         <div class="nav-item" data-view="analysis"><span class="emoji">📊</span> Analysis</div>
       </nav>
-      <!-- Theme Toggle Button at Bottom Left -->
       <div class="theme-toggle" id="themeToggle">
         <span class="toggle-icon" id="themeIcon">🌙</span>
         <span id="themeText">Dark Mode</span>
@@ -967,7 +922,6 @@
       updateThemeButton('light');
     }
   }
-
   function updateThemeButton(theme) {
     const themeIcon = document.getElementById('themeIcon');
     const themeText = document.getElementById('themeText');
@@ -979,7 +933,6 @@
       themeText.textContent = 'Dark Mode';
     }
   }
-
   function toggleTheme() {
     if (document.body.classList.contains('navy-theme')) {
       document.body.classList.remove('navy-theme');
@@ -992,7 +945,108 @@
     }
   }
 
-  // ==================== DATA MODEL ====================
+  // ==================== LINEAR ALGEBRA PYQ DATA ====================
+  const linearAlgebraQuestionsData = [
+    { A: "Test for consistency and solve: 2x - 3y + 5z = 1, 3x + y - z = 2, x + 4y - 6z = 1.", B: "Inconsistent", C: "Consistent with a unique solution", D: "Consistent with infinite solutions", E: "Trivial solution (x=0, y=0, z=0)", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Determine whether vectors (2, 3, 4, -2), (-1, 1, -2, 1), (1, 1, 2, -1) are linearly dependent.", B: "Linearly dependent", C: "Linearly independent", D: "Orthogonal to each other", E: "Cannot be determined", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Determine the currents in the given generic electrical network.", B: "I1=1A, I2=2A, I3=3A", C: "I1=2A, I2=1.5A, I3=0.5A", D: "I1=0A, I2=0A, I3=0A", E: "Insufficient parameters provided", F: "Option D", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Find eigenvalues of the matrix: [2 -1 1; 1 2 -1; 1 -1 2]", B: "1, 2, 3", C: "0, 2, 4", D: "-1, 1, 3", E: "-1, -2, 2", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Reduce matrix A to its normal form and find rank: [1 1 -1 1; 1 -1 2 -1; 3 1 0 1].", B: "Rank = 2", C: "Rank = 3", D: "Rank = 4", E: "Rank = 1", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Determine the currents in the network below.", B: "I1=5A, I2=-2A", C: "I1=2A, I2=3A", D: "Requires specific circuit values", E: "I1=0A, I2=0A", F: "Option C", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Are the vectors (1,1,1), (1,2,3), (2,3,8) linearly dependent?", B: "Linearly independent", C: "Linearly dependent", D: "Orthogonal", E: "Parallel", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Find all eigenvalues of [1 0 -4; 0 5 4; -4 4 3].", B: "-3, 5, 7", C: "1, 2, 6", D: "-1, 4, 6", E: "0, 3, 8", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Verify Cayley-Hamilton theorem for identity matrix I = [1 0 0; 0 1 0; 0 0 1].", B: "A³−3A²+3A−I=0", C: "A³+A²+A+I=0", D: "A²−2A+I=0", E: "A³−I=0", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Find eigenvalues to form diagonal matrix D for A = [5 4; 1 2].", B: "1, 6", C: "-1, -6", D: "2, 5", E: "3, 4", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Verify whether vectors X1=(1,1,-1,1), X2=(1,-1,2,-1), X3=(3,1,*,3) are linearly independent.", B: "Dependent for a specific *", C: "Always independent", D: "Always orthogonal", E: "Cannot evaluate without *", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Find eigenvalues for [0 2 0; 3 -2 3; 0 3 0].", B: "0, -5, 3", C: "1, 2, -5", D: "0, 2, -4", E: "-1, -2, 1", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Find currents in circuit (R1=5, R2=7, E=7.5).", B: "I=0.625A", C: "I=1.5A", D: "I=2.0A", E: "I=1.25A", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
+    { A: "Find smallest eigenvalue of A = [1 2 2; 0 2 1; -1 2 2].", B: "1", C: "2", D: "0", E: "-1", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" }
+  ];
+
+  // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 1 ====================
+  const chemistryWaterQuestionsData = [
+    { A: "50 ml of alkaline water sample titrated with N/50 HCl: Phenolphthalein endpoint = 5.2 ml. Additional acid required = 15.4 ml. Identify the type of alkalinity and determine its extent.", B: "Carbonate = 208 ppm, Bicarbonate = 204 ppm", C: "Hydroxide = 208 ppm, Carbonate = 204 ppm", D: "Carbonate = 104 ppm, Bicarbonate = 102 ppm", E: "Hydroxide = 104 ppm, Carbonate = 102 ppm", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "Which of the following best describes the shape of the conductometric titration curve for a strong acid versus a strong base?", B: "V-shaped (conductance decreases to a minimum, then increases)", C: "U-shaped (conductance decreases slightly, then plateaus)", D: "Linear continuous decrease", E: "Linear continuous increase", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "Why do hydroxide (OH−) and bicarbonate (HCO3−) alkalinity not exist together in a water sample?", B: "They react together to form carbonate ions and water.", C: "They precipitate out as insoluble salts.", D: "They neutralize each other to form an acid.", E: "They evaporate as carbon dioxide gas.", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "If the Phenolphthalein alkalinity (P) is exactly equal to half of the Total alkalinity (M) (P = M/2), which type of alkalinity is present?", B: "Only Carbonate alkalinity is present.", C: "Only Hydroxide alkalinity is present.", D: "Only Bicarbonate alkalinity is present.", E: "Both Hydroxide and Carbonate are present.", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "Which chemicals are typically used for the regeneration of a exhausted cation-exchange resin and an anion-exchange resin, respectively?", B: "Dilute HCl or H2SO4 for cation; Dilute NaOH for anion", C: "Concentrated NaCl for both", D: "Dilute NaOH for cation; Dilute HCl for anion", E: "EDTA solution for both", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "In the context of boiler troubles, how are scale and sludge differentiated?", B: "Scale is a hard, firmly adherent coating; Sludge is a soft, loose, and slimy precipitate.", C: "Scale is soft and loose; Sludge is hard and adherent.", D: "Scale is formed by highly soluble salts; Sludge is formed by insoluble salts.", E: "Scale floats on the water surface; Sludge sinks to the bottom.", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "Calculate the atom economy for the following reaction: H2 + Cl2 → 2HCl.", B: "1", C: "0.5", D: "0.75", E: "0.25", F: "Option A", G: "Unit I Assessment", H: "Green Chemistry", I: "Chemistry" },
+    { A: "What terms describe the violent, jerky boiling of water causing droplets to carry over with steam, and the formation of persistent bubbles, respectively?", B: "Priming and Foaming", C: "Scaling and Sludge", D: "Carryover and Blowdown", E: "Caustic embrittlement and Corrosion", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "Which principle of green chemistry is best justified by the reaction 2H2O → 2H2 + O2 using solar energy?", B: "Use of renewable feedstocks and renewable energy", C: "Maximizing atom economy", D: "Designing safer chemicals", E: "Avoiding chemical derivatives", F: "Option A", G: "Unit I Assessment", H: "Green Chemistry", I: "Chemistry" },
+    { A: "What is the basic chemical principle behind the EDTA method for determining water hardness?", B: "Formation of a stable complex between EDTA and metal ions (Ca2+, Mg2+) at pH 10.", C: "Precipitation of calcium and magnesium as carbonates.", D: "Neutralization of strong acids by weak bases.", E: "Measurement of the electrical conductivity of the water.", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "In the Zeolite process for water softening, which ions are primarily exchanged from the hard water?", B: "Ca2+ and Mg2+ are exchanged for Na+ ions", C: "Na+ ions are exchanged for Ca2+", D: "H+ and OH− are exchanged for heavy metals", E: "Cl− and SO42− are exchanged for OH−", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "50 ml of an alkaline water sample requires 4.2 ml of N/50 HCl up to the phenolphthalein end point and 14.4 ml for complete neutralization. Calculate the values of P & M.", B: "P = 4.2 ml, M = 14.4 ml", C: "P = 4.2 ml, M = 18.6 ml", D: "P = 8.4 ml, M = 14.4 ml", E: "P = 14.4 ml, M = 4.2 ml", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "Which of the following is a major advantage of the Zeolite process for water softening?", B: "The equipment is compact and the operation can be easily automated.", C: "It completely removes all dissolved salts, producing zero hardness water.", D: "It operates effectively even in highly acidic water conditions.", E: "The treated water is completely free of sodium ions.", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "100 ml of water required 28 ml of 0.01M EDTA. 100 ml of the same boiled water required 18 ml of 0.01M EDTA. Calculate total, permanent, and temporary hardness.", B: "Total = 280 ppm, Permanent = 180 ppm, Temporary = 100 ppm", C: "Total = 200 ppm, Permanent = 100 ppm, Temporary = 100 ppm", D: "Total = 180 ppm, Permanent = 280 ppm, Temporary = 100 ppm", E: "Total = 100 ppm, Permanent = 180 ppm, Temporary = 280 ppm", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "Which highly toxic chemical is traditionally used in polycarbonate synthesis but is safely avoided and replaced in the green chemistry route?", B: "Phosgene (COCl2)", C: "Bisphenol A", D: "Diphenyl carbonate", E: "Sodium hydroxide", F: "Option A", G: "Unit I Assessment", H: "Green Chemistry", I: "Chemistry" },
+    { A: "50 ml of alkaline water titrated against N/50 HCl. P endpoint obtained at 9.2 ml, and a further 13.1 ml is required to get the M endpoint. Identify alkalinity type and extent.", B: "Carbonate = 368 ppm, Bicarbonate = 78 ppm", C: "Hydroxide = 368 ppm, Carbonate = 78 ppm", D: "Carbonate = 184 ppm, Bicarbonate = 39 ppm", E: "Hydroxide = 184 ppm, Carbonate = 78 ppm", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "50 ml of water required 14 ml of 0.01M EDTA. 50 ml of boiled water required 9 ml of 0.01M EDTA. Calculate total, permanent, and temporary hardness.", B: "Total = 280 ppm, Permanent = 180 ppm, Temporary = 100 ppm", C: "Total = 140 ppm, Permanent = 90 ppm, Temporary = 50 ppm", D: "Total = 560 ppm, Permanent = 360 ppm, Temporary = 200 ppm", E: "Total = 180 ppm, Permanent = 280 ppm, Temporary = 100 ppm", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "In the green synthesis route of polycarbonate, what acts as the replacement for the toxic phosgene gas?", B: "Diphenyl carbonate", C: "Carbon monoxide", D: "Sodium carbonate", E: "Dichloromethane", F: "Option A", G: "Unit I Assessment", H: "Green Chemistry", I: "Chemistry" },
+    { A: "100 ml of alkaline water titrated against 0.02N HCl. P endpoint obtained at 18 ml, and a further 13 ml is required for the M endpoint. Identify type and extent of alkalinity.", B: "Hydroxide = 50 ppm, Carbonate = 260 ppm", C: "Carbonate = 50 ppm, Bicarbonate = 260 ppm", D: "Hydroxide = 260 ppm, Carbonate = 50 ppm", E: "Carbonate = 130 ppm, Bicarbonate = 25 ppm", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
+    { A: "In the ion-exchange process, what is the correct representation of the cation exchange reaction when softening water containing calcium chloride (CaCl2) impurities?", B: "R−H2 + CaCl2 → R−Ca + 2HCl", C: "R−Na2 + CaCl2 → R−Ca + 2NaCl", D: "R−OH + CaCl2 → R−Cl2 + Ca(OH)2", E: "R−H2 + CaCl2 → R−Cl2 + CaH2", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" }
+  ];
+
+  // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 2 (FUELS & COMBUSTION) ====================
+  const chemistryFuelsQuestionsData = [
+    { A: "Which of the following describes the standard conditions for determining volatile matter in coal during proximate analysis?", B: "Heating at 925±20°C for exactly 7 minutes in a covered crucible", C: "Heating at 105-110°C for 1 hour", D: "Heating at 700-750°C for 30 minutes in an open crucible", E: "Washing with solvent and evaporating", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Boy's gas calorimeter is primarily used to determine the calorific value of which type of fuels?", B: "Gaseous and highly volatile liquid fuels", C: "Solid fuels like coal and wood", D: "Non-volatile thick liquid fuels", E: "Nuclear fuels", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "In the steam reforming of methane for hydrogen production, what are the primary products formed in the first step (reformer reaction)?", B: "CO and H2 (Synthesis gas)", C: "CO2 and H2O", D: "C (soot) and H2O", E: "CH3OH and O2", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "What is the mathematical relation between Gross Calorific Value (GCV) and Net Calorific Value (NCV)?", B: "NCV = GCV − (Latent heat of water vapor formed)", C: "NCV = GCV + (Latent heat of water vapor formed)", D: "GCV = NCV / (Latent heat)", E: "NCV = GCV − (Heat absorbed by ash)", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Calculate % C and % H for a coal sample: 0.25 gm of coal is burnt. The increase in weight of the anhydrous CaCl2 U-tube is 0.030 gm and the KOH U-tube is 0.5 gm.", B: "%C = 54.54%, %H = 1.33%", C: "%C = 60.00%, %H = 2.50%", D: "%C = 45.20%, %H = 1.15%", E: "%C = 72.50%, %H = 3.33%", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Which of the following is a primary advantage of biodiesel over conventional petroleum diesel?", B: "It is biodegradable and produces fewer air pollutants (like sulfur oxides).", C: "It has a higher sulfur content.", D: "It requires engine modification to run smoothly.", E: "It emits higher levels of carbon monoxide.", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Calculate the mass of air needed for the complete combustion of 5 Kg of coal containing C=80% and H=20%.", B: "81.16 Kg", C: "50.50 Kg", D: "100.25 Kg", E: "72.80 Kg", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Which of the following is NOT a characteristic of a good fuel?", B: "High moisture content", C: "High calorific value", D: "Moderate ignition temperature", E: "Low ash content", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Calculate % N: 1.6gm of coal in a Kjeldahl experiment released NH3, passed into 50 ml 0.1 N H2SO4. The unreacted acid requires 14 ml of 0.1 N NaOH to neutralize.", B: "%N = 3.15%", C: "%N = 4.25%", D: "%N = 1.50%", E: "%N = 2.75%", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "What is the basic physical principle of fractional distillation used in refining petroleum?", B: "Separation based on differences in boiling points of fractions", C: "Separation based on differences in density", D: "Separation based on chemical reactivity", E: "Separation based on magnetic properties", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "The synthesis of biodiesel from vegetable oils or animal fats is chemically known as:", B: "Transesterification", C: "Saponification", D: "Hydrogenation", E: "Polymerization", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "What is the significance of determining the 'fixed carbon' content in the proximate analysis of coal?", B: "It directly indicates the calorific value; higher fixed carbon means better fuel quality.", C: "It determines the amount of pollution the coal will cause.", D: "It shows the moisture retention capacity of the coal.", E: "It indicates the tendency of coal to form clinkers or slag.", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Boy's Gas calorimeter data: Volume burnt = 0.1m3, Water mass = 25 Kg, ΔT = 31.3−23.2°C, Steam condensed = 0.04 Kg. Calculate GCV and NCV (Assume Latent heat = 587 kcal/kg).", B: "GCV = 2025 kcal/m3, NCV = 1790.2 kcal/m3", C: "GCV = 2500 kcal/m3, NCV = 2100.5 kcal/m3", D: "GCV = 1800 kcal/m3, NCV = 1500.2 kcal/m3", E: "GCV = 2025 kcal/m3, NCV = 1950.0 kcal/m3", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Which of the following is a known demerit (disadvantage) of using power alcohol (blended petrol) as a fuel?", B: "It has a lower calorific value than pure petrol, requiring more fuel for the same distance.", C: "It causes higher knocking in spark-ignition engines.", D: "It fails to mix easily with air.", E: "It significantly increases carbon monoxide emissions.", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "Which alcohol is most commonly reacted with triglycerides (fats/oils) in the presence of a catalyst to produce Biodiesel?", B: "Methanol", C: "Butanol", D: "Isopropanol", E: "Glycerol", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" },
+    { A: "What catalyst is typically utilized in the industrial steam reforming of methane to produce hydrogen gas?", B: "Nickel (Ni)", C: "Iron (Fe)", D: "Platinum (Pt)", E: "Vanadium pentoxide (V2O5)", F: "Option A", G: "Unit II Assessment", H: "Fuels and Combustion", I: "Chemistry" }
+  ];
+
+  function parseQuestions(dataArray) {
+    return dataArray.map((q, idx) => {
+      const opts = [q.B, q.C, q.D, q.E];
+      let correctIdx = 0;
+      if (q.F === "Option A") correctIdx = 0;
+      else if (q.F === "Option B") correctIdx = 1;
+      else if (q.F === "Option C") correctIdx = 2;
+      else if (q.F === "Option D") correctIdx = 3;
+      return {
+        id: idx + 1,
+        text: q.A,
+        options: opts,
+        correct: correctIdx,
+        exam: q.G,
+        chapter: q.H,
+        subject: q.I
+      };
+    });
+  }
+
+  const matricesQuestions = parseQuestions(linearAlgebraQuestionsData);
+  const waterTechQuestions = parseQuestions(chemistryWaterQuestionsData);
+  const fuelsQuestions = parseQuestions(chemistryFuelsQuestionsData);
+  
+  // Create subjects
+  const linearAlgebraSubject = {
+    id: 11,
+    name: "Linear Algebra & Univariate Calculus",
+    icon: "📐",
+    chapters: ["Unit 1: Matrices & Linear Algebra"]
+  };
+
+  const chemistrySubject = {
+    id: 12,
+    name: "Engineering Chemistry",
+    icon: "🧪",
+    chapters: ["Unit 1: Water Technology", "Unit 2: Fuels and Combustion"]
+  };
+
+  // Subjects array
   const subjectsData = [
     { id: 1, name: "Physics", icon: "⚛️", chapters: ["Math in Physics", "Units & Dimensions", "Motion in 1D", "Motion in 2D", "Laws of Motion"] },
     { id: 2, name: "Chemistry", icon: "🧪", chapters: ["Mole Concept", "Atomic Structure", "Periodic Table", "Chemical Bonding", "Thermodynamics"] },
@@ -1003,75 +1057,32 @@
     { id: 7, name: "History", icon: "🏛️", chapters: ["Ancient India", "Medieval India", "Modern India", "World History", "Art & Culture"] },
     { id: 8, name: "Geography", icon: "🌍", chapters: ["Physical Geo", "Indian Geo", "World Geo", "Climatology", "Oceanography"] },
     { id: 9, name: "Economics", icon: "📈", chapters: ["Microeconomics", "Macroeconomics", "Indian Economy", "International Trade", "Development"] },
-    { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] }
+    { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] },
+    linearAlgebraSubject,
+    chemistrySubject
   ];
 
   let bookmarks = JSON.parse(localStorage.getItem('learnflow_bookmarks') || '[]');
+  function saveBookmarks() { localStorage.setItem('learnflow_bookmarks', JSON.stringify(bookmarks)); }
+  function addBookmark(sn, cn, qid, qt, qi) { if(!bookmarks.some(b=>b.subjectName===sn && b.chapterName===cn && b.questionId===qid)){ bookmarks.push({subjectName:sn, chapterName:cn, questionId:qid, questionText:qt, questionIndex:qi}); saveBookmarks();} }
+  function removeBookmark(sn, cn, qid) { bookmarks = bookmarks.filter(b=>!(b.subjectName===sn && b.chapterName===cn && b.questionId===qid)); saveBookmarks(); }
+  function isBookmarked(sn, cn, qid) { return bookmarks.some(b=>b.subjectName===sn && b.chapterName===cn && b.questionId===qid); }
 
-  function saveBookmarksToStorage() {
-    localStorage.setItem('learnflow_bookmarks', JSON.stringify(bookmarks));
-  }
-
-  function addBookmark(subjectName, chapterName, questionId, questionText, questionIndex) {
-    if (!bookmarks.some(b => b.subjectName === subjectName && b.chapterName === chapterName && b.questionId === questionId)) {
-      bookmarks.push({ subjectName, chapterName, questionId, questionText, questionIndex });
-      saveBookmarksToStorage();
-    }
-  }
-
-  function removeBookmark(subjectName, chapterName, questionId) {
-    bookmarks = bookmarks.filter(b => !(b.subjectName === subjectName && b.chapterName === chapterName && b.questionId === questionId));
-    saveBookmarksToStorage();
-  }
-
-  function isBookmarked(subjectName, chapterName, questionId) {
-    return bookmarks.some(b => b.subjectName === subjectName && b.chapterName === chapterName && b.questionId === questionId);
-  }
-
-  function generateQuestionsForChapter(chapterName, count = 100) {
-    const questions = [];
-    for (let i = 1; i <= count; i++) {
-      const correctIndex = Math.floor(Math.random() * 4);
-      questions.push({
-        id: i,
-        text: `${chapterName} - Sample Question ${i}: What is the correct answer for this problem? (This is a practice question for ${chapterName})`,
-        options: [`Option A for Q${i}`, `Option B for Q${i}`, `Option C for Q${i}`, `Option D for Q${i}`],
-        correct: correctIndex,
-        exam: `Practice Test ${Math.floor(i/20)+1}`
-      });
-    }
-    return questions;
-  }
-
-  let currentSubject = null;
-  let currentChapter = null;
-  let currentQuestions = [];
-  let currentQuestionIndex = 0;
-  let userAnswers = {};
-  let answerChecked = {};
-  let answerResult = {};
+  let currentSubject = null, currentChapter = null, currentQuestions = [], currentQuestionIndex = 0, userAnswers = {}, answerChecked = {}, answerResult = {};
 
   const mainContent = document.getElementById('mainContent');
-  const sidebarUserName = document.getElementById('sidebarUserName');
-  const loginPage = document.getElementById('loginPage');
-  const appWrapper = document.getElementById('appWrapper');
-
-  function showPage(pageId) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
-    if (pageId === 'login') {
-      loginPage.classList.add('active-page');
-      appWrapper.style.display = 'none';
-    } else {
-      loginPage.classList.remove('active-page');
-      appWrapper.style.display = 'block';
-    }
-  }
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('sidebarUserName').innerText = document.getElementById('loginUsername').value.trim() || "Student";
+    document.getElementById('loginPage').classList.remove('active-page');
+    document.getElementById('appWrapper').style.display = 'block';
+    renderSubjects();
+  });
 
   function renderSubjects() {
-    let html = `<div class="top-bar"><div class="page-title"><h1>📚 All Subjects</h1><p>Choose a subject to practice PYQs</p></div></div>
-      <div class="subjects-grid">`;
+    let html = `<div class="top-bar"><div class="page-title"><h1>📚 All Subjects</h1><p>Choose a subject to practice PYQs</p></div></div><div class="subjects-grid">`;
     subjectsData.forEach(sub => {
-      html += `<div class="subject-card" data-subject-id="${sub.id}"><div class="subject-icon">${sub.icon}</div><h3>${sub.name}</h3><p>${sub.chapters.length} chapters • 100 Qs each</p><div class="chapter-count">📖 ${sub.chapters.length} Chapters →</div></div>`;
+      html += `<div class="subject-card" data-subject-id="${sub.id}"><div class="subject-icon">${sub.icon}</div><h3>${sub.name}</h3><p>${sub.chapters.length} chapters</p><div class="chapter-count">📖 ${sub.chapters.length} Chapters →</div></div>`;
     });
     html += `</div>`;
     mainContent.innerHTML = html;
@@ -1089,194 +1100,96 @@
       <div class="top-bar"><div class="page-title"><h1>${currentSubject.icon} ${currentSubject.name} PYQs</h1><p>Chapter-wise Collection</p></div></div>
       <div class="chapters-grid">`;
     currentSubject.chapters.forEach((chapter, idx) => {
-      html += `<div class="chapter-row" data-chapter="${chapter}"><div class="chapter-info"><div class="chapter-name">${idx+1}. ${chapter}</div><div class="chapter-meta"><span>📚 100 Questions</span></div></div><div class="question-stats"><div class="qs-count">100 Qs</div><div class="qs-label">Available</div></div></div>`;
+      let qCount = 100;
+      if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 1: Matrices & Linear Algebra") qCount = matricesQuestions.length;
+      else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 1: Water Technology") qCount = waterTechQuestions.length;
+      else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 2: Fuels and Combustion") qCount = fuelsQuestions.length;
+      html += `<div class="chapter-row" data-chapter="${chapter}"><div class="chapter-info"><div class="chapter-name">${idx+1}. ${chapter}</div><div class="chapter-meta"><span>📚 ${qCount} Questions</span></div></div><div class="question-stats"><div class="qs-count">${qCount} Qs</div></div></div>`;
     });
     html += `</div>`;
     mainContent.innerHTML = html;
     document.querySelectorAll('.chapter-row').forEach(row => {
       row.addEventListener('click', () => {
         currentChapter = row.dataset.chapter;
-        currentQuestions = generateQuestionsForChapter(currentChapter, 100);
+        if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 1: Matrices & Linear Algebra") {
+          currentQuestions = [...matricesQuestions];
+        } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 1: Water Technology") {
+          currentQuestions = [...waterTechQuestions];
+        } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 2: Fuels and Combustion") {
+          currentQuestions = [...fuelsQuestions];
+        } else {
+          currentQuestions = [];
+          for (let i = 1; i <= 100; i++) {
+            currentQuestions.push({ id: i, text: `${currentChapter} - Sample Q${i}`, options: [`Opt A${i}`, `Opt B${i}`, `Opt C${i}`, `Opt D${i}`], correct: Math.floor(Math.random()*4), exam: "Practice" });
+          }
+        }
         currentQuestionIndex = 0;
-        userAnswers = {};
-        answerChecked = {};
-        answerResult = {};
+        userAnswers = {}; answerChecked = {}; answerResult = {};
         renderSingleQuestion();
       });
     });
   }
 
-  function renderBookmarksPage() {
-    if (bookmarks.length === 0) {
-      mainContent.innerHTML = `<div class="empty-bookmarks">
-        <div style="font-size: 64px; margin-bottom: 20px;">🔖</div>
-        <h3>No Bookmarks Yet</h3>
-        <p>When you bookmark a question, it will appear here organized by subject and chapter.</p>
-        <button class="btn btn-primary" style="margin-top: 20px; width: auto; padding: 12px 32px;" onclick="renderSubjects()">Browse Subjects →</button>
-      </div>`;
-      return;
-    }
-
-    const grouped = {};
-    bookmarks.forEach(bm => {
-      if (!grouped[bm.subjectName]) grouped[bm.subjectName] = {};
-      if (!grouped[bm.subjectName][bm.chapterName]) grouped[bm.subjectName][bm.chapterName] = [];
-      grouped[bm.subjectName][bm.chapterName].push(bm);
-    });
-
-    let html = `<div class="top-bar"><div class="page-title"><h1>🔖 My Bookmarks</h1><p>Subject-wise and chapter-wise collection of saved questions</p></div></div>
-      <div class="bookmarks-container">`;
-
-    for (const subjectName in grouped) {
-      html += `<div class="bookmark-group"><div class="bookmark-group-header" onclick="toggleBookmarkGroup('${subjectName}')"><h3>📘 ${subjectName}</h3><span>▼</span></div>
-        <div class="bookmark-chapter-list" id="group-${subjectName.replace(/\s/g, '')}">`;
-      for (const chapterName in grouped[subjectName]) {
-        const questions = grouped[subjectName][chapterName];
-        html += `<div class="bookmark-chapter-item"><div class="bookmark-chapter-title" onclick="toggleBookmarkChapter('${subjectName}', '${chapterName}')">
-          <span>📖</span> ${chapterName} <span style="font-size: 12px; opacity: 0.7;">(${questions.length} questions)</span><span style="margin-left: auto;">▼</span></div>
-          <div class="bookmark-questions-list" id="chapter-${subjectName.replace(/\s/g, '')}-${chapterName.replace(/\s/g, '')}" style="display: none;">`;
-        questions.forEach((bm) => {
-          const shortText = bm.questionText.length > 80 ? bm.questionText.substring(0, 80) + '...' : bm.questionText;
-          html += `<div class="bookmark-question-item" onclick="navigateToBookmarkedQuestion('${subjectName}', '${chapterName}', ${bm.questionId}, ${bm.questionIndex})">
-            <div style="display: flex; align-items: center; gap: 12px; flex: 1;"><span class="bookmark-question-id">Q${bm.questionId}</span><span class="bookmark-question-text">${shortText}</span></div>
-            <button class="remove-bookmark" onclick="event.stopPropagation(); removeBookmarkAndRefresh('${subjectName}', '${chapterName}', ${bm.questionId})">🗑️</button>
-          </div>`;
-        });
-        html += `</div></div>`;
-      }
-      html += `</div></div>`;
-    }
-    html += `</div>`;
-    mainContent.innerHTML = html;
-  }
-
-  window.toggleBookmarkGroup = function(subjectName) {
-    const groupId = `group-${subjectName.replace(/\s/g, '')}`;
-    const groupDiv = document.getElementById(groupId);
-    if (groupDiv) groupDiv.style.display = groupDiv.style.display !== 'none' ? 'none' : 'block';
-  };
-  window.toggleBookmarkChapter = function(subjectName, chapterName) {
-    const chapterId = `chapter-${subjectName.replace(/\s/g, '')}-${chapterName.replace(/\s/g, '')}`;
-    const chapterDiv = document.getElementById(chapterId);
-    if (chapterDiv) chapterDiv.style.display = chapterDiv.style.display !== 'none' ? 'none' : 'block';
-  };
-  window.navigateToBookmarkedQuestion = function(subjectName, chapterName, questionId, questionIndex) {
-    currentSubject = subjectsData.find(s => s.name === subjectName);
-    if (currentSubject) {
-      currentChapter = chapterName;
-      currentQuestions = generateQuestionsForChapter(currentChapter, 100);
-      const foundIndex = currentQuestions.findIndex(q => q.id === questionId);
-      currentQuestionIndex = foundIndex !== -1 ? foundIndex : questionIndex;
-      userAnswers = {};
-      answerChecked = {};
-      answerResult = {};
-      renderSingleQuestion();
-    }
-  };
-  window.removeBookmarkAndRefresh = function(subjectName, chapterName, questionId) {
-    removeBookmark(subjectName, chapterName, questionId);
-    renderBookmarksPage();
-  };
-
   function renderSingleQuestion() {
+    if(!currentQuestions.length) return;
     const q = currentQuestions[currentQuestionIndex];
     const total = currentQuestions.length;
-    const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
-    const selectedVal = userAnswers[currentQuestionIndex];
+    const progressPercent = ((currentQuestionIndex+1)/total)*100;
+    const selected = userAnswers[currentQuestionIndex];
     const isChecked = answerChecked[currentQuestionIndex];
-    const isCorrectResult = answerResult[currentQuestionIndex];
+    const isCorrect = answerResult[currentQuestionIndex];
     const bookmarked = isBookmarked(currentSubject.name, currentChapter, q.id);
-
     let html = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>${currentChapter}</span></div>
       <button class="back-btn" onclick="renderChapters()">← Back to Chapters</button>
-      <div class="question-container"><div class="progress-wrapper"><div class="progress-header"><span class="progress-label">Your Progress</span><span class="progress-count">Question ${currentQuestionIndex + 1} of ${total}</span></div>
-      <div class="progress-bar-bg"><div class="progress-fill" style="width: ${progressPercent}%;"></div></div></div>
-      <div class="question-card"><div class="question-header"><div class="question-badge"><span class="question-number">Question ${currentQuestionIndex + 1}</span><span class="exam-tag">${q.exam}</span></div></div>
-      <div class="question-text">${q.text}</div><div class="options" id="optionsContainer">`;
+      <div class="question-container"><div class="progress-wrapper"><div class="progress-header"><span class="progress-label">Progress</span><span class="progress-count">Q${currentQuestionIndex+1}/${total}</span></div>
+      <div class="progress-bar-bg"><div class="progress-fill" style="width:${progressPercent}%"></div></div></div>
+      <div class="question-card"><div class="question-header"><div class="question-badge"><span class="question-number">Q${currentQuestionIndex+1}</span><span class="exam-tag">${q.exam}</span></div></div>
+      <div class="question-text">${q.text}</div><div class="options">`;
     q.options.forEach((opt, idx) => {
-      const letter = String.fromCharCode(65 + idx);
-      const isSelected = (selectedVal === idx);
-      let additionalClass = '';
-      if (isChecked && isSelected) additionalClass = isCorrectResult ? 'correct-highlight' : 'wrong-highlight';
-      html += `<label class="option ${additionalClass}"><input type="radio" name="question" value="${idx}" ${isSelected ? 'checked' : ''} onchange="selectOption(${idx})"><span><strong>${letter}.</strong> ${opt}</span></label>`;
+      const letter = String.fromCharCode(65+idx);
+      const isSelected = (selected === idx);
+      let addClass = (isChecked && isSelected) ? (isCorrect ? 'correct-highlight' : 'wrong-highlight') : '';
+      html += `<label class="option ${addClass}"><input type="radio" name="question" value="${idx}" ${isSelected ? 'checked' : ''} onchange="selectOption(${idx})"><span><strong>${letter}.</strong> ${opt}</span></label>`;
     });
-    html += `</div><div class="action-buttons"><button class="btn btn-check" id="checkAnswerBtn">✅ Check Answer</button>
-      <button class="btn btn-bookmark ${bookmarked ? 'bookmarked' : ''}" id="bookmarkBtn">${bookmarked ? '★ Bookmarked' : '☆ Add Bookmark'}</button></div>
-      <div id="feedbackMsg" class="feedback-message"></div><div class="question-nav"><button class="btn btn-secondary" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? 'disabled' : ''}>← Previous</button>
-      <div class="nav-buttons"><button class="btn btn-primary" onclick="nextQuestion()">Next →</button></div></div>
-      <div class="question-dots-section"><div class="dots-grid" id="dotsGrid"></div>
-      <div class="legend"><span><i class="legend-dot" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95);"></i> Current</span>
+    html += `</div><div class="action-buttons"><button class="btn btn-check" id="checkBtn">✅ Check</button><button class="btn btn-bookmark ${bookmarked ? 'bookmarked' : ''}" id="bookmarkBtn">${bookmarked ? '★ Bookmarked' : '☆ Bookmark'}</button></div>
+      <div id="fbMsg" class="feedback-message"></div><div class="question-nav"><button class="btn btn-secondary" onclick="prevQ()" ${currentQuestionIndex===0 ? 'disabled' : ''}>← Prev</button>
+      <div class="nav-buttons"><button class="btn btn-primary" onclick="nextQ()">Next →</button></div></div>
+      <div class="question-dots-section"><div class="dots-grid" id="dotsGrid"></div><div class="legend"><span><i class="legend-dot" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95);"></i> Current</span>
       <span><i class="legend-dot" style="background:#10b981;"></i> Correct</span><span><i class="legend-dot" style="background:#ef4444;"></i> Wrong</span>
-      <span><i class="legend-dot" style="background:var(--chip-bg);"></i> Not Checked</span></div></div></div></div>`;
+      <span><i class="legend-dot" style="background:#3b82f6;"></i> Attempted</span><span><i class="legend-dot" style="background:var(--chip-bg);"></i> Unseen</span></div></div></div></div>`;
     mainContent.innerHTML = html;
-    const dotsGrid = document.getElementById('dotsGrid');
-    if (dotsGrid) {
-      for (let i = 0; i < total; i++) {
-        let dotClass = 'q-dot';
-        if (i === currentQuestionIndex) dotClass += ' current';
-        else if (answerChecked[i]) dotClass += answerResult[i] ? ' checked-correct' : ' checked-wrong';
-        else if (userAnswers[i] !== undefined) dotClass += ' answered';
-        else dotClass += ' unanswered';
-        dotsGrid.innerHTML += `<button class="${dotClass}" onclick="jumpToQuestion(${i})">${i + 1}</button>`;
-      }
-    }
-    document.getElementById('checkAnswerBtn')?.addEventListener('click', () => checkAnswer());
-    document.getElementById('bookmarkBtn')?.addEventListener('click', () => toggleBookmark());
+    const grid = document.getElementById('dotsGrid');
+    if(grid) for(let i=0;i<total;i++){ let cls='q-dot'; if(i===currentQuestionIndex) cls+=' current'; else if(answerChecked[i]) cls+= answerResult[i] ? ' checked-correct' : ' checked-wrong'; else if(userAnswers[i]!==undefined) cls+=' answered'; else cls+=' unanswered'; grid.innerHTML += `<button class="${cls}" onclick="jumpToQ(${i})">${i+1}</button>`; }
+    document.getElementById('checkBtn')?.addEventListener('click',()=>checkAnswer());
+    document.getElementById('bookmarkBtn')?.addEventListener('click',()=>toggleBookmark());
   }
 
-  window.selectOption = function(optIndex) { userAnswers[currentQuestionIndex] = optIndex; answerChecked[currentQuestionIndex] = false; answerResult[currentQuestionIndex] = undefined; renderSingleQuestion(); };
-  window.checkAnswer = function() {
-    const selected = userAnswers[currentQuestionIndex];
-    if (selected === undefined) { alert("Please select an option first."); return; }
-    const q = currentQuestions[currentQuestionIndex];
-    const isCorrect = (selected === q.correct);
-    answerChecked[currentQuestionIndex] = true;
-    answerResult[currentQuestionIndex] = isCorrect;
-    const feedbackDiv = document.getElementById('feedbackMsg');
-    feedbackDiv.style.display = 'block';
-    feedbackDiv.className = `feedback-message ${isCorrect ? 'feedback-correct' : 'feedback-wrong'}`;
-    feedbackDiv.innerHTML = isCorrect ? '✅ Correct! Great job!' : `❌ Incorrect. Correct answer: ${String.fromCharCode(65 + q.correct)}. ${q.options[q.correct]}`;
-    renderSingleQuestion();
-  };
-  window.toggleBookmark = function() {
-    const q = currentQuestions[currentQuestionIndex];
-    if (isBookmarked(currentSubject.name, currentChapter, q.id)) removeBookmark(currentSubject.name, currentChapter, q.id);
-    else addBookmark(currentSubject.name, currentChapter, q.id, q.text, currentQuestionIndex);
-    renderSingleQuestion();
-  };
-  window.prevQuestion = function() { if (currentQuestionIndex > 0) { currentQuestionIndex--; renderSingleQuestion(); } };
-  window.nextQuestion = function() {
-    if (currentQuestionIndex < currentQuestions.length - 1) { currentQuestionIndex++; renderSingleQuestion(); }
-    else { let correct = 0; for (let i = 0; i < currentQuestions.length; i++) if (answerChecked[i] && answerResult[i]) correct++; showResult(correct); }
-  };
-  window.jumpToQuestion = function(index) { currentQuestionIndex = index; renderSingleQuestion(); };
-  function showResult(correctCount) {
-    mainContent.innerHTML = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>Result</span></div>
-      <div class="result-card"><div class="result-icon">🏆</div><h2>Chapter Completed!</h2><div class="score">${correctCount}<span>/${currentQuestions.length}</span></div>
-      <p>Percentage: ${Math.round((correctCount/currentQuestions.length)*100)}%</p><div class="result-actions"><button class="btn btn-primary" onclick="renderSubjects()">🏠 Go Home</button>
-      <button class="btn btn-secondary" onclick="renderChapters()">📖 Back to Chapters</button><button class="btn btn-secondary" onclick="location.reload()">🔄 Retake</button></div></div>`;
+  window.selectOption = function(idx){ userAnswers[currentQuestionIndex]=idx; answerChecked[currentQuestionIndex]=false; answerResult[currentQuestionIndex]=undefined; renderSingleQuestion(); };
+  window.checkAnswer = function(){ let s=userAnswers[currentQuestionIndex]; if(s===undefined){ alert("Select an option"); return; } let q=currentQuestions[currentQuestionIndex]; let correct=(s===q.correct); answerChecked[currentQuestionIndex]=true; answerResult[currentQuestionIndex]=correct; let fb=document.getElementById('fbMsg'); fb.style.display='block'; fb.className=`feedback-message ${correct?'feedback-correct':'feedback-wrong'}`; fb.innerHTML=correct?'✅ Correct!':`❌ Incorrect. Correct: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}`; renderSingleQuestion(); };
+  window.toggleBookmark = function(){ let q=currentQuestions[currentQuestionIndex]; if(isBookmarked(currentSubject.name,currentChapter,q.id)) removeBookmark(currentSubject.name,currentChapter,q.id); else addBookmark(currentSubject.name,currentChapter,q.id,q.text,currentQuestionIndex); renderSingleQuestion(); };
+  window.prevQ = function(){ if(currentQuestionIndex>0){ currentQuestionIndex--; renderSingleQuestion(); } };
+  window.nextQ = function(){ if(currentQuestionIndex<currentQuestions.length-1){ currentQuestionIndex++; renderSingleQuestion(); } else { let correct=0; for(let i=0;i<currentQuestions.length;i++) if(answerChecked[i] && answerResult[i]) correct++; showResult(correct); } };
+  window.jumpToQ = function(i){ currentQuestionIndex=i; renderSingleQuestion(); };
+  function showResult(correct){ mainContent.innerHTML=`<div class="result-card"><div class="result-icon">🏆</div><h2>Chapter Completed!</h2><div class="score">${correct}/${currentQuestions.length}</div><p>${Math.round((correct/currentQuestions.length)*100)}%</p><div class="result-actions"><button class="btn btn-primary" onclick="renderSubjects()">🏠 Home</button><button class="btn btn-secondary" onclick="renderChapters()">📖 Back</button><button class="btn btn-secondary" onclick="location.reload()">🔄 Retake</button></div></div>`; }
+  
+  function renderBookmarksPage() {
+    if(bookmarks.length===0){ mainContent.innerHTML=`<div class="empty-bookmarks"><div style="font-size:64px">🔖</div><h3>No Bookmarks</h3><button class="btn btn-primary" onclick="renderSubjects()">Browse Subjects</button></div>`; return; }
+    let grouped={}; bookmarks.forEach(b=>{ if(!grouped[b.subjectName]) grouped[b.subjectName]={}; if(!grouped[b.subjectName][b.chapterName]) grouped[b.subjectName][b.chapterName]=[]; grouped[b.subjectName][b.chapterName].push(b); });
+    let html=`<div class="top-bar"><div class="page-title"><h1>🔖 Bookmarks</h1></div></div><div class="bookmarks-container">`;
+    for(let sub in grouped){ html+=`<div class="bookmark-group"><div class="bookmark-group-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><h3>📘 ${sub}</h3><span>▼</span></div><div class="bookmark-chapter-list">`;
+      for(let chap in grouped[sub]){ html+=`<div class="bookmark-chapter-item"><div class="bookmark-chapter-title" onclick="let el=document.getElementById('bmc-${sub.replace(/\s/g,'')}-${chap.replace(/\s/g,'')}'); if(el) el.style.display=el.style.display==='none'?'block':'none'"><span>📖</span> ${chap} (${grouped[sub][chap].length})<span style="margin-left:auto;">▼</span></div><div id="bmc-${sub.replace(/\s/g,'')}-${chap.replace(/\s/g,'')}" class="bookmark-questions-list" style="display:none">`;
+        grouped[sub][chap].forEach(b=>{ html+=`<div class="bookmark-question-item" onclick="navigateToBookmark('${sub}','${chap}',${b.questionId},${b.questionIndex})"><div style="flex:1"><span class="bookmark-question-id">Q${b.questionId}</span> ${b.questionText.substring(0,70)}...</div><button class="remove-bookmark" onclick="event.stopPropagation(); removeBookmarkAndRefresh('${sub}','${chap}',${b.questionId})">🗑️</button></div>`; });
+        html+=`</div></div>`; }
+      html+=`</div></div>`; }
+    html+=`</div>`; mainContent.innerHTML=html;
   }
+  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
+  window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
 
-  document.getElementById('loginForm').addEventListener('submit', (e) => {
-    e.preventDefault();
-    sidebarUserName.innerText = document.getElementById('loginUsername').value.trim() || "Student";
-    showPage('app');
-    renderSubjects();
-  });
-  document.querySelectorAll('[data-view]').forEach(el => {
-    el.addEventListener('click', () => {
-      document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-      el.classList.add('active');
-      if (el.dataset.view === 'subjects') renderSubjects();
-      else if (el.dataset.view === 'bookmarks') renderBookmarksPage();
-      else if (el.dataset.view === 'analysis') mainContent.innerHTML = '<div style="padding:40px;text-align:center">📊 Performance analysis coming soon!</div>';
-    });
-  });
+  document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Performance analytics coming soon!</div>'; }); });
   document.getElementById('themeToggle').addEventListener('click', toggleTheme);
   initTheme();
   window.renderSubjects = renderSubjects;
-  window.renderChapters = renderChapters;
-  window.renderBookmarksPage = renderBookmarksPage;
 </script>
 </body>
 </html>
