@@ -1020,7 +1020,7 @@
   ];
 
   // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 1 (LOGIC GATES & MINIMIZATION) ====================
-  const digitalElectronicsQuestionsData = [
+  const digitalElectronicsUnit1Data = [
     { A: "Convert the boolean expression F(A,B,C,D)=ABC+AB+ABCD into standard SOP (Sum of Products) form.", B: "ABCD+ABCD′+ABC′D+ABC′D′", C: "ABC+ABCD+A′B′C′D′", D: "AB+CD", E: "A′B′C′D′+A′B′CD+AB′C′D′", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
     { A: "Given voltage waveforms for inputs A and B, which 2-input logic gate will produce a HIGH (1) output waveform ONLY when both input A and input B are HIGH (1)?", B: "OR Gate", C: "AND Gate", D: "NAND Gate", E: "NOR Gate", F: "Option B", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
     { A: "Simplify the Boolean function f(A,B,C,D)=Σm(1,3,5,7,9)+d(6,12,13) using a Karnaugh Map.", B: "AD′+CD′", C: "A′C+BD", D: "A′D+C′D", E: "AB′+C′D", F: "Option C", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
@@ -1031,6 +1031,48 @@
     { A: "In a 3-input (A, B, C) voting system requiring a majority (at least two \"yes\" votes) to output a 1, how many rows in the standard 8-row truth table will have an output of 1?", B: "3 rows", C: "4 rows", D: "5 rows", E: "2 rows", F: "Option B", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
     { A: "Find the minimized SOP expression for the function F(A,B,C,D)=Σm(0,2,3,7,11,14,15).", B: "A′B′D′+A′CD+BCD+ACD", C: "A′B′D+A′C′D+BC′D′+A′CD", D: "AB′D′+A′C′D′+B′C′D′+ACD", E: "A′B′D′+A′CD′+BCD′+AC′D", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
     { A: "Find the minimized POS (Product of Sums) expression for F(P,Q,R,S)=ΠM(2,4,6,11,15)+d(1,8,12).", B: "(P+Q+R)(P′+Q′+S)(P+R+S)", C: "(P′+Q′+R′)(P+Q+S′)(P′+R′+S′)", D: "(P+Q+R′)(P+Q′+S)(P′+R+S′)", E: "(P′+Q+R)(P′+Q′+S′)(P+R′+S)", F: "Option C", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" }
+  ];
+
+  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 2 (DESIGN OF COMBINATIONAL LOGIC) ====================
+  const digitalElectronicsUnit2Data = [
+    { A: "How many 1:4 DEMUX blocks are required to construct a single 1:16 DEMUX circuit for a streetlight control system?", B: "5", C: "4", D: "3", E: "6", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "In an 8:1 MUX implementation of F(A,B,C,D)=Σm(0,2,3,7,11,14,15) where A, B, and C are the select lines (S2,S1,S0), what is the data input for I1?", B: "1", C: "0", D: "D", E: "D'", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "What is the simplified Boolean expression for a 3-input (A, B, C) voting system or intrusion alarm where the output is HIGH (1) if at least two inputs are HIGH?", B: "AB+BC+AC", C: "A⊕B⊕C", D: "ABC", E: "A+B+C", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "What is the Boolean expression for the 'Sum' output in a Full Adder circuit designed for 3 one-bit inputs (A, B, Cin)?", B: "A⊕B⊕Cin", C: "AB+BCin+ACin", D: "A′B′Cin+ABCin", E: "(A+B)⊕Cin", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "What is the Boolean expression for the 'Borrow Out' (Bout) of a Full Subtractor with inputs A, B, and Bin (where A is the minuend)?", B: "A′B + A′Bin + BBin", C: "A⊕B⊕Bin", D: "AB + ABin + BBin", E: "A′B′ + Bin", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "Convert the binary scoreboard value 10101100₂ to its Decimal equivalent.", B: "172", C: "170", D: "182", E: "168", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "For a 3-bit input (A, B, C), what is the correct Boolean expression to implement an odd parity generator?", B: "(A⊕B⊕C)′", C: "A⊕B⊕C", D: "ABC+A′B′C′", E: "AB+BC+AC", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "What is the completely simplified SOP form of the Boolean expression F(A,B,C,D)=ABC+AB+ABCD?", B: "AB", C: "ABC", D: "ABCD", E: "AB+CD", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "Simplify the Boolean function f(A,B,C,D)=Σm(1,3,5,7,9)+d(6,12,13) using a Karnaugh Map.", B: "A′D+C′D", C: "AD′+C′D′", D: "A′C+BD", E: "A′B′+C′D", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "Find the minimized expression for f(W,X,Y,Z)=Σ(0,1,3,5,14)+d(8,15).", B: "W′X′Y′+W′Y′Z+W′X′Z+WXYZ′", C: "W′Y′Z+W′X′Z+WXYZ", D: "W′X′Y′+W′Y′Z+W′X′Z+WXY′Z′", E: "W′X′Z′+W′Y′Z′+WXY′Z′", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "To implement the Product of Sums (POS) function F(A,B,C,D)=ΠM(0,2,4,6,13,14) using a MUX, what is its equivalent standard SOP representation?", B: "Σm(1,3,5,7,8,9,10,11,12,15)", C: "Σm(0,2,4,6,13,14)", D: "Σm(1,2,3,4,8,9)", E: "Σm(0,1,5,7,12,15)", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" },
+    { A: "Find the minimized expression for F(P,Q,R,S)=Σm(2,4,8,11,15)+d(1,10,12,13).", B: "P′Q′RS′+P′QR′S′+PQ′R′S′+PQS", C: "PQ+RS+P′R′", D: "P′Q′R+PQS+Q′R′S", E: "P′Q′RS′+PQ′R′+P′Q′S′", F: "Option A", G: "Unit 2 Assessment", H: "Combinational Logic", I: "Digital Electronics" }
+  ];
+
+  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 3 (DESIGN OF SEQUENTIAL LOGIC) ====================
+  const digitalElectronicsUnit3Data = [
+    { A: "What is the characteristic equation of a D flip-flop?", B: "Q(n+1) = D", C: "Q(n+1) = D'", D: "Q(n+1) = D ⊕ Q", E: "Q(n+1) = JQ' + K'Q", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "How many J-K flip-flops are required to design a MOD-8 asynchronous counter?", B: "2", C: "3", D: "4", E: "8", F: "Option B", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "What must the J and K inputs be connected to in order to configure a J-K flip-flop for use in an asynchronous (ripple) counter?", B: "Logic 0", C: "Logic 1", D: "The main Clock signal", E: "The Q output", F: "Option B", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "To convert a D flip-flop into an SR flip-flop, what is the required boolean expression for the D input in terms of S, R, and the present state Q?", B: "D = S + R'Q", C: "D = S' + RQ", D: "D = S ⊕ R ⊕ Q", E: "D = SR' + Q", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "How is a JK flip-flop converted into a T flip-flop?", B: "Tie J and K together to form a single input T", C: "Connect J to T and K to T'", D: "Connect J to Logic 1 and K to T", E: "Connect J to T' and K to T", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "What is the characteristic equation of a JK flip-flop?", B: "Q(n+1) = J'Q + KQ'", C: "Q(n+1) = JQ' + K'Q", D: "Q(n+1) = JQ + K'Q'", E: "Q(n+1) = J ⊕ K ⊕ Q", F: "Option B", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "According to the excitation table of a T flip-flop, what is the required T input for the flip-flop to toggle from a present state of Q=1 to a next state of Q(n+1)=0?", B: "T = 0", C: "T = 1", D: "T = X (Don't care)", E: "T = High-Z", F: "Option B", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "To convert a D flip-flop into a JK flip-flop, what must the combinational logic expression for the D input be?", B: "D = JQ' + K'Q", C: "D = J'Q + KQ'", D: "D = JQ + KQ", E: "D = J + K'Q", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "When converting a T flip-flop into an SR flip-flop, what is the required boolean expression to drive the T input?", B: "T = SQ' + RQ", C: "T = S'Q + R'Q'", D: "T = S ⊕ R", E: "T = S + R'", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" },
+    { A: "To convert an SR flip-flop into a JK flip-flop, what should the combinational logic driving the S and R inputs be?", B: "S = JQ' and R = KQ", C: "S = J'Q and R = K'Q", D: "S = J and R = K", E: "S = JQ and R = KQ'", F: "Option A", G: "Unit 3 Assessment", H: "Sequential Logic", I: "Digital Electronics" }
+  ];
+
+  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 4 (REGISTERS AND COUNTERS) ====================
+  const digitalElectronicsUnit4Data = [
+    { A: "How many clock pulses are required to completely shift a 4-bit data word serially into a 4-bit SISO (Serial-In Serial-Out) register?", B: "4", C: "1", D: "8", E: "2", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
+    { A: "In a MOD-8 synchronous DOWN counter constructed with J-K flip-flops, what is the next logical state after the count reaches binary 000?", B: "111", C: "1", D: "100", E: "000 (Counter Halts)", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
+    { A: "The IC 7490 is a commonly used digital component for realizing which of the following circuits?", B: "Decade (MOD-10) Counter", C: "4-bit Full Adder", D: "8:1 Multiplexer", E: "4-bit Shift Register", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
+    { A: "What is the maximum decimal count that a 3-bit ripple up counter can reach before resetting to zero?", B: "7", C: "8", D: "15", E: "3", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
+    { A: "How many clock pulses are required to load a 4-bit word simultaneously into a 4-bit PIPO (Parallel-In Parallel-Out) register?", B: "1", C: "4", D: "8", E: "0 (It is fully asynchronous)", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
+    { A: "What is the primary characteristic of the number of states in a standard Ring Counter constructed using 'n' flip-flops?", B: "It has exactly 'n' distinct states.", C: "It has exactly 2n distinct states.", D: "It counts in a standard binary sequence.", E: "It has 2n states (like a Johnson counter).", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
+    { A: "To realize a Mod-76 counter using IC 7490 chips, what is the minimum number of IC 7490 decade counters that must be cascaded?", B: "2", C: "1", D: "3", E: "7", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" },
+    { A: "In an asynchronous MOD-8 ripple counter, what serves as the clock input for the second flip-flop in the sequence?", B: "The Q or Q' output of the first flip-flop", C: "The main external clock signal", D: "A constant logic HIGH", E: "A constant logic LOW", F: "Option A", G: "Unit 4 Assessment", H: "Registers and Counters", I: "Digital Electronics" }
   ];
 
   // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 1 ====================
@@ -1137,7 +1179,10 @@
   const differentialQuestions = parseQuestions(differentialCalculusQuestionsData);
   const odeQuestions = parseQuestions(odeQuestionsData);
   const linearDifferentialQuestions = parseQuestions(linearDifferentialQuestionsData);
-  const digitalElectronicsQuestions = parseQuestions(digitalElectronicsQuestionsData);
+  const digitalElectronicsUnit1 = parseQuestions(digitalElectronicsUnit1Data);
+  const digitalElectronicsUnit2 = parseQuestions(digitalElectronicsUnit2Data);
+  const digitalElectronicsUnit3 = parseQuestions(digitalElectronicsUnit3Data);
+  const digitalElectronicsUnit4 = parseQuestions(digitalElectronicsUnit4Data);
   const waterTechQuestions = parseQuestions(chemistryWaterQuestionsData);
   const fuelsQuestions = parseQuestions(chemistryFuelsQuestionsData);
   const corrosionQuestions = parseQuestions(chemistryCorrosionQuestionsData);
@@ -1155,7 +1200,7 @@
     id: 13,
     name: "Digital Electronics & Computer Organization",
     icon: "💻",
-    chapters: ["Unit 1: Logic Gates & Minimization"]
+    chapters: ["Unit 1: Logic Gates & Minimization", "Unit 2: Design of Combinational Logic", "Unit 3: Design of Sequential Logic", "Unit 4: Registers and Counters"]
   };
 
   const chemistrySubject = {
@@ -1167,16 +1212,6 @@
 
   // Subjects array
   const subjectsData = [
-    // { id: 1, name: "Physics", icon: "⚛️", chapters: ["Math in Physics", "Units & Dimensions", "Motion in 1D", "Motion in 2D", "Laws of Motion"] },
-    // { id: 2, name: "Chemistry", icon: "🧪", chapters: ["Mole Concept", "Atomic Structure", "Periodic Table", "Chemical Bonding", "Thermodynamics"] },
-    // { id: 3, name: "Mathematics", icon: "📐", chapters: ["Quadratic Equations", "Trigonometry", "Calculus", "Vectors", "Probability"] },
-    // { id: 4, name: "Biology", icon: "🧬", chapters: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Kingdom"] },
-    // { id: 5, name: "English", icon: "📖", chapters: ["Grammar", "Vocabulary", "Reading Comp", "Writing Skills", "Literature"] },
-    // { id: 6, name: "Computer Science", icon: "💻", chapters: ["Programming Basics", "Data Structures", "Algorithms", "DBMS", "Networks"] },
-    // { id: 7, name: "History", icon: "🏛️", chapters: ["Ancient India", "Medieval India", "Modern India", "World History", "Art & Culture"] },
-    // { id: 8, name: "Geography", icon: "🌍", chapters: ["Physical Geo", "Indian Geo", "World Geo", "Climatology", "Oceanography"] },
-    // { id: 9, name: "Economics", icon: "📈", chapters: ["Microeconomics", "Macroeconomics", "Indian Economy", "International Trade", "Development"] },
-    // { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] },
     linearAlgebraSubject,
     chemistrySubject,
     digitalElectronicsSubject
@@ -1225,7 +1260,10 @@
       else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 2: Differential Calculus") qCount = differentialQuestions.length;
       else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 3: Ordinary Differential Equations") qCount = odeQuestions.length;
       else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 4: Linear Differential Equations") qCount = linearDifferentialQuestions.length;
-      else if (currentSubject.name === "Digital Electronics & Computer Organization" && chapter === "Unit 1: Logic Gates & Minimization") qCount = digitalElectronicsQuestions.length;
+      else if (currentSubject.name === "Digital Electronics & Computer Organization" && chapter === "Unit 1: Logic Gates & Minimization") qCount = digitalElectronicsUnit1.length;
+      else if (currentSubject.name === "Digital Electronics & Computer Organization" && chapter === "Unit 2: Design of Combinational Logic") qCount = digitalElectronicsUnit2.length;
+      else if (currentSubject.name === "Digital Electronics & Computer Organization" && chapter === "Unit 3: Design of Sequential Logic") qCount = digitalElectronicsUnit3.length;
+      else if (currentSubject.name === "Digital Electronics & Computer Organization" && chapter === "Unit 4: Registers and Counters") qCount = digitalElectronicsUnit4.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 1: Water Technology") qCount = waterTechQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 2: Fuels and Combustion") qCount = fuelsQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 3: Corrosion and Corrosion Control") qCount = corrosionQuestions.length;
@@ -1246,7 +1284,13 @@
         } else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 4: Linear Differential Equations") {
           currentQuestions = [...linearDifferentialQuestions];
         } else if (currentSubject.name === "Digital Electronics & Computer Organization" && currentChapter === "Unit 1: Logic Gates & Minimization") {
-          currentQuestions = [...digitalElectronicsQuestions];
+          currentQuestions = [...digitalElectronicsUnit1];
+        } else if (currentSubject.name === "Digital Electronics & Computer Organization" && currentChapter === "Unit 2: Design of Combinational Logic") {
+          currentQuestions = [...digitalElectronicsUnit2];
+        } else if (currentSubject.name === "Digital Electronics & Computer Organization" && currentChapter === "Unit 3: Design of Sequential Logic") {
+          currentQuestions = [...digitalElectronicsUnit3];
+        } else if (currentSubject.name === "Digital Electronics & Computer Organization" && currentChapter === "Unit 4: Registers and Counters") {
+          currentQuestions = [...digitalElectronicsUnit4];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 1: Water Technology") {
           currentQuestions = [...waterTechQuestions];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 2: Fuels and Combustion") {
@@ -1321,7 +1365,7 @@
       html+=`</div></div>`; }
     html+=`</div>`; mainContent.innerHTML=html;
   }
-  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 4: Linear Differential Equations") currentQuestions=[...linearDifferentialQuestions]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 1: Logic Gates & Minimization") currentQuestions=[...digitalElectronicsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
+  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 4: Linear Differential Equations") currentQuestions=[...linearDifferentialQuestions]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 1: Logic Gates & Minimization") currentQuestions=[...digitalElectronicsUnit1]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 2: Design of Combinational Logic") currentQuestions=[...digitalElectronicsUnit2]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 3: Design of Sequential Logic") currentQuestions=[...digitalElectronicsUnit3]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 4: Registers and Counters") currentQuestions=[...digitalElectronicsUnit4]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
   window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
 
   document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Performance analytics coming soon!</div>'; }); });
