@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>LearnFlow | Engineering Chemistry & Linear Algebra PYQ</title>
+  <title>LearnFlow | Engineering Chemistry, Linear Algebra & Digital Electronics PYQ</title>
   <style>
     * {
       margin: 0;
@@ -1003,6 +1003,22 @@
     { A: "Find the orthogonal trajectories of the family of circles: x² + y² = c.", B: "y = kx (Straight lines through origin)", C: "xy = k (Hyperbolas)", D: "x² − y² = k", E: "y = x² + k (Parabolas)", F: "Option A", G: "Ordinary Differential Equation", H: "Orthogonal Traj.", I: "Engineering Mathematics" }
   ];
 
+  // ==================== LINEAR ALGEBRA PYQ DATA - UNIT 4 (LINEAR DIFFERENTIAL EQUATIONS) ====================
+  const linearDifferentialQuestionsData = [
+    { A: "A voltage Ee^(-at) is applied at t=0 to a circuit with inductance L and resistance R. What is the expression for current I at any time t?", B: "I = E/(R-aL)[e^(-at) - e^(-Rt/L)]", C: "I = E/(R+aL)[e^(-at) + e^(-Rt/L)]", D: "I = E/(aL-R)[e^(-at) - e^(-Rt/L)]", E: "I = E/(R-aL)[e^(at) - e^(Rt/L)]", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Solve the differential equation: (D²−9)y = 2 + sinh x", B: "y = c₁e^(3x) + c₂e^(-3x) - 2/9 - (1/8)sinh x", C: "y = c₁e^(3x) + c₂e^(-3x) + 2/9 + (1/8)cosh x", D: "y = c₁e^(3x) + c₂e^(-3x) - 2/9 + (1/10)sinh x", E: "y = c₁cos3x + c₂sin3x - 2/9 - (1/8)sinh x", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "An inductor of 0.5 H, a resistor of 6 ohms, and a capacitor of 0.02 F are in series with v=24sin10t. Find the particular integral (PI) for the charge q.", B: "qₚ = -0.4cos10t", C: "qₚ = 0.4sin10t", D: "qₚ = -0.2cos10t", E: "qₚ = 0.2sin10t", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Solve by method of Variation of Parameters: (D²−6D+9)y = e^(2x)/x²", B: "y = (c₁ + c₂x)e^(3x) + yₚ (where yₚ is derived via Wronskian)", C: "y = c₁cos3x + c₂sin3x + e^(2x)/x", D: "y = (c₁ + c₂x)e^(-3x) - e^(2x)/x²", E: "y = c₁e^(2x) + c₂e^(3x) + e^(2x)/x", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Solve the differential equation: d²y/dx² − 2dy/dx + 5y = 10 sin x", B: "y = e^x(c₁cos2x + c₂sin2x) + 2sin x + cos x", C: "y = e^x(c₁cos2x + c₂sin2x) + 2cos x − sin x", D: "y = e^(-x)(c₁cos2x + c₂sin2x) + sin x + 2cos x", E: "y = e^x(c₁cos2x + c₂sin2x) + 2sin x − cos x", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Solve the differential equation: (D²+3D+2)y = e^(e^x) + cos(e^x)", B: "y = c₁e^(-x) + c₂e^(-2x) + Particular Integral via VOP", C: "y = c₁e^x + c₂e^(2x) + e^(e^x)", D: "y = c₁e^(-x) + c₂e^(-2x) + sin(e^x)", E: "y = c₁e^x + c₂e^(-2x) + cos(e^x)", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Solve by the method of variation of parameters: (D²−4D+4)y = e^(2x) sec²x", B: "y = (c₁ + c₂x)e^(2x) + e^(2x) ln|sec x|", C: "y = (c₁ + c₂x)e^(2x) + e^(2x) tan x", D: "y = (c₁ + c₂x)e^(-2x) + e^(2x) ln|sec x|", E: "y = c₁e^(2x) + c₂e^(-2x) + e^(2x) ln|sec x|", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "A series circuit contains L=0.2 H, R=10 Ω, C=0.05 F with v=30cos4t. What is the general form of the particular solution for the charge?", B: "qₚ = A cos4t + B sin4t", C: "qₚ = A cos4t", D: "qₚ = A sin4t", E: "qₚ = At cos4t + Bt sin4t", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Form the DE and find the particular integral for an RLC circuit with L=0.8 H, R=5 Ω, C=0.04 F, and v=20sin8t.", B: "0.8q″ + 5q′ + 25q = 20sin8t; qₚ = A cos8t + B sin8t", C: "0.8q″ + 5q′ + 25q = 20sin8t; qₚ = A sin8t", D: "0.8q″ − 5q′ + 25q = 20cos8t; qₚ = A cos8t", E: "0.4q″ + 5q′ + 20q = 20sin8t; qₚ = Ae^(-8t)", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Solve by variation of parameters: (D²−4D+4)y = e^(2x)/x", B: "y = (c₁ + c₂x)e^(2x) + x e^(2x) ln x", C: "y = (c₁ + c₂x)e^(2x) − x e^(2x) ln x", D: "y = c₁e^(2x) + c₂e^(-2x) + x e^(2x) ln x", E: "y = (c₁ + c₂x)e^(2x) + e^(2x) ln x", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "Solve by variation of parameters: (D²−5D+6)y = e^x/x²", B: "y = c₁e^(2x) + c₂e^(3x) + yₚ (where yₚ is evaluated via integrals)", C: "y = (c₁ + c₂x)e^(2x) + e^x/x", D: "y = c₁e^(2x) + c₂e^(-3x) − e^x/x²", E: "y = c₁e^x + c₂e^(6x) + e^x/x", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" },
+    { A: "A circuit with L=0.3 H, R=8 Ω, C=0.02 F is driven by v=15e^(-t)sin6t. Form the DE for the charge.", B: "0.3q″ + 8q′ + 50q = 15e^(-t)sin6t", C: "0.3q″ + 8q′ + 0.02q = 15e^(-t)sin6t", D: "0.3q″ + 8q′ + 50q = 15sin6t", E: "3q″ + 8q′ + 50q = 15e^(-t)cos6t", F: "Option A", G: "Unit 4 Assessment", H: "Linear Differential Equations", I: "Engineering Mathematics" }
+  ];
+
   // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 1 (LOGIC GATES & MINIMIZATION) ====================
   const digitalElectronicsQuestionsData = [
     { A: "Convert the boolean expression F(A,B,C,D)=ABC+AB+ABCD into standard SOP (Sum of Products) form.", B: "ABCD+ABCD′+ABC′D+ABC′D′", C: "ABC+ABCD+A′B′C′D′", D: "AB+CD", E: "A′B′C′D′+A′B′CD+AB′C′D′", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
@@ -1120,6 +1136,7 @@
   const matricesQuestions = parseQuestions(linearAlgebraQuestionsData);
   const differentialQuestions = parseQuestions(differentialCalculusQuestionsData);
   const odeQuestions = parseQuestions(odeQuestionsData);
+  const linearDifferentialQuestions = parseQuestions(linearDifferentialQuestionsData);
   const digitalElectronicsQuestions = parseQuestions(digitalElectronicsQuestionsData);
   const waterTechQuestions = parseQuestions(chemistryWaterQuestionsData);
   const fuelsQuestions = parseQuestions(chemistryFuelsQuestionsData);
@@ -1131,7 +1148,7 @@
     id: 11,
     name: "Linear Algebra & Univariate Calculus",
     icon: "📐",
-    chapters: ["Unit 1: Matrices & Linear Algebra", "Unit 2: Differential Calculus", "Unit 3: Ordinary Differential Equations"]
+    chapters: ["Unit 1: Matrices & Linear Algebra", "Unit 2: Differential Calculus", "Unit 3: Ordinary Differential Equations", "Unit 4: Linear Differential Equations"]
   };
 
   const digitalElectronicsSubject = {
@@ -1150,16 +1167,16 @@
 
   // Subjects array
   const subjectsData = [
-    { id: 1, name: "Physics", icon: "⚛️", chapters: ["Math in Physics", "Units & Dimensions", "Motion in 1D", "Motion in 2D", "Laws of Motion"] },
-    { id: 2, name: "Chemistry", icon: "🧪", chapters: ["Mole Concept", "Atomic Structure", "Periodic Table", "Chemical Bonding", "Thermodynamics"] },
-    { id: 3, name: "Mathematics", icon: "📐", chapters: ["Quadratic Equations", "Trigonometry", "Calculus", "Vectors", "Probability"] },
-    { id: 4, name: "Biology", icon: "🧬", chapters: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Kingdom"] },
-    { id: 5, name: "English", icon: "📖", chapters: ["Grammar", "Vocabulary", "Reading Comp", "Writing Skills", "Literature"] },
-    { id: 6, name: "Computer Science", icon: "💻", chapters: ["Programming Basics", "Data Structures", "Algorithms", "DBMS", "Networks"] },
-    { id: 7, name: "History", icon: "🏛️", chapters: ["Ancient India", "Medieval India", "Modern India", "World History", "Art & Culture"] },
-    { id: 8, name: "Geography", icon: "🌍", chapters: ["Physical Geo", "Indian Geo", "World Geo", "Climatology", "Oceanography"] },
-    { id: 9, name: "Economics", icon: "📈", chapters: ["Microeconomics", "Macroeconomics", "Indian Economy", "International Trade", "Development"] },
-    { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] },
+    // { id: 1, name: "Physics", icon: "⚛️", chapters: ["Math in Physics", "Units & Dimensions", "Motion in 1D", "Motion in 2D", "Laws of Motion"] },
+    // { id: 2, name: "Chemistry", icon: "🧪", chapters: ["Mole Concept", "Atomic Structure", "Periodic Table", "Chemical Bonding", "Thermodynamics"] },
+    // { id: 3, name: "Mathematics", icon: "📐", chapters: ["Quadratic Equations", "Trigonometry", "Calculus", "Vectors", "Probability"] },
+    // { id: 4, name: "Biology", icon: "🧬", chapters: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Kingdom"] },
+    // { id: 5, name: "English", icon: "📖", chapters: ["Grammar", "Vocabulary", "Reading Comp", "Writing Skills", "Literature"] },
+    // { id: 6, name: "Computer Science", icon: "💻", chapters: ["Programming Basics", "Data Structures", "Algorithms", "DBMS", "Networks"] },
+    // { id: 7, name: "History", icon: "🏛️", chapters: ["Ancient India", "Medieval India", "Modern India", "World History", "Art & Culture"] },
+    // { id: 8, name: "Geography", icon: "🌍", chapters: ["Physical Geo", "Indian Geo", "World Geo", "Climatology", "Oceanography"] },
+    // { id: 9, name: "Economics", icon: "📈", chapters: ["Microeconomics", "Macroeconomics", "Indian Economy", "International Trade", "Development"] },
+    // { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] },
     linearAlgebraSubject,
     chemistrySubject,
     digitalElectronicsSubject
@@ -1207,6 +1224,7 @@
       if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 1: Matrices & Linear Algebra") qCount = matricesQuestions.length;
       else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 2: Differential Calculus") qCount = differentialQuestions.length;
       else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 3: Ordinary Differential Equations") qCount = odeQuestions.length;
+      else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 4: Linear Differential Equations") qCount = linearDifferentialQuestions.length;
       else if (currentSubject.name === "Digital Electronics & Computer Organization" && chapter === "Unit 1: Logic Gates & Minimization") qCount = digitalElectronicsQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 1: Water Technology") qCount = waterTechQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 2: Fuels and Combustion") qCount = fuelsQuestions.length;
@@ -1225,6 +1243,8 @@
           currentQuestions = [...differentialQuestions];
         } else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 3: Ordinary Differential Equations") {
           currentQuestions = [...odeQuestions];
+        } else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 4: Linear Differential Equations") {
+          currentQuestions = [...linearDifferentialQuestions];
         } else if (currentSubject.name === "Digital Electronics & Computer Organization" && currentChapter === "Unit 1: Logic Gates & Minimization") {
           currentQuestions = [...digitalElectronicsQuestions];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 1: Water Technology") {
@@ -1301,7 +1321,7 @@
       html+=`</div></div>`; }
     html+=`</div>`; mainContent.innerHTML=html;
   }
-  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 1: Logic Gates & Minimization") currentQuestions=[...digitalElectronicsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
+  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 4: Linear Differential Equations") currentQuestions=[...linearDifferentialQuestions]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 1: Logic Gates & Minimization") currentQuestions=[...digitalElectronicsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
   window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
 
   document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Performance analytics coming soon!</div>'; }); });
