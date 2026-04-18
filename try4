@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>LearnFlow | PYQ Practice Platform</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    /* ========= LOGIN PAGE ========= */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
+    }
+
+    .login-card {
+      background: white;
+      border-radius: 32px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 440px;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .login-card h1 {
+      font-size: 36px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
+    }
+
+    .login-card .subtitle {
+      color: #64748b;
+      margin-bottom: 32px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #334155;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: #4c1d95;
+      box-shadow: 0 0 0 3px rgba(76, 29, 149, 0.1);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 40px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      color: white;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(76, 29, 149, 0.3);
+    }
+
+    /* ========= DASHBOARD LAYOUT ========= */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 280px;
+      background: white;
+      padding: 28px 20px;
+      position: fixed;
+      height: 100vh;
+      border-right: 1px solid #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 32px;
+      padding-left: 12px;
+    }
+
+    .nav-menu {
+      flex: 1;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      margin: 4px 0;
+      border-radius: 14px;
+      color: #475569;
+      text-decoration: none;
+      transition: all 0.2s;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .nav-item:hover {
+      background: #f1f5f9;
+      color: #4c1d95;
+    }
+
+    .nav-item.active {
+      background: linear-gradient(135deg, #1e1b4b15, #4c1d9515);
+      color: #4c1d95;
+    }
+
+    .nav-item .emoji {
+      margin-right: 12px;
+      font-size: 20px;
+    }
+
+    .user-section {
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+      margin-top: auto;
+    }
+
+    .user-name {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .user-role {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .main-content {
+      flex: 1;
+      margin-left: 280px;
+      padding: 28px 36px;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .page-title h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .page-title p {
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .filter-bar {
+      background: white;
+      border-radius: 20px;
+      padding: 16px 24px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      background: #f1f5f9;
+      border: none;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #475569;
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      color: white;
+    }
+
+    .sort-btn {
+      padding: 8px 18px;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 40px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .subject-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      border-color: #4c1d95;
+    }
+
+    .subject-icon {
+      font-size: 44px;
+      margin-bottom: 16px;
+    }
+
+    .subject-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .subject-card p {
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    .chapter-count {
+      margin-top: 12px;
+      font-size: 12px;
+      color: #4c1d95;
+      font-weight: 500;
+    }
+
+    .chapters-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chapter-row {
+      background: white;
+      border-radius: 18px;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .chapter-row:hover {
+      transform: translateX(6px);
+      border-color: #4c1d95;
+      box-shadow: 0 4px 12px rgba(76, 29, 149, 0.1);
+    }
+
+    .chapter-info {
+      flex: 1;
+    }
+
+    .chapter-name {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .chapter-meta {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    .question-stats {
+      text-align: right;
+    }
+
+    .qs-count {
+      font-weight: 700;
+      font-size: 20px;
+      color: #4c1d95;
+    }
+
+    /* ========= SINGLE QUESTION PAGE ========= */
+    .question-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .progress-wrapper {
+      margin-bottom: 24px;
+      background: white;
+      padding: 20px 24px;
+      border-radius: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+
+    .progress-label {
+      color: #64748b;
+      font-weight: 500;
+    }
+
+    .progress-count {
+      color: #4c1d95;
+      font-weight: 700;
+    }
+
+    .progress-bar-bg {
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #1e1b4b, #4c1d95);
+      border-radius: 4px;
+      transition: width 0.4s ease;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: #64748b;
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      color: #4c1d95;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .back-btn {
+      background: none;
+      border: none;
+      color: #4c1d95;
+      cursor: pointer;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      padding: 8px 0;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-4px);
+    }
+
+    .question-card {
+      background: white;
+      border-radius: 24px;
+      padding: 32px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      border: 1px solid #e2e8f0;
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .question-badge {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .question-number {
+      font-weight: 700;
+      color: #4c1d95;
+      background: #f3e8ff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    .exam-tag {
+      color: #64748b;
+      font-size: 13px;
+      background: #f1f5f9;
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    .question-text {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      color: #1e293b;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      padding: 16px 20px;
+      background: #f8fafc;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1.5px solid #e2e8f0;
+    }
+
+    .option:hover {
+      background: #f1f5f9;
+      transform: translateX(4px);
+    }
+
+    /* Answer feedback styles */
+    .option.correct-highlight {
+      background: #10b981;
+      border-color: #059669;
+      color: white;
+    }
+    .option.correct-highlight span,
+    .option.correct-highlight strong {
+      color: white;
+    }
+    .option.wrong-highlight {
+      background: #ef4444;
+      border-color: #dc2626;
+      color: white;
+    }
+    .option.wrong-highlight span,
+    .option.wrong-highlight strong {
+      color: white;
+    }
+    .option.disabled-option {
+      cursor: default;
+      opacity: 0.9;
+    }
+    .option input {
+      margin-right: 14px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+      accent-color: #4c1d95;
+    }
+    .option.disabled-option input {
+      cursor: default;
+    }
+    .option span {
+      font-size: 15px;
+      color: #334155;
+    }
+    .option strong {
+      margin-right: 8px;
+      color: #4c1d95;
+    }
+
+    .action-buttons {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-check {
+      background: #10b981;
+      color: white;
+      width: auto;
+      padding: 12px 28px;
+    }
+    .btn-check:hover {
+      background: #059669;
+      transform: translateY(-2px);
+    }
+
+    .question-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 16px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn-secondary {
+      background: #f1f5f9;
+      color: #334155;
+      width: auto;
+      padding: 12px 24px;
+    }
+
+    .btn-secondary:hover {
+      background: #e2e8f0;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .feedback-message {
+      margin: 16px 0;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      display: none;
+    }
+
+    .feedback-correct {
+      background: #d1fae5;
+      color: #065f46;
+      border-left: 4px solid #10b981;
+    }
+
+    .feedback-wrong {
+      background: #fee2e2;
+      color: #991b1b;
+      border-left: 4px solid #ef4444;
+    }
+
+    .question-dots-section {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    .dots-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .q-dot {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: none;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: #f1f5f9;
+      color: #475569;
+    }
+
+    .q-dot.current {
+      background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(76, 29, 149, 0.4);
+    }
+
+    .q-dot.answered {
+      background: #10b981;
+      color: white;
+    }
+
+    .q-dot.checked-correct {
+      background: #10b981;
+      color: white;
+      box-shadow: 0 0 0 2px #059669;
+    }
+
+    .q-dot.checked-wrong {
+      background: #ef4444;
+      color: white;
+      box-shadow: 0 0 0 2px #dc2626;
+    }
+
+    .q-dot.unanswered {
+      background: #e2e8f0;
+      color: #64748b;
+    }
+
+    .q-dot:hover {
+      transform: scale(1.08);
+    }
+
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      font-size: 12px;
+      color: #64748b;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .result-card {
+      background: white;
+      border-radius: 32px;
+      padding: 48px;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .result-icon {
+      font-size: 64px;
+      margin-bottom: 24px;
+    }
+
+    .score {
+      font-size: 56px;
+      font-weight: 800;
+      color: #4c1d95;
+      margin: 24px 0;
+    }
+
+    .result-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 32px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+      }
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      .q-dot {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+      }
+    }
+
+    .page {
+      display: none;
+    }
+    .page.active-page {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div id="loginPage" class="page active-page">
+  <div class="login-container">
+    <div class="login-card">
+      <h1>📚 LearnFlow</h1>
+      <p class="subtitle">PYQ Practice Platform</p>
+      <form id="loginForm">
+        <div class="input-group"><label>Username</label><input type="text" id="loginUsername" placeholder="Enter your name" required></div>
+        <div class="input-group"><label>Password</label><input type="password" placeholder="Enter your password" required></div>
+        <button type="submit" class="btn btn-primary">Start Learning →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="appWrapper" style="display: none;">
+  <div class="app-container">
+    <aside class="sidebar">
+      <div class="logo">📖 LearnFlow</div>
+      <nav class="nav-menu">
+        <div class="nav-item active" data-view="subjects"><span class="emoji">📚</span> Subjects</div>
+        <div class="nav-item" data-view="bookmarks"><span class="emoji">🔖</span> Bookmarks</div>
+        <div class="nav-item" data-view="analysis"><span class="emoji">📊</span> Analysis</div>
+      </nav>
+      <div class="user-section"><div class="user-name" id="sidebarUserName">Student</div><div class="user-role">PYQ Practice</div></div>
+    </aside>
+    <main class="main-content" id="mainContent"></main>
+  </div>
+</div>
+
+<script>
+  // 10 SUBJECTS WITH 5 CHAPTERS EACH (EACH CHAPTER WILL HAVE 100 QUESTIONS)
+  const subjectsData = [
+    { id: 1, name: "Physics", icon: "⚛️", chapters: ["Math in Physics", "Units & Dimensions", "Motion in 1D", "Motion in 2D", "Laws of Motion"] },
+    { id: 2, name: "Chemistry", icon: "🧪", chapters: ["Mole Concept", "Atomic Structure", "Periodic Table", "Chemical Bonding", "Thermodynamics"] },
+    { id: 3, name: "Mathematics", icon: "📐", chapters: ["Quadratic Equations", "Trigonometry", "Calculus", "Vectors", "Probability"] },
+    { id: 4, name: "Biology", icon: "🧬", chapters: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Kingdom"] },
+    { id: 5, name: "English", icon: "📖", chapters: ["Grammar", "Vocabulary", "Reading Comp", "Writing Skills", "Literature"] },
+    { id: 6, name: "Computer Science", icon: "💻", chapters: ["Programming Basics", "Data Structures", "Algorithms", "DBMS", "Networks"] },
+    { id: 7, name: "History", icon: "🏛️", chapters: ["Ancient India", "Medieval India", "Modern India", "World History", "Art & Culture"] },
+    { id: 8, name: "Geography", icon: "🌍", chapters: ["Physical Geo", "Indian Geo", "World Geo", "Climatology", "Oceanography"] },
+    { id: 9, name: "Economics", icon: "📈", chapters: ["Microeconomics", "Macroeconomics", "Indian Economy", "International Trade", "Development"] },
+    { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] }
+  ];
+
+  // GENERATE 100 QUESTIONS FOR ANY CHAPTER
+  function generateQuestionsForChapter(chapterName, count = 100) {
+    const questions = [];
+    for (let i = 1; i <= count; i++) {
+      const correctIndex = Math.floor(Math.random() * 4);
+      questions.push({
+        id: i,
+        text: `${chapterName} - Sample Question ${i}: What is the correct answer for this problem? (This is a practice question for ${chapterName})`,
+        options: [`Option A for Q${i}`, `Option B for Q${i}`, `Option C for Q${i}`, `Option D for Q${i}`],
+        correct: correctIndex,
+        exam: `Practice Test ${Math.floor(i/20)+1}`
+      });
+    }
+    return questions;
+  }
+
+  let currentSubject = null;
+  let currentChapter = null;
+  let currentQuestions = [];
+  let currentQuestionIndex = 0;
+  let userAnswers = {};        // stores selected option index
+  let answerChecked = {};      // stores whether user clicked "Check Answer" for a question
+  let answerResult = {};       // stores whether the checked answer was correct (true/false)
+
+  const mainContent = document.getElementById('mainContent');
+  const sidebarUserName = document.getElementById('sidebarUserName');
+
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+    if (pageId === 'login') {
+      loginPage.classList.add('active-page');
+      appWrapper.style.display = 'none';
+    } else {
+      loginPage.classList.remove('active-page');
+      appWrapper.style.display = 'block';
+    }
+  }
+
+  function renderSubjects() {
+    let html = `<div class="top-bar"><div class="page-title"><h1>📚 All Subjects</h1><p>Choose a subject to practice PYQs</p></div></div>
+      <div class="filter-bar"><div class="filter-group"><button class="filter-btn active">All Classes</button><button class="filter-btn">11th</button><button class="filter-btn">12th</button></div></div>
+      <div class="subjects-grid">`;
+    subjectsData.forEach(sub => {
+      html += `<div class="subject-card" data-subject-id="${sub.id}"><div class="subject-icon">${sub.icon}</div><h3>${sub.name}</h3><p>${sub.chapters.length} chapters • PYQ Bank</p><div class="chapter-count">📖 ${sub.chapters.length} Chapters →</div></div>`;
+    });
+    html += `</div>`;
+    mainContent.innerHTML = html;
+    document.querySelectorAll('.subject-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = parseInt(card.dataset.subjectId);
+        currentSubject = subjectsData.find(s => s.id === id);
+        renderChapters();
+      });
+    });
+  }
+
+  function renderChapters() {
+    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">All Subjects</a> › <span>${currentSubject.name}</span></div>
+      <div class="top-bar"><div class="page-title"><h1>${currentSubject.icon} ${currentSubject.name} PYQs</h1><p>Chapter-wise Collection</p></div></div>
+      <div class="filter-bar"><div class="filter-group"><button class="filter-btn active">All Chapters</button></div></div>
+      <div class="chapters-grid">`;
+    currentSubject.chapters.forEach((chapter, idx) => {
+      html += `<div class="chapter-row" data-chapter="${chapter}"><div class="chapter-info"><div class="chapter-name">${idx+1}. ${chapter}</div><div class="chapter-meta"><span>📚 Full Question Bank</span></div></div><div class="question-stats"><div class="qs-count">100 Qs</div><div class="qs-label">Questions</div></div></div>`;
+    });
+    html += `</div>`;
+    mainContent.innerHTML = html;
+    document.querySelectorAll('.chapter-row').forEach(row => {
+      row.addEventListener('click', () => {
+        currentChapter = row.dataset.chapter;
+        // Generate 100 questions for this chapter
+        currentQuestions = generateQuestionsForChapter(currentChapter, 100);
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        answerChecked = {};
+        answerResult = {};
+        renderSingleQuestion();
+      });
+    });
+  }
+
+  function renderSingleQuestion() {
+    const q = currentQuestions[currentQuestionIndex];
+    const total = currentQuestions.length;
+    const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
+    const selectedVal = userAnswers[currentQuestionIndex];
+    const isChecked = answerChecked[currentQuestionIndex];
+    const isCorrectResult = answerResult[currentQuestionIndex];
+
+    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>${currentChapter}</span></div>
+      <button class="back-btn" onclick="renderChapters()">← Back to Chapters</button>
+      <div class="question-container">
+        <div class="progress-wrapper"><div class="progress-header"><span class="progress-label">Your Progress</span><span class="progress-count">Question ${currentQuestionIndex + 1} of ${total}</span></div>
+        <div class="progress-bar-bg"><div class="progress-fill" style="width: ${progressPercent}%;"></div></div></div>
+        <div class="question-card">
+          <div class="question-header"><div class="question-badge"><span class="question-number">Question ${currentQuestionIndex + 1}</span><span class="exam-tag">${q.exam}</span></div></div>
+          <div class="question-text">${q.text}</div>
+          <div class="options" id="optionsContainer">`;
+
+    q.options.forEach((opt, idx) => {
+      const letter = String.fromCharCode(65 + idx);
+      const isSelected = (selectedVal === idx);
+      let additionalClass = '';
+      if (isChecked && isSelected) {
+        additionalClass = isCorrectResult ? 'correct-highlight' : 'wrong-highlight';
+      }
+      html += `<label class="option ${additionalClass}" data-opt-index="${idx}">
+        <input type="radio" name="question" value="${idx}" ${isSelected ? 'checked' : ''} onchange="selectOption(${idx})">
+        <span><strong>${letter}.</strong> ${opt}</span>
+      </label>`;
+    });
+
+    html += `</div><div class="action-buttons"><button class="btn btn-check" id="checkAnswerBtn">✅ Check Answer</button></div>
+      <div id="feedbackMsg" class="feedback-message"></div>
+      <div class="question-nav"><button class="btn btn-secondary" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? 'disabled' : ''}>← Previous</button>
+      <div class="nav-buttons"><button class="btn btn-primary" onclick="nextQuestion()">Next →</button></div></div>
+      <div class="question-dots-section"><div class="dots-grid" id="dotsGrid"></div>
+      <div class="legend"><span><i class="legend-dot" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95);"></i> Current</span>
+      <span><i class="legend-dot" style="background:#10b981;"></i> Answered & Correct</span>
+      <span><i class="legend-dot" style="background:#ef4444;"></i> Answered & Wrong</span>
+      <span><i class="legend-dot" style="background:#e2e8f0;"></i> Not Checked</span></div></div></div></div>`;
+
+    mainContent.innerHTML = html;
+
+    // Build dots grid
+    const dotsGrid = document.getElementById('dotsGrid');
+    if (dotsGrid) {
+      for (let i = 0; i < total; i++) {
+        let dotClass = 'q-dot';
+        if (i === currentQuestionIndex) dotClass += ' current';
+        else if (answerChecked[i]) {
+          dotClass += answerResult[i] ? ' checked-correct' : ' checked-wrong';
+        } else if (userAnswers[i] !== undefined) {
+          dotClass += ' answered';
+        } else {
+          dotClass += ' unanswered';
+        }
+        dotsGrid.innerHTML += `<button class="${dotClass}" onclick="jumpToQuestion(${i})">${i + 1}</button>`;
+      }
+    }
+
+    // Attach check answer handler
+    document.getElementById('checkAnswerBtn')?.addEventListener('click', () => checkAnswer());
+  }
+
+  window.selectOption = function(optIndex) {
+    userAnswers[currentQuestionIndex] = optIndex;
+    // Reset checked status for this question when new option is selected
+    answerChecked[currentQuestionIndex] = false;
+    answerResult[currentQuestionIndex] = undefined;
+    renderSingleQuestion();
+  };
+
+  window.checkAnswer = function() {
+    const selected = userAnswers[currentQuestionIndex];
+    if (selected === undefined) {
+      alert("Please select an option before checking the answer.");
+      return;
+    }
+    const q = currentQuestions[currentQuestionIndex];
+    const isCorrect = (selected === q.correct);
+    answerChecked[currentQuestionIndex] = true;
+    answerResult[currentQuestionIndex] = isCorrect;
+    
+    const feedbackDiv = document.getElementById('feedbackMsg');
+    if (feedbackDiv) {
+      feedbackDiv.style.display = 'block';
+      feedbackDiv.className = `feedback-message ${isCorrect ? 'feedback-correct' : 'feedback-wrong'}`;
+      feedbackDiv.innerHTML = isCorrect ? '✅ Correct! Great job!' : `❌ Incorrect. The correct answer is ${String.fromCharCode(65 + q.correct)}. ${q.options[q.correct]}`;
+    }
+    renderSingleQuestion(); // Re-render to highlight correct/wrong option
+  };
+
+  window.prevQuestion = function() {
+    if (currentQuestionIndex > 0) {
+      currentQuestionIndex--;
+      renderSingleQuestion();
+    }
+  };
+
+  window.nextQuestion = function() {
+    if (currentQuestionIndex < currentQuestions.length - 1) {
+      currentQuestionIndex++;
+      renderSingleQuestion();
+    } else {
+      // Quiz complete
+      let totalCorrect = 0;
+      for (let i = 0; i < currentQuestions.length; i++) {
+        if (answerChecked[i] && answerResult[i]) totalCorrect++;
+      }
+      showResult(totalCorrect);
+    }
+  };
+
+  window.jumpToQuestion = function(index) {
+    currentQuestionIndex = index;
+    renderSingleQuestion();
+  };
+
+  function showResult(correctCount) {
+    const total = currentQuestions.length;
+    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>Result</span></div>
+      <div class="result-card"><div class="result-icon">🏆</div><h2>Chapter Completed!</h2>
+      <div class="score">${correctCount}<span>/${total}</span></div>
+      <p>Percentage: ${Math.round((correctCount/total)*100)}%</p>
+      <div class="result-actions"><button class="btn btn-primary" onclick="renderSubjects()">🏠 Go Home</button>
+      <button class="btn btn-secondary" onclick="renderChapters()">📖 Back to Chapters</button>
+      <button class="btn btn-secondary" onclick="location.reload()">🔄 Retake Chapter</button></div></div>`;
+    mainContent.innerHTML = html;
+  }
+
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('loginUsername').value.trim() || "Student";
+    sidebarUserName.innerText = username;
+    showPage('app');
+    renderSubjects();
+  });
+
+  document.querySelectorAll('[data-view]').forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+      el.classList.add('active');
+      const view = el.dataset.view;
+      if (view === 'subjects') renderSubjects();
+      else if (view === 'bookmarks') mainContent.innerHTML = '<div style="padding:40px;text-align:center">🔖 Bookmarks feature coming soon!</div>';
+      else if (view === 'analysis') mainContent.innerHTML = '<div style="padding:40px;text-align:center">📊 Performance analysis coming soon!</div>';
+    });
+  });
+
+  window.renderSubjects = renderSubjects;
+  window.renderChapters = renderChapters;
+</script>
+</body>
+</html>
