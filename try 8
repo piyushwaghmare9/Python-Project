@@ -881,7 +881,7 @@
   <div class="login-container">
     <div class="login-card">
       <h1>📚 LearnFlow</h1>
-      <p class="subtitle">Engineering Chemistry & Linear Algebra PYQ Platform</p>
+      <p class="subtitle">Engineering Chemistry, Linear Algebra & Digital Electronics PYQ Platform</p>
       <form id="loginForm">
         <div class="input-group"><label>Username</label><input type="text" id="loginUsername" placeholder="Enter your name" required></div>
         <div class="input-group"><label>Password</label><input type="password" placeholder="Enter your password" required></div>
@@ -1003,6 +1003,20 @@
     { A: "Find the orthogonal trajectories of the family of circles: x² + y² = c.", B: "y = kx (Straight lines through origin)", C: "xy = k (Hyperbolas)", D: "x² − y² = k", E: "y = x² + k (Parabolas)", F: "Option A", G: "Ordinary Differential Equation", H: "Orthogonal Traj.", I: "Engineering Mathematics" }
   ];
 
+  // ==================== DIGITAL ELECTRONICS PYQ DATA - UNIT 1 (LOGIC GATES & MINIMIZATION) ====================
+  const digitalElectronicsQuestionsData = [
+    { A: "Convert the boolean expression F(A,B,C,D)=ABC+AB+ABCD into standard SOP (Sum of Products) form.", B: "ABCD+ABCD′+ABC′D+ABC′D′", C: "ABC+ABCD+A′B′C′D′", D: "AB+CD", E: "A′B′C′D′+A′B′CD+AB′C′D′", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "Given voltage waveforms for inputs A and B, which 2-input logic gate will produce a HIGH (1) output waveform ONLY when both input A and input B are HIGH (1)?", B: "OR Gate", C: "AND Gate", D: "NAND Gate", E: "NOR Gate", F: "Option B", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "Simplify the Boolean function f(A,B,C,D)=Σm(1,3,5,7,9)+d(6,12,13) using a Karnaugh Map.", B: "AD′+CD′", C: "A′C+BD", D: "A′D+C′D", E: "AB′+C′D", F: "Option C", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "For a 3-input (A, B, C) Voting System where the output is 1 if at least two people vote \"yes\", what is the simplified Boolean expression?", B: "ABC", C: "A′B+B′C+C′A", D: "A+B+C", E: "AB+BC+CA", F: "Option D", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "Find the minimized expression for the function F(P,Q,R,S)=Σm(2,4,8,11,15)+d(1,10,12,13).", B: "P′Q′RS′+P′QR′S′+PQ′R′S′+PQS", C: "PQ+RS+P′R′", D: "P′Q′R+PQS+Q′R′S", E: "P′Q′RS′+PQ′R′+P′Q′S′", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "In a 3-sensor security system (A, B, C), the alarm triggers (output 1) if at least two sensors detect intrusion. What logic gate implementation matches this minimized circuit?", B: "Three 2-input AND gates feeding into a 3-input OR gate", C: "One 3-input AND gate feeding into a NOT gate", D: "Three 2-input OR gates feeding into a 3-input AND gate", E: "One 3-input XOR gate", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "Find the minimized expression for the function f(W,X,Y,Z)=Σm(0,1,3,5,14)+d(8,15).", B: "W′Y′Z+W′X′Z+WXYZ", C: "W′X′Y′+W′Y′Z+W′X′Z+WXY′Z′", D: "W′X′Y′+W′Y′Z+W′X′Z+WXYZ′", E: "W′X′Z′+W′Y′Z′+WXY′Z′", F: "Option C", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "In a 3-input (A, B, C) voting system requiring a majority (at least two \"yes\" votes) to output a 1, how many rows in the standard 8-row truth table will have an output of 1?", B: "3 rows", C: "4 rows", D: "5 rows", E: "2 rows", F: "Option B", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "Find the minimized SOP expression for the function F(A,B,C,D)=Σm(0,2,3,7,11,14,15).", B: "A′B′D′+A′CD+BCD+ACD", C: "A′B′D+A′C′D+BC′D′+A′CD", D: "AB′D′+A′C′D′+B′C′D′+ACD", E: "A′B′D′+A′CD′+BCD′+AC′D", F: "Option A", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" },
+    { A: "Find the minimized POS (Product of Sums) expression for F(P,Q,R,S)=ΠM(2,4,6,11,15)+d(1,8,12).", B: "(P+Q+R)(P′+Q′+S)(P+R+S)", C: "(P′+Q′+R′)(P+Q+S′)(P′+R′+S′)", D: "(P+Q+R′)(P+Q′+S)(P′+R+S′)", E: "(P′+Q+R)(P′+Q′+S′)(P+R′+S)", F: "Option C", G: "Unit 1 Assessment", H: "Logic Gates & Minimization", I: "Digital Electronics" }
+  ];
+
   // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 1 ====================
   const chemistryWaterQuestionsData = [
     { A: "50 ml of alkaline water sample titrated with N/50 HCl: Phenolphthalein endpoint = 5.2 ml. Additional acid required = 15.4 ml. Identify the type of alkalinity and determine its extent.", B: "Carbonate = 208 ppm, Bicarbonate = 204 ppm", C: "Hydroxide = 208 ppm, Carbonate = 204 ppm", D: "Carbonate = 104 ppm, Bicarbonate = 102 ppm", E: "Hydroxide = 104 ppm, Carbonate = 102 ppm", F: "Option A", G: "Unit I Assessment", H: "Water Technology", I: "Chemistry" },
@@ -1106,6 +1120,7 @@
   const matricesQuestions = parseQuestions(linearAlgebraQuestionsData);
   const differentialQuestions = parseQuestions(differentialCalculusQuestionsData);
   const odeQuestions = parseQuestions(odeQuestionsData);
+  const digitalElectronicsQuestions = parseQuestions(digitalElectronicsQuestionsData);
   const waterTechQuestions = parseQuestions(chemistryWaterQuestionsData);
   const fuelsQuestions = parseQuestions(chemistryFuelsQuestionsData);
   const corrosionQuestions = parseQuestions(chemistryCorrosionQuestionsData);
@@ -1117,6 +1132,13 @@
     name: "Linear Algebra & Univariate Calculus",
     icon: "📐",
     chapters: ["Unit 1: Matrices & Linear Algebra", "Unit 2: Differential Calculus", "Unit 3: Ordinary Differential Equations"]
+  };
+
+  const digitalElectronicsSubject = {
+    id: 13,
+    name: "Digital Electronics & Computer Organization",
+    icon: "💻",
+    chapters: ["Unit 1: Logic Gates & Minimization"]
   };
 
   const chemistrySubject = {
@@ -1139,7 +1161,8 @@
     { id: 9, name: "Economics", icon: "📈", chapters: ["Microeconomics", "Macroeconomics", "Indian Economy", "International Trade", "Development"] },
     { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] },
     linearAlgebraSubject,
-    chemistrySubject
+    chemistrySubject,
+    digitalElectronicsSubject
   ];
 
   let bookmarks = JSON.parse(localStorage.getItem('learnflow_bookmarks') || '[]');
@@ -1184,6 +1207,7 @@
       if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 1: Matrices & Linear Algebra") qCount = matricesQuestions.length;
       else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 2: Differential Calculus") qCount = differentialQuestions.length;
       else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 3: Ordinary Differential Equations") qCount = odeQuestions.length;
+      else if (currentSubject.name === "Digital Electronics & Computer Organization" && chapter === "Unit 1: Logic Gates & Minimization") qCount = digitalElectronicsQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 1: Water Technology") qCount = waterTechQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 2: Fuels and Combustion") qCount = fuelsQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 3: Corrosion and Corrosion Control") qCount = corrosionQuestions.length;
@@ -1201,6 +1225,8 @@
           currentQuestions = [...differentialQuestions];
         } else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 3: Ordinary Differential Equations") {
           currentQuestions = [...odeQuestions];
+        } else if (currentSubject.name === "Digital Electronics & Computer Organization" && currentChapter === "Unit 1: Logic Gates & Minimization") {
+          currentQuestions = [...digitalElectronicsQuestions];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 1: Water Technology") {
           currentQuestions = [...waterTechQuestions];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 2: Fuels and Combustion") {
@@ -1275,7 +1301,7 @@
       html+=`</div></div>`; }
     html+=`</div>`; mainContent.innerHTML=html;
   }
-  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
+  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Digital Electronics & Computer Organization" && chap==="Unit 1: Logic Gates & Minimization") currentQuestions=[...digitalElectronicsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
   window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
 
   document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Performance analytics coming soon!</div>'; }); });
