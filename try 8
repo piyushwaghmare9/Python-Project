@@ -945,7 +945,7 @@
     }
   }
 
-  // ==================== LINEAR ALGEBRA PYQ DATA ====================
+  // ==================== LINEAR ALGEBRA PYQ DATA - UNIT 1 (MATRICES) ====================
   const linearAlgebraQuestionsData = [
     { A: "Test for consistency and solve: 2x - 3y + 5z = 1, 3x + y - z = 2, x + 4y - 6z = 1.", B: "Inconsistent", C: "Consistent with a unique solution", D: "Consistent with infinite solutions", E: "Trivial solution (x=0, y=0, z=0)", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
     { A: "Determine whether vectors (2, 3, 4, -2), (-1, 1, -2, 1), (1, 1, 2, -1) are linearly dependent.", B: "Linearly dependent", C: "Linearly independent", D: "Orthogonal to each other", E: "Cannot be determined", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
@@ -961,6 +961,46 @@
     { A: "Find eigenvalues for [0 2 0; 3 -2 3; 0 3 0].", B: "0, -5, 3", C: "1, 2, -5", D: "0, 2, -4", E: "-1, -2, 1", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
     { A: "Find currents in circuit (R1=5, R2=7, E=7.5).", B: "I=0.625A", C: "I=1.5A", D: "I=2.0A", E: "I=1.25A", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" },
     { A: "Find smallest eigenvalue of A = [1 2 2; 0 2 1; -1 2 2].", B: "1", C: "2", D: "0", E: "-1", F: "Option A", G: "LAUC Matrix", H: "Matrices & Linear Algebra", I: "Engineering Mathematics" }
+  ];
+
+  // ==================== LINEAR ALGEBRA PYQ DATA - UNIT 2 (DIFFERENTIAL CALCULUS) ====================
+  const differentialCalculusQuestionsData = [
+    { A: "What is the Maclaurin series expansion of log(1+x+x²+x³+…) for |x|<1?", B: "x", C: "x+2x²+3x³+4x⁴+…", D: "x−x²/2+x³/3−x⁴/4+…", E: "1+x+x²+x³+…", F: "x+x²+x³+…", G: "Option A", H: "UNIT II", I: "Engineering Mathematics" },
+    { A: "Expand x³+7x²+x−6 in powers of (x−3) using Taylor's theorem.", B: "(x−3)³+16(x−3)²+70(x−3)+87", C: "(x−3)³+12(x−3)²+60(x−3)+80", D: "(x−3)³+10(x−3)²+50(x−3)+75", E: "(x−3)³+15(x−3)²+65(x−3)+85", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Evaluate the indeterminate form limit: lim_{x→0} (x−sin x)/x³", B: "0", C: "1", D: "1/6", E: "∞", F: "Option C", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Find the nth derivative of y=(x−1)(x−2)(x−3) for n≥4.", B: "n!", C: "xⁿ", D: "0", E: "1", F: "Option C", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "If f(x)=log(x) in the interval [a,b], applying Lagrange's Mean Value Theorem yields c∈(a,b). What is the exact value of c?", B: "c=(b−a)/(log b−log a)", C: "c=(log b−log a)/(b−a)", D: "c=√(ab)", E: "c=(a+b)/2", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Find the nth derivative of y=(2x+3)/((x−1)(x−2)) using partial fractions.", B: "(-1)ⁿ n![5/(x−2)ⁿ⁺¹ − 7/(x−1)ⁿ⁺¹]", C: "(-1)ⁿ n![5/(x−1)ⁿ⁺¹ + 7/(x−2)ⁿ⁺¹]", D: "n![7/(x−2)ⁿ − 5/(x−1)ⁿ]", E: "(-1)ⁿ n![2/(x−2)ⁿ⁺¹ − 3/(x−1)ⁿ⁺¹]", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Apply Leibnitz's theorem to find the nth derivative of y=x³e²ˣ. Which of the following is a factor in the expanded expression?", B: "2ⁿ⁻³e²ˣ", C: "e²ⁿˣ", D: "n!e²ˣ", E: "2ⁿxⁿ", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Evaluate the limit: lim_{x→0} ((2aˣ+bˣ)/2)^{1/x}", B: "√(ab)", C: "2a+b", D: "1", E: "0", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "What are the first three non-zero terms in the Maclaurin series expansion of sin x cosh x?", B: "x + x³/3 − x⁵/30 + …", C: "x − x³/6 + x⁵/120 + …", D: "x + x³/2 + x⁵/24 + …", E: "x − x³/3 + x⁵/30 + …", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Expand 2x³+7x²+x−6 in powers of (x−2) using Taylor's theorem.", B: "2(x−2)³+19(x−2)²+53(x−2)+40", C: "2(x−2)³+17(x−2)²+40(x−2)+30", D: "2(x−2)³+15(x−2)²+35(x−2)+20", E: "(x−2)³+19(x−2)²+53(x−2)+40", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Find the nth derivative of the function y=x/(x²−5x+6).", B: "(-1)ⁿ n![3/(x−3)ⁿ⁺¹ − 2/(x−2)ⁿ⁺¹]", C: "(-1)ⁿ n![2/(x−3)ⁿ⁺¹ + 3/(x−2)ⁿ⁺¹]", D: "n![3/(x−3)ⁿ − 2/(x−2)ⁿ]", E: "(-1)ⁿ n![1/(x−3)ⁿ⁺¹ − 1/(x−2)ⁿ⁺¹]", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "What is the coefficient of x³ when the expression 4+5(x−2)+3(x−2)²+2(x−2)³ is fully expanded?", B: "2", C: "3", D: "5", E: "4", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Using Taylor's theorem, expand 2x³−5x²+3x−4 in powers of (x−3).", B: "2(x−3)³+13(x−3)²+27(x−3)+14", C: "2(x−3)³+10(x−3)²+20(x−3)+10", D: "2(x−3)³+15(x−3)²+30(x−3)+15", E: "2(x−3)³+12(x−3)²+25(x−3)+12", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Expand x csc x up to x⁴ using Maclaurin's series.", B: "1 + x²/6 + 7x⁴/360", C: "1 − x²/2 + x⁴/24", D: "x + x³/6 + 7x⁵/360", E: "1 + x²/2 + 5x⁴/24", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Verify Cauchy's Mean Value Theorem for f(x)=x² and g(x)=x on [1,2] and find c∈(1,2).", B: "c=1.5", C: "c=1.25", D: "c=1.75", E: "c=1.8", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "Find the nth derivative of y=e³ˣ cos(4x).", B: "5ⁿ e³ˣ cos(4x + n tan⁻¹(4/3))", C: "5ⁿ e³ˣ sin(4x + n tan⁻¹(3/4))", D: "12ⁿ e³ˣ cos(4x + nπ/2)", E: "e³ˣ cos(4x + nπ)", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" },
+    { A: "For y=sin⁻¹(x), applying Leibnitz's theorem to its differential equation yields which of the following relations?", B: "(1−x²)yₙ₊₂ − (2n+1)x yₙ₊₁ − n² yₙ = 0", C: "(1−x²)yₙ₊₂ + (2n+1)x yₙ₊₁ − n² yₙ = 0", D: "(1−x²)yₙ₊₂ − (2n−1)x yₙ₊₁ + n² yₙ = 0", E: "(1+x²)yₙ₊₂ − (2n+1)x yₙ₊₁ + n² yₙ = 0", F: "Option A", G: "UNIT II", H: "Differential Calculus", I: "Engineering Mathematics" }
+  ];
+
+  // ==================== LINEAR ALGEBRA PYQ DATA - UNIT 3 (ORDINARY DIFFERENTIAL EQUATIONS) ====================
+  const odeQuestionsData = [
+    { A: "Solve the exact differential equation: (y²−2x²)dx + (2xy²−x³)dy = 0.", B: "xy² − (2/3)x³ − (x³/y) = C", C: "x²y − x³ = C", D: "xy − x² = C", E: "y²x − 2x³ = C", F: "Option A", G: "Ordinary Differential Equation", H: "Exact ODEs", I: "Engineering Mathematics" },
+    { A: "A body cools from 60°C to 40°C in 20 min. The room temperature is 20°C. Find its temperature after 30 min.", B: "34.1°C", C: "30°C", D: "35°C", E: "32°C", F: "Option A", G: "Ordinary Differential Equation", H: "Newton's Cooling", I: "Engineering Mathematics" },
+    { A: "Find the orthogonal trajectories of the polar family of curves: r = a(1+cosθ).", B: "r = c(1−cosθ)", C: "r = c(1+sinθ)", D: "r = c sinθ", E: "r = c cosθ", F: "Option A", G: "Ordinary Differential Equation", H: "Orthogonal Traj.", I: "Engineering Mathematics" },
+    { A: "A steam pipe 15 cm in diameter contains steam at 120°C with insulation (k=0.01). If outer temp is 30°C, find heat loss per meter length. (Assuming typical insulation thickness if not given, e.g., 5cm).", B: "Requires insulation thickness to solve precisely", C: "150 W/m", D: "200 W/m", E: "100 W/m", F: "Option A", G: "Ordinary Differential Equation", H: "Heat Conduction", I: "Engineering Mathematics" },
+    { A: "Solve the differential equation: (x²+y²+1)dx − 2xy dy = 0.", B: "x² − y² − 1 = Cx", C: "x² + y² + 1 = Cx", D: "x² − y² + 1 = Cx", E: "x² + y² − 1 = Cx", F: "Option A", G: "Ordinary Differential Equation", H: "Exact ODEs", I: "Engineering Mathematics" },
+    { A: "Find the orthogonal trajectory for the family of curves: rθ = c.", B: "r = k e^{θ²/2}", C: "r² = kθ", D: "r = k cosθ", E: "r = k e^{-θ²/2}", F: "Option A", G: "Ordinary Differential Equation", H: "Orthogonal Traj.", I: "Engineering Mathematics" },
+    { A: "Solve the exact differential equation: (x+y−2)dx + (x−y+4)dy = 0.", B: "(x²/2) + xy − 2x − (y²/2) + 4y = C", C: "x² + xy − 2x − y² + 4y = C", D: "2x² − xy − 2x + 2y² + 4y = C", E: "x² − xy + 2x − y² − 4y = C", F: "Option A", G: "Ordinary Differential Equation", H: "Exact ODEs", I: "Engineering Mathematics" },
+    { A: "In an L-R circuit with L=680H, R=250Ω, E=500V, and I(0)=0, find the time when current reaches 80% of its maximum value.", B: "t ≈ 4.38 seconds", C: "t ≈ 2.50 seconds", D: "t ≈ 5.10 seconds", E: "t ≈ 3.75 seconds", F: "Option A", G: "Ordinary Differential Equation", H: "L-R Circuits", I: "Engineering Mathematics" },
+    { A: "Solve the differential equation reducible to exact form: (1+xy)y dx + (1−xy)x dy = 0.", B: "ln(y/x) − 1/(xy) = C", C: "ln(xy) − y/x = C", D: "ln(x) + 1/y = C", E: "ln(y) − 1/x = C", F: "Option A", G: "Ordinary Differential Equation", H: "Exact ODEs", I: "Engineering Mathematics" },
+    { A: "Solve the exact differential equation: (3x−y+5)dx + (−x+4y+5)dy = 0.", B: "(3/2)x² − xy + 5x + 2y² + 5y = C", C: "3x² − 2xy + 5x + 4y² + 5y = C", D: "(3/2)x² + xy + 5x − 2y² + 5y = C", E: "x² − xy + x + y² + y = C", F: "Option A", G: "Ordinary Differential Equation", H: "Exact ODEs", I: "Engineering Mathematics" },
+    { A: "Solve the differential equation reducible to exact form: (1+xy)y dx − (1−xy)x dy = 0.", B: "ln(y/x) − 1/(xy) = C", C: "ln(xy) − y/x = C", D: "ln(x) + 1/y = C", E: "ln(y) − 1/x = C", F: "Option A", G: "Ordinary Differential Equation", H: "Exact ODEs", I: "Engineering Mathematics" },
+    { A: "Find the orthogonal trajectories of the family of curves represented by: (1+x²)dy/dx + xy = 1.", B: "y = ∫(1−xy)/(1+x²) dx", C: "Cannot be solved as standard family", D: "y² = x² + c", E: "y = cx", F: "Option B", G: "Ordinary Differential Equation", H: "Orthogonal Traj.", I: "Engineering Mathematics" },
+    { A: "A body initially at 100°C cools to 60°C in 15 min. Room is 30°C. Find temperature after 50 min.", B: "38.2°C", C: "42.5°C", D: "40°C", E: "35°C", F: "Option A", G: "Ordinary Differential Equation", H: "Newton's Cooling", I: "Engineering Mathematics" },
+    { A: "A steam pipe 20 cm in diameter is covered with 6 cm insulation (k=0.0003). Inner temp is 200°C, outer is 30°C. Find heat loss per hour per meter length.", B: "Heat loss = 2πk(T₁−T₂)/ln(r₂/r₁) (Requires unit conversions)", C: "50 kcal/hr", D: "100 kcal/hr", E: "25 kcal/hr", F: "Option A", G: "Ordinary Differential Equation", H: "Heat Conduction", I: "Engineering Mathematics" },
+    { A: "Find the orthogonal trajectories of the family of circles: x² + y² = c.", B: "y = kx (Straight lines through origin)", C: "xy = k (Hyperbolas)", D: "x² − y² = k", E: "y = x² + k (Parabolas)", F: "Option A", G: "Ordinary Differential Equation", H: "Orthogonal Traj.", I: "Engineering Mathematics" }
   ];
 
   // ==================== ENGINEERING CHEMISTRY PYQ DATA - UNIT 1 ====================
@@ -1064,6 +1104,8 @@
   }
 
   const matricesQuestions = parseQuestions(linearAlgebraQuestionsData);
+  const differentialQuestions = parseQuestions(differentialCalculusQuestionsData);
+  const odeQuestions = parseQuestions(odeQuestionsData);
   const waterTechQuestions = parseQuestions(chemistryWaterQuestionsData);
   const fuelsQuestions = parseQuestions(chemistryFuelsQuestionsData);
   const corrosionQuestions = parseQuestions(chemistryCorrosionQuestionsData);
@@ -1074,7 +1116,7 @@
     id: 11,
     name: "Linear Algebra & Univariate Calculus",
     icon: "📐",
-    chapters: ["Unit 1: Matrices & Linear Algebra"]
+    chapters: ["Unit 1: Matrices & Linear Algebra", "Unit 2: Differential Calculus", "Unit 3: Ordinary Differential Equations"]
   };
 
   const chemistrySubject = {
@@ -1140,6 +1182,8 @@
     currentSubject.chapters.forEach((chapter, idx) => {
       let qCount = 100;
       if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 1: Matrices & Linear Algebra") qCount = matricesQuestions.length;
+      else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 2: Differential Calculus") qCount = differentialQuestions.length;
+      else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && chapter === "Unit 3: Ordinary Differential Equations") qCount = odeQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 1: Water Technology") qCount = waterTechQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 2: Fuels and Combustion") qCount = fuelsQuestions.length;
       else if (currentSubject.name === "Engineering Chemistry" && chapter === "Unit 3: Corrosion and Corrosion Control") qCount = corrosionQuestions.length;
@@ -1153,6 +1197,10 @@
         currentChapter = row.dataset.chapter;
         if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 1: Matrices & Linear Algebra") {
           currentQuestions = [...matricesQuestions];
+        } else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 2: Differential Calculus") {
+          currentQuestions = [...differentialQuestions];
+        } else if (currentSubject.name === "Linear Algebra & Univariate Calculus" && currentChapter === "Unit 3: Ordinary Differential Equations") {
+          currentQuestions = [...odeQuestions];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 1: Water Technology") {
           currentQuestions = [...waterTechQuestions];
         } else if (currentSubject.name === "Engineering Chemistry" && currentChapter === "Unit 2: Fuels and Combustion") {
@@ -1227,7 +1275,7 @@
       html+=`</div></div>`; }
     html+=`</div>`; mainContent.innerHTML=html;
   }
-  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
+  window.navigateToBookmark = function(sub,chap,qid,idx){ currentSubject=subjectsData.find(s=>s.name===sub); if(currentSubject){ currentChapter=chap; if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 1: Matrices & Linear Algebra") currentQuestions=[...matricesQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 2: Differential Calculus") currentQuestions=[...differentialQuestions]; else if(sub==="Linear Algebra & Univariate Calculus" && chap==="Unit 3: Ordinary Differential Equations") currentQuestions=[...odeQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 1: Water Technology") currentQuestions=[...waterTechQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 2: Fuels and Combustion") currentQuestions=[...fuelsQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 3: Corrosion and Corrosion Control") currentQuestions=[...corrosionQuestions]; else if(sub==="Engineering Chemistry" && chap==="Unit 4: Chemistry of Polymers and Nanomaterials") currentQuestions=[...polymersQuestions]; else{ currentQuestions=[]; for(let i=1;i<=100;i++) currentQuestions.push({id:i,text:`${chap} - Q${i}`,options:[`A${i}`,`B${i}`,`C${i}`,`D${i}`],correct:Math.floor(Math.random()*4),exam:"Practice"}); } let found=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=found!==-1?found:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); } };
   window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
 
   document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Performance analytics coming soon!</div>'; }); });
