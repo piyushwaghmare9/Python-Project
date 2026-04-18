@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>LearnFlow | Linear Algebra & Calculus PYQ</title>
+  <title>LearnFlow | PYQ Practice Platform</title>
   <style>
     * {
       margin: 0;
@@ -28,6 +28,9 @@
       --btn-secondary-bg: #f1f5f9;
       --btn-secondary-hover: #e2e8f0;
       --chip-bg: #f1f5f9;
+      --stat-correct: #10b981;
+      --stat-wrong: #ef4444;
+      --stat-attempted: #3b82f6;
     }
 
     body {
@@ -37,6 +40,7 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
+    /* Navy Blue Theme */
     body.navy-theme {
       --bg-primary: #0a0e27;
       --bg-secondary: #111837;
@@ -91,6 +95,10 @@
     .login-card .subtitle {
       color: #64748b;
       margin-bottom: 32px;
+    }
+
+    body.navy-theme .login-card .subtitle {
+      color: #94a3b8;
     }
 
     .input-group {
@@ -218,6 +226,7 @@
       font-size: 20px;
     }
 
+    /* Theme Toggle Button - Bottom Left */
     .theme-toggle {
       margin-top: auto;
       padding: 16px 12px;
@@ -284,6 +293,7 @@
       margin-top: 4px;
     }
 
+    /* SUBJECTS GRID */
     .subjects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -329,6 +339,7 @@
       font-weight: 500;
     }
 
+    /* CHAPTERS LIST */
     .chapters-grid {
       display: flex;
       flex-direction: column;
@@ -381,6 +392,7 @@
       color: #4c1d95;
     }
 
+    /* BOOKMARKS PAGE */
     .bookmarks-container {
       max-width: 900px;
       margin: 0 auto;
@@ -407,6 +419,11 @@
     .bookmark-group-header h3 {
       font-size: 18px;
       font-weight: 600;
+    }
+
+    .bookmark-group-header span {
+      font-size: 14px;
+      opacity: 0.9;
     }
 
     .bookmark-chapter-list {
@@ -457,6 +474,12 @@
       flex: 1;
     }
 
+    .bookmark-question-id {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-right: 16px;
+    }
+
     .remove-bookmark {
       background: none;
       border: none;
@@ -481,6 +504,7 @@
       color: var(--text-secondary);
     }
 
+    /* ========= SINGLE QUESTION PAGE ========= */
     .question-container {
       max-width: 900px;
       margin: 0 auto;
@@ -542,6 +566,10 @@
       cursor: pointer;
     }
 
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
     .back-btn {
       background: none;
       border: none;
@@ -554,6 +582,10 @@
       margin-bottom: 20px;
       font-weight: 500;
       padding: 8px 0;
+    }
+
+    .back-btn:hover {
+      transform: translateX(-4px);
     }
 
     .question-card {
@@ -893,7 +925,7 @@
   <div class="login-container">
     <div class="login-card">
       <h1>📚 LearnFlow</h1>
-      <p class="subtitle">Linear Algebra & Calculus PYQ Platform</p>
+      <p class="subtitle">PYQ Practice Platform</p>
       <form id="loginForm">
         <div class="input-group"><label>Username</label><input type="text" id="loginUsername" placeholder="Enter your name" required></div>
         <div class="input-group"><label>Password</label><input type="password" placeholder="Enter your password" required></div>
@@ -912,6 +944,7 @@
         <div class="nav-item" data-view="bookmarks"><span class="emoji">🔖</span> Bookmarks</div>
         <div class="nav-item" data-view="analysis"><span class="emoji">📊</span> Analysis</div>
       </nav>
+      <!-- Theme Toggle Button at Bottom Left -->
       <div class="theme-toggle" id="themeToggle">
         <span class="toggle-icon" id="themeIcon">🌙</span>
         <span id="themeText">Dark Mode</span>
@@ -934,6 +967,7 @@
       updateThemeButton('light');
     }
   }
+
   function updateThemeButton(theme) {
     const themeIcon = document.getElementById('themeIcon');
     const themeText = document.getElementById('themeText');
@@ -945,6 +979,7 @@
       themeText.textContent = 'Dark Mode';
     }
   }
+
   function toggleTheme() {
     if (document.body.classList.contains('navy-theme')) {
       document.body.classList.remove('navy-theme');
@@ -957,117 +992,291 @@
     }
   }
 
-  // ==================== IMPORTED PYQ DATA ====================
-  const rawQuestions = [
-    { A: "Under what condition is the system 3x+4y+5z=α, 4x+5y+6z=β, 5x+6y+7z=γ consistent?", B: "α,β,γ are in Arithmetic Progression (AP)", C: "α,β,γ are in Geometric Progression (GP)", D: "α,β,γ are in Harmonic Progression (HP)", E: "α+β+γ=0", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "System of Linear Equations", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Examine for linear dependence, the system of vectors X1=[1,1,1,3], X2=[1,2,3,4], X3=[2,3,4,7]. If dependent, find the relation.", B: "Linearly independent", C: "Dependent, X1+X2=X3", D: "Dependent, X1−2X2+X3=0", E: "Dependent, 2X1+X2=X3", F: "Option B", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Vector Spaces & Linear Dependence", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Solve the system: x+y+z=6, x−y+2z=5, 3x+y+z=8, 2x−2y+3z=7.", B: "x=1,y=2,z=3", C: "x=2,y=1,z=3", D: "x=3,y=2,z=1", E: "Inconsistent system", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "System of Linear Equations", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Find Eigen values of A=[3,-1,1;-1,5,-1;1,-1,3].", B: "2,3,6", C: "1,4,6", D: "-2,-3,-6", E: "1,2,3", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Eigenvalues & Eigenvectors", I: "Linear Algebra and Univariate Calculus" },
-    { A: "In Fourier series of f(x)=e^x in [0,2π], constant term a0?", B: "(e^{2π}-1)/π", C: "(e^{π}-1)/π", D: "(e^{2π}+1)/π", E: "(e^{-π})/π", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Fourier Series", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Obtain constant term in Fourier expansion. X:0,1,2,3,4,5; Y:9,18,24,28,26,20.", B: "20.83", C: "15.5", D: "25", E: "30.2", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Harmonic Analysis", I: "Linear Algebra and Univariate Calculus" },
-    { A: "If f(x)=x for -1≤x≤0 and f(x)=x+2 for 0≤x≤1, find bn.", B: "(2-4(-1)^n)/(nπ)", C: "(2+4(-1)^n)/(nπ)", D: "(4-2(-1)^n)/(nπ)", E: "0", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Fourier Series", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Sum of series 1/1^2 - 1/2^2 + 1/3^2 - ... from Fourier of f(x)=π^2 - x^2?", B: "π^2/12", C: "π^2/6", D: "π^2/8", E: "π^2/4", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Fourier Series", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Expand 2x^3+7x^2+x-6 in powers of (x-2).", B: "2(x-2)^3+19(x-2)^2+53(x-2)+40", C: "2(x-2)^3+17(x-2)^2+40(x-2)+30", D: "2(x-2)^3+12(x-2)^2+24(x-2)+16", E: "(x-2)^3+19(x-2)^2+53(x-2)+20", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Taylor/Maclaurin Series", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Maclaurin series of log(1+tan x) up to x^3 term?", B: "x - x^2/2 + 2x^3/3", C: "x + x^2/2 + x^3/3", D: "x - x^2/2 - 2x^3/3", E: "1+x - x^2/2", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Series Expansion", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Evaluate lim_{x→0} (cot x)^{sin x}.", B: "1", C: "0", D: "e", E: "∞", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Limits and Continuity", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Properties of nth derivative of y=x^2 e^x cos x?", B: "Terms with 2^{n/2} and angles (x+nπ/4)", C: "Terms with 2^n and angles (x+2nπ)", D: "Purely e^{nx}", E: "x^2 e^x cos(x+2nπ)", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Successive Differentiation", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Solve: (x^4 e^x - 2mxy^2)dx + (2mx^2 y)dy=0.", B: "e^x + x^{-2m} y^2 = C", C: "e^x - x^{-2m} y^2 = C", D: "x e^x + m y^2 = C", E: "e^x + m y^2 x^2 = C", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Ordinary Differential Equations", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Solve: (1+x^2) dy/dx + xy = 1.", B: "y√(1+x^2) = ln(x+√(1+x^2)) + C", C: "y(1+x^2)=tan^{-1}x+C", D: "y=ln(1+x^2)+C", E: "y√(1+x^2)=x+C", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Ordinary Differential Equations", I: "Linear Algebra and Univariate Calculus" },
-    { A: "Body cools 85°C to 65°C in 25 min, air 40°C. Temp after 40 min?", B: "57.6°C", C: "55.0°C", D: "60.5°C", E: "52.3°C", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Applications of Differential Equations", I: "Linear Algebra and Univariate Calculus" },
-    { A: "RC circuit with EMF E, voltage across condenser at time t?", B: "E(1-e^{-t/RC})", C: "E e^{-t/RC}", D: "E(1-e^{-Rt/C})", E: "E(1+e^{-t/RC})", F: "Option A", G: "First Year B. Tech. Summative Assessment (Sem-I)", H: "Applications of Differential Equations", I: "Linear Algebra and Univariate Calculus" }
+  // ==================== DATA MODEL ====================
+  const subjectsData = [
+    { id: 1, name: "Physics", icon: "⚛️", chapters: ["Math in Physics", "Units & Dimensions", "Motion in 1D", "Motion in 2D", "Laws of Motion"] },
+    { id: 2, name: "Chemistry", icon: "🧪", chapters: ["Mole Concept", "Atomic Structure", "Periodic Table", "Chemical Bonding", "Thermodynamics"] },
+    { id: 3, name: "Mathematics", icon: "📐", chapters: ["Quadratic Equations", "Trigonometry", "Calculus", "Vectors", "Probability"] },
+    { id: 4, name: "Biology", icon: "🧬", chapters: ["Cell Biology", "Genetics", "Ecology", "Human Physiology", "Plant Kingdom"] },
+    { id: 5, name: "English", icon: "📖", chapters: ["Grammar", "Vocabulary", "Reading Comp", "Writing Skills", "Literature"] },
+    { id: 6, name: "Computer Science", icon: "💻", chapters: ["Programming Basics", "Data Structures", "Algorithms", "DBMS", "Networks"] },
+    { id: 7, name: "History", icon: "🏛️", chapters: ["Ancient India", "Medieval India", "Modern India", "World History", "Art & Culture"] },
+    { id: 8, name: "Geography", icon: "🌍", chapters: ["Physical Geo", "Indian Geo", "World Geo", "Climatology", "Oceanography"] },
+    { id: 9, name: "Economics", icon: "📈", chapters: ["Microeconomics", "Macroeconomics", "Indian Economy", "International Trade", "Development"] },
+    { id: 10, name: "Logical Reasoning", icon: "🧠", chapters: ["Puzzles", "Blood Relations", "Coding-Decoding", "Syllogisms", "Data Sufficiency"] }
   ];
 
-  function parseQuestions() {
-    return rawQuestions.map((q, idx) => {
-      const opts = [q.B, q.C, q.D, q.E];
-      let correctIdx = 0;
-      if (q.F === "Option A") correctIdx = 0;
-      else if (q.F === "Option B") correctIdx = 1;
-      else if (q.F === "Option C") correctIdx = 2;
-      else if (q.F === "Option D") correctIdx = 3;
-      return {
-        id: idx + 1,
-        text: q.A,
-        options: opts,
-        correct: correctIdx,
-        exam: q.G,
-        chapter: q.H,
-        subject: q.I
-      };
-    });
-  }
-  const allQuestions = parseQuestions();
-  const chaptersMap = new Map();
-  allQuestions.forEach(q => { if(!chaptersMap.has(q.chapter)) chaptersMap.set(q.chapter, []); chaptersMap.get(q.chapter).push(q); });
-  const uniqueChapters = Array.from(chaptersMap.keys());
+  let bookmarks = JSON.parse(localStorage.getItem('learnflow_bookmarks') || '[]');
 
-  let currentSubject = { id: 1, name: "Linear Algebra and Univariate Calculus", icon: "📐", chapters: uniqueChapters };
+  function saveBookmarksToStorage() {
+    localStorage.setItem('learnflow_bookmarks', JSON.stringify(bookmarks));
+  }
+
+  function addBookmark(subjectName, chapterName, questionId, questionText, questionIndex) {
+    if (!bookmarks.some(b => b.subjectName === subjectName && b.chapterName === chapterName && b.questionId === questionId)) {
+      bookmarks.push({ subjectName, chapterName, questionId, questionText, questionIndex });
+      saveBookmarksToStorage();
+    }
+  }
+
+  function removeBookmark(subjectName, chapterName, questionId) {
+    bookmarks = bookmarks.filter(b => !(b.subjectName === subjectName && b.chapterName === chapterName && b.questionId === questionId));
+    saveBookmarksToStorage();
+  }
+
+  function isBookmarked(subjectName, chapterName, questionId) {
+    return bookmarks.some(b => b.subjectName === subjectName && b.chapterName === chapterName && b.questionId === questionId);
+  }
+
+  function generateQuestionsForChapter(chapterName, count = 100) {
+    const questions = [];
+    for (let i = 1; i <= count; i++) {
+      const correctIndex = Math.floor(Math.random() * 4);
+      questions.push({
+        id: i,
+        text: `${chapterName} - Sample Question ${i}: What is the correct answer for this problem? (This is a practice question for ${chapterName})`,
+        options: [`Option A for Q${i}`, `Option B for Q${i}`, `Option C for Q${i}`, `Option D for Q${i}`],
+        correct: correctIndex,
+        exam: `Practice Test ${Math.floor(i/20)+1}`
+      });
+    }
+    return questions;
+  }
+
+  let currentSubject = null;
   let currentChapter = null;
   let currentQuestions = [];
   let currentQuestionIndex = 0;
-  let userAnswers = {}, answerChecked = {}, answerResult = {};
-  let bookmarks = JSON.parse(localStorage.getItem('learnflow_bookmarks') || '[]');
-  function saveBookmarks() { localStorage.setItem('learnflow_bookmarks', JSON.stringify(bookmarks)); }
-  function addBookmark(sub, chap, qid, qtext, idx) { if(!bookmarks.some(b=>b.subjectName===sub && b.chapterName===chap && b.questionId===qid)){ bookmarks.push({subjectName:sub, chapterName:chap, questionId:qid, questionText:qtext, questionIndex:idx}); saveBookmarks();} }
-  function removeBookmark(sub, chap, qid) { bookmarks = bookmarks.filter(b=>!(b.subjectName===sub && b.chapterName===chap && b.questionId===qid)); saveBookmarks(); }
-  function isBookmarked(sub, chap, qid) { return bookmarks.some(b=>b.subjectName===sub && b.chapterName===chap && b.questionId===qid); }
+  let userAnswers = {};
+  let answerChecked = {};
+  let answerResult = {};
 
   const mainContent = document.getElementById('mainContent');
-  document.getElementById('loginForm').addEventListener('submit', (e) => { e.preventDefault(); document.getElementById('sidebarUserName').innerText = document.getElementById('loginUsername').value.trim() || "Student"; document.getElementById('loginPage').classList.remove('active-page'); document.getElementById('appWrapper').style.display = 'block'; renderSubjects(); });
-  function showPage(){}
-  function renderSubjects() {
-    let html = `<div class="top-bar"><div class="page-title"><h1>📚 All Subjects</h1><p>Choose a subject to practice PYQs</p></div></div><div class="subjects-grid"><div class="subject-card" data-subject="la"><div class="subject-icon">📐</div><h3>Linear Algebra & Univariate Calculus</h3><p>${uniqueChapters.length} chapters • ${allQuestions.length} PYQs</p><div class="chapter-count">📖 ${uniqueChapters.length} Chapters →</div></div></div>`;
-    mainContent.innerHTML = html;
-    document.querySelector('.subject-card')?.addEventListener('click', () => renderChapters());
+  const sidebarUserName = document.getElementById('sidebarUserName');
+  const loginPage = document.getElementById('loginPage');
+  const appWrapper = document.getElementById('appWrapper');
+
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active-page'));
+    if (pageId === 'login') {
+      loginPage.classList.add('active-page');
+      appWrapper.style.display = 'none';
+    } else {
+      loginPage.classList.remove('active-page');
+      appWrapper.style.display = 'block';
+    }
   }
-  function renderChapters() {
-    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">All Subjects</a> › <span>${currentSubject.name}</span></div><div class="top-bar"><div class="page-title"><h1>📐 ${currentSubject.name} PYQs</h1><p>Chapter-wise previous year questions</p></div></div><div class="chapters-grid">`;
-    uniqueChapters.forEach((ch, idx) => { let qCount = chaptersMap.get(ch).length; html += `<div class="chapter-row" data-chapter="${ch}"><div class="chapter-info"><div class="chapter-name">${idx+1}. ${ch}</div><div class="chapter-meta"><span>📚 ${qCount} Questions</span></div></div><div class="question-stats"><div class="qs-count">${qCount} Qs</div></div></div>`; });
+
+  function renderSubjects() {
+    let html = `<div class="top-bar"><div class="page-title"><h1>📚 All Subjects</h1><p>Choose a subject to practice PYQs</p></div></div>
+      <div class="subjects-grid">`;
+    subjectsData.forEach(sub => {
+      html += `<div class="subject-card" data-subject-id="${sub.id}"><div class="subject-icon">${sub.icon}</div><h3>${sub.name}</h3><p>${sub.chapters.length} chapters • 100 Qs each</p><div class="chapter-count">📖 ${sub.chapters.length} Chapters →</div></div>`;
+    });
     html += `</div>`;
     mainContent.innerHTML = html;
-    document.querySelectorAll('.chapter-row').forEach(row => { row.addEventListener('click', () => { currentChapter = row.dataset.chapter; currentQuestions = chaptersMap.get(currentChapter); currentQuestionIndex = 0; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); }); });
+    document.querySelectorAll('.subject-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const id = parseInt(card.dataset.subjectId);
+        currentSubject = subjectsData.find(s => s.id === id);
+        renderChapters();
+      });
+    });
   }
+
+  function renderChapters() {
+    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">All Subjects</a> › <span>${currentSubject.name}</span></div>
+      <div class="top-bar"><div class="page-title"><h1>${currentSubject.icon} ${currentSubject.name} PYQs</h1><p>Chapter-wise Collection</p></div></div>
+      <div class="chapters-grid">`;
+    currentSubject.chapters.forEach((chapter, idx) => {
+      html += `<div class="chapter-row" data-chapter="${chapter}"><div class="chapter-info"><div class="chapter-name">${idx+1}. ${chapter}</div><div class="chapter-meta"><span>📚 100 Questions</span></div></div><div class="question-stats"><div class="qs-count">100 Qs</div><div class="qs-label">Available</div></div></div>`;
+    });
+    html += `</div>`;
+    mainContent.innerHTML = html;
+    document.querySelectorAll('.chapter-row').forEach(row => {
+      row.addEventListener('click', () => {
+        currentChapter = row.dataset.chapter;
+        currentQuestions = generateQuestionsForChapter(currentChapter, 100);
+        currentQuestionIndex = 0;
+        userAnswers = {};
+        answerChecked = {};
+        answerResult = {};
+        renderSingleQuestion();
+      });
+    });
+  }
+
+  function renderBookmarksPage() {
+    if (bookmarks.length === 0) {
+      mainContent.innerHTML = `<div class="empty-bookmarks">
+        <div style="font-size: 64px; margin-bottom: 20px;">🔖</div>
+        <h3>No Bookmarks Yet</h3>
+        <p>When you bookmark a question, it will appear here organized by subject and chapter.</p>
+        <button class="btn btn-primary" style="margin-top: 20px; width: auto; padding: 12px 32px;" onclick="renderSubjects()">Browse Subjects →</button>
+      </div>`;
+      return;
+    }
+
+    const grouped = {};
+    bookmarks.forEach(bm => {
+      if (!grouped[bm.subjectName]) grouped[bm.subjectName] = {};
+      if (!grouped[bm.subjectName][bm.chapterName]) grouped[bm.subjectName][bm.chapterName] = [];
+      grouped[bm.subjectName][bm.chapterName].push(bm);
+    });
+
+    let html = `<div class="top-bar"><div class="page-title"><h1>🔖 My Bookmarks</h1><p>Subject-wise and chapter-wise collection of saved questions</p></div></div>
+      <div class="bookmarks-container">`;
+
+    for (const subjectName in grouped) {
+      html += `<div class="bookmark-group"><div class="bookmark-group-header" onclick="toggleBookmarkGroup('${subjectName}')"><h3>📘 ${subjectName}</h3><span>▼</span></div>
+        <div class="bookmark-chapter-list" id="group-${subjectName.replace(/\s/g, '')}">`;
+      for (const chapterName in grouped[subjectName]) {
+        const questions = grouped[subjectName][chapterName];
+        html += `<div class="bookmark-chapter-item"><div class="bookmark-chapter-title" onclick="toggleBookmarkChapter('${subjectName}', '${chapterName}')">
+          <span>📖</span> ${chapterName} <span style="font-size: 12px; opacity: 0.7;">(${questions.length} questions)</span><span style="margin-left: auto;">▼</span></div>
+          <div class="bookmark-questions-list" id="chapter-${subjectName.replace(/\s/g, '')}-${chapterName.replace(/\s/g, '')}" style="display: none;">`;
+        questions.forEach((bm) => {
+          const shortText = bm.questionText.length > 80 ? bm.questionText.substring(0, 80) + '...' : bm.questionText;
+          html += `<div class="bookmark-question-item" onclick="navigateToBookmarkedQuestion('${subjectName}', '${chapterName}', ${bm.questionId}, ${bm.questionIndex})">
+            <div style="display: flex; align-items: center; gap: 12px; flex: 1;"><span class="bookmark-question-id">Q${bm.questionId}</span><span class="bookmark-question-text">${shortText}</span></div>
+            <button class="remove-bookmark" onclick="event.stopPropagation(); removeBookmarkAndRefresh('${subjectName}', '${chapterName}', ${bm.questionId})">🗑️</button>
+          </div>`;
+        });
+        html += `</div></div>`;
+      }
+      html += `</div></div>`;
+    }
+    html += `</div>`;
+    mainContent.innerHTML = html;
+  }
+
+  window.toggleBookmarkGroup = function(subjectName) {
+    const groupId = `group-${subjectName.replace(/\s/g, '')}`;
+    const groupDiv = document.getElementById(groupId);
+    if (groupDiv) groupDiv.style.display = groupDiv.style.display !== 'none' ? 'none' : 'block';
+  };
+  window.toggleBookmarkChapter = function(subjectName, chapterName) {
+    const chapterId = `chapter-${subjectName.replace(/\s/g, '')}-${chapterName.replace(/\s/g, '')}`;
+    const chapterDiv = document.getElementById(chapterId);
+    if (chapterDiv) chapterDiv.style.display = chapterDiv.style.display !== 'none' ? 'none' : 'block';
+  };
+  window.navigateToBookmarkedQuestion = function(subjectName, chapterName, questionId, questionIndex) {
+    currentSubject = subjectsData.find(s => s.name === subjectName);
+    if (currentSubject) {
+      currentChapter = chapterName;
+      currentQuestions = generateQuestionsForChapter(currentChapter, 100);
+      const foundIndex = currentQuestions.findIndex(q => q.id === questionId);
+      currentQuestionIndex = foundIndex !== -1 ? foundIndex : questionIndex;
+      userAnswers = {};
+      answerChecked = {};
+      answerResult = {};
+      renderSingleQuestion();
+    }
+  };
+  window.removeBookmarkAndRefresh = function(subjectName, chapterName, questionId) {
+    removeBookmark(subjectName, chapterName, questionId);
+    renderBookmarksPage();
+  };
+
   function renderSingleQuestion() {
-    if(!currentQuestions.length) return;
     const q = currentQuestions[currentQuestionIndex];
     const total = currentQuestions.length;
-    const progressPercent = ((currentQuestionIndex+1)/total)*100;
-    const selected = userAnswers[currentQuestionIndex];
+    const progressPercent = ((currentQuestionIndex + 1) / total) * 100;
+    const selectedVal = userAnswers[currentQuestionIndex];
     const isChecked = answerChecked[currentQuestionIndex];
-    const isCorrect = answerResult[currentQuestionIndex];
+    const isCorrectResult = answerResult[currentQuestionIndex];
     const bookmarked = isBookmarked(currentSubject.name, currentChapter, q.id);
-    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>${currentChapter}</span></div><button class="back-btn" onclick="renderChapters()">← Back to Chapters</button><div class="question-container"><div class="progress-wrapper"><div class="progress-header"><span class="progress-label">Your Progress</span><span class="progress-count">Q${currentQuestionIndex+1} of ${total}</span></div><div class="progress-bar-bg"><div class="progress-fill" style="width:${progressPercent}%"></div></div></div><div class="question-card"><div class="question-header"><div class="question-badge"><span class="question-number">Question ${currentQuestionIndex+1}</span><span class="exam-tag">${q.exam}</span></div></div><div class="question-text">${q.text}</div><div class="options" id="optionsContainer">`;
-    q.options.forEach((opt, idx) => { let letter = String.fromCharCode(65+idx); let addClass = (isChecked && selected===idx) ? (isCorrect ? 'correct-highlight' : 'wrong-highlight') : ''; html += `<label class="option ${addClass}"><input type="radio" name="question" value="${idx}" ${selected===idx ? 'checked' : ''} onchange="selectOption(${idx})"><span><strong>${letter}.</strong> ${opt}</span></label>`; });
-    html += `</div><div class="action-buttons"><button class="btn btn-check" id="checkAnswerBtn">✅ Check Answer</button><button class="btn btn-bookmark ${bookmarked ? 'bookmarked' : ''}" id="bookmarkBtn">${bookmarked ? '★ Bookmarked' : '☆ Add Bookmark'}</button></div><div id="feedbackMsg" class="feedback-message"></div><div class="question-nav"><button class="btn btn-secondary" onclick="prevQuestion()" ${currentQuestionIndex===0 ? 'disabled' : ''}>← Previous</button><div class="nav-buttons"><button class="btn btn-primary" onclick="nextQuestion()">Next →</button></div></div><div class="question-dots-section"><div class="dots-grid" id="dotsGrid"></div><div class="legend"><span><i class="legend-dot" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95);"></i> Current</span><span><i class="legend-dot" style="background:#10b981;"></i> Correct</span><span><i class="legend-dot" style="background:#ef4444;"></i> Wrong</span><span><i class="legend-dot" style="background:var(--chip-bg);"></i> Not Checked</span></div></div></div></div>`;
+
+    let html = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>${currentChapter}</span></div>
+      <button class="back-btn" onclick="renderChapters()">← Back to Chapters</button>
+      <div class="question-container"><div class="progress-wrapper"><div class="progress-header"><span class="progress-label">Your Progress</span><span class="progress-count">Question ${currentQuestionIndex + 1} of ${total}</span></div>
+      <div class="progress-bar-bg"><div class="progress-fill" style="width: ${progressPercent}%;"></div></div></div>
+      <div class="question-card"><div class="question-header"><div class="question-badge"><span class="question-number">Question ${currentQuestionIndex + 1}</span><span class="exam-tag">${q.exam}</span></div></div>
+      <div class="question-text">${q.text}</div><div class="options" id="optionsContainer">`;
+    q.options.forEach((opt, idx) => {
+      const letter = String.fromCharCode(65 + idx);
+      const isSelected = (selectedVal === idx);
+      let additionalClass = '';
+      if (isChecked && isSelected) additionalClass = isCorrectResult ? 'correct-highlight' : 'wrong-highlight';
+      html += `<label class="option ${additionalClass}"><input type="radio" name="question" value="${idx}" ${isSelected ? 'checked' : ''} onchange="selectOption(${idx})"><span><strong>${letter}.</strong> ${opt}</span></label>`;
+    });
+    html += `</div><div class="action-buttons"><button class="btn btn-check" id="checkAnswerBtn">✅ Check Answer</button>
+      <button class="btn btn-bookmark ${bookmarked ? 'bookmarked' : ''}" id="bookmarkBtn">${bookmarked ? '★ Bookmarked' : '☆ Add Bookmark'}</button></div>
+      <div id="feedbackMsg" class="feedback-message"></div><div class="question-nav"><button class="btn btn-secondary" onclick="prevQuestion()" ${currentQuestionIndex === 0 ? 'disabled' : ''}>← Previous</button>
+      <div class="nav-buttons"><button class="btn btn-primary" onclick="nextQuestion()">Next →</button></div></div>
+      <div class="question-dots-section"><div class="dots-grid" id="dotsGrid"></div>
+      <div class="legend"><span><i class="legend-dot" style="background:linear-gradient(135deg,#1e1b4b,#4c1d95);"></i> Current</span>
+      <span><i class="legend-dot" style="background:#10b981;"></i> Correct</span><span><i class="legend-dot" style="background:#ef4444;"></i> Wrong</span>
+      <span><i class="legend-dot" style="background:var(--chip-bg);"></i> Not Checked</span></div></div></div></div>`;
     mainContent.innerHTML = html;
-    const grid = document.getElementById('dotsGrid');
-    if(grid) for(let i=0;i<total;i++){ let cls='q-dot'; if(i===currentQuestionIndex) cls+=' current'; else if(answerChecked[i]) cls+= answerResult[i] ? ' checked-correct' : ' checked-wrong'; else if(userAnswers[i]!==undefined) cls+=' answered'; else cls+=' unanswered'; grid.innerHTML += `<button class="${cls}" onclick="jumpToQuestion(${i})">${i+1}</button>`; }
-    document.getElementById('checkAnswerBtn')?.addEventListener('click',()=>checkAnswer()); document.getElementById('bookmarkBtn')?.addEventListener('click',()=>toggleBookmark());
+    const dotsGrid = document.getElementById('dotsGrid');
+    if (dotsGrid) {
+      for (let i = 0; i < total; i++) {
+        let dotClass = 'q-dot';
+        if (i === currentQuestionIndex) dotClass += ' current';
+        else if (answerChecked[i]) dotClass += answerResult[i] ? ' checked-correct' : ' checked-wrong';
+        else if (userAnswers[i] !== undefined) dotClass += ' answered';
+        else dotClass += ' unanswered';
+        dotsGrid.innerHTML += `<button class="${dotClass}" onclick="jumpToQuestion(${i})">${i + 1}</button>`;
+      }
+    }
+    document.getElementById('checkAnswerBtn')?.addEventListener('click', () => checkAnswer());
+    document.getElementById('bookmarkBtn')?.addEventListener('click', () => toggleBookmark());
   }
-  window.selectOption = function(optIndex){ userAnswers[currentQuestionIndex]=optIndex; answerChecked[currentQuestionIndex]=false; answerResult[currentQuestionIndex]=undefined; renderSingleQuestion(); };
-  window.checkAnswer = function(){ let selected=userAnswers[currentQuestionIndex]; if(selected===undefined){ alert("Select an option"); return; } let q=currentQuestions[currentQuestionIndex]; let isCorrect=(selected===q.correct); answerChecked[currentQuestionIndex]=true; answerResult[currentQuestionIndex]=isCorrect; let fb=document.getElementById('feedbackMsg'); fb.style.display='block'; fb.className=`feedback-message ${isCorrect?'feedback-correct':'feedback-wrong'}`; fb.innerHTML=isCorrect?'✅ Correct! Great job!':`❌ Incorrect. Correct: ${String.fromCharCode(65+q.correct)}. ${q.options[q.correct]}`; renderSingleQuestion(); };
-  window.toggleBookmark = function(){ let q=currentQuestions[currentQuestionIndex]; if(isBookmarked(currentSubject.name,currentChapter,q.id)) removeBookmark(currentSubject.name,currentChapter,q.id); else addBookmark(currentSubject.name,currentChapter,q.id,q.text,currentQuestionIndex); renderSingleQuestion(); };
-  window.prevQuestion = function(){ if(currentQuestionIndex>0){ currentQuestionIndex--; renderSingleQuestion(); } };
-  window.nextQuestion = function(){ if(currentQuestionIndex<currentQuestions.length-1){ currentQuestionIndex++; renderSingleQuestion(); } else { let correct=0; for(let i=0;i<currentQuestions.length;i++) if(answerChecked[i] && answerResult[i]) correct++; showResult(correct); } };
-  window.jumpToQuestion = function(idx){ currentQuestionIndex=idx; renderSingleQuestion(); };
-  function showResult(correct){ mainContent.innerHTML=`<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>Result</span></div><div class="result-card"><div class="result-icon">🏆</div><h2>Chapter Completed!</h2><div class="score">${correct}<span>/${currentQuestions.length}</span></div><p>Percentage: ${Math.round((correct/currentQuestions.length)*100)}%</p><div class="result-actions"><button class="btn btn-primary" onclick="renderSubjects()">🏠 Go Home</button><button class="btn btn-secondary" onclick="renderChapters()">📖 Back to Chapters</button><button class="btn btn-secondary" onclick="location.reload()">🔄 Retake</button></div></div>`; }
-  function renderBookmarksPage() {
-    if(bookmarks.length===0){ mainContent.innerHTML=`<div class="empty-bookmarks"><div style="font-size:64px">🔖</div><h3>No Bookmarks Yet</h3><p>Bookmark questions to review later.</p><button class="btn btn-primary" onclick="renderSubjects()">Browse Subjects</button></div>`; return; }
-    let grouped={}; bookmarks.forEach(bm=>{ if(!grouped[bm.subjectName]) grouped[bm.subjectName]={}; if(!grouped[bm.subjectName][bm.chapterName]) grouped[bm.subjectName][bm.chapterName]=[]; grouped[bm.subjectName][bm.chapterName].push(bm); });
-    let html=`<div class="top-bar"><div class="page-title"><h1>🔖 My Bookmarks</h1></div></div><div class="bookmarks-container">`;
-    for(let sub in grouped){ html+=`<div class="bookmark-group"><div class="bookmark-group-header" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='none'?'block':'none'"><h3>📘 ${sub}</h3><span>▼</span></div><div class="bookmark-chapter-list">`;
-      for(let chap in grouped[sub]){ html+=`<div class="bookmark-chapter-item"><div class="bookmark-chapter-title" onclick="let el=document.getElementById('ch-${sub.replace(/\s/g,'')}-${chap.replace(/\s/g,'')}'); if(el) el.style.display=el.style.display==='none'?'block':'none'"><span>📖</span> ${chap} (${grouped[sub][chap].length})<span style="margin-left:auto;">▼</span></div><div id="ch-${sub.replace(/\s/g,'')}-${chap.replace(/\s/g,'')}" class="bookmark-questions-list" style="display:none">`;
-        grouped[sub][chap].forEach(bm=>{ html+=`<div class="bookmark-question-item" onclick="navigateToBookmark('${sub}','${chap}',${bm.questionId},${bm.questionIndex})"><div style="flex:1">Q${bm.questionId}: ${bm.questionText.substring(0,70)}...</div><button class="remove-bookmark" onclick="event.stopPropagation(); removeBookmarkAndRefresh('${sub}','${chap}',${bm.questionId})">🗑️</button></div>`; });
-        html+=`</div></div>`; }
-      html+=`</div></div>`; }
-    html+=`</div>`; mainContent.innerHTML=html;
+
+  window.selectOption = function(optIndex) { userAnswers[currentQuestionIndex] = optIndex; answerChecked[currentQuestionIndex] = false; answerResult[currentQuestionIndex] = undefined; renderSingleQuestion(); };
+  window.checkAnswer = function() {
+    const selected = userAnswers[currentQuestionIndex];
+    if (selected === undefined) { alert("Please select an option first."); return; }
+    const q = currentQuestions[currentQuestionIndex];
+    const isCorrect = (selected === q.correct);
+    answerChecked[currentQuestionIndex] = true;
+    answerResult[currentQuestionIndex] = isCorrect;
+    const feedbackDiv = document.getElementById('feedbackMsg');
+    feedbackDiv.style.display = 'block';
+    feedbackDiv.className = `feedback-message ${isCorrect ? 'feedback-correct' : 'feedback-wrong'}`;
+    feedbackDiv.innerHTML = isCorrect ? '✅ Correct! Great job!' : `❌ Incorrect. Correct answer: ${String.fromCharCode(65 + q.correct)}. ${q.options[q.correct]}`;
+    renderSingleQuestion();
+  };
+  window.toggleBookmark = function() {
+    const q = currentQuestions[currentQuestionIndex];
+    if (isBookmarked(currentSubject.name, currentChapter, q.id)) removeBookmark(currentSubject.name, currentChapter, q.id);
+    else addBookmark(currentSubject.name, currentChapter, q.id, q.text, currentQuestionIndex);
+    renderSingleQuestion();
+  };
+  window.prevQuestion = function() { if (currentQuestionIndex > 0) { currentQuestionIndex--; renderSingleQuestion(); } };
+  window.nextQuestion = function() {
+    if (currentQuestionIndex < currentQuestions.length - 1) { currentQuestionIndex++; renderSingleQuestion(); }
+    else { let correct = 0; for (let i = 0; i < currentQuestions.length; i++) if (answerChecked[i] && answerResult[i]) correct++; showResult(correct); }
+  };
+  window.jumpToQuestion = function(index) { currentQuestionIndex = index; renderSingleQuestion(); };
+  function showResult(correctCount) {
+    mainContent.innerHTML = `<div class="breadcrumb"><a onclick="renderSubjects()">Subjects</a> › <a onclick="renderChapters()">${currentSubject.name}</a> › <span>Result</span></div>
+      <div class="result-card"><div class="result-icon">🏆</div><h2>Chapter Completed!</h2><div class="score">${correctCount}<span>/${currentQuestions.length}</span></div>
+      <p>Percentage: ${Math.round((correctCount/currentQuestions.length)*100)}%</p><div class="result-actions"><button class="btn btn-primary" onclick="renderSubjects()">🏠 Go Home</button>
+      <button class="btn btn-secondary" onclick="renderChapters()">📖 Back to Chapters</button><button class="btn btn-secondary" onclick="location.reload()">🔄 Retake</button></div></div>`;
   }
-  window.navigateToBookmark = function(sub, chap, qid, idx){ currentSubject={name:sub, icon:"📐", chapters:uniqueChapters}; currentChapter=chap; currentQuestions=chaptersMap.get(chap); let foundIdx=currentQuestions.findIndex(q=>q.id===qid); currentQuestionIndex=foundIdx!==-1?foundIdx:idx; userAnswers={}; answerChecked={}; answerResult={}; renderSingleQuestion(); };
-  window.removeBookmarkAndRefresh = function(sub,chap,qid){ removeBookmark(sub,chap,qid); renderBookmarksPage(); };
-  document.querySelectorAll('[data-view]').forEach(el=>{ el.addEventListener('click',()=>{ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); if(el.dataset.view==='subjects') renderSubjects(); else if(el.dataset.view==='bookmarks') renderBookmarksPage(); else mainContent.innerHTML='<div style="padding:40px;text-align:center">📊 Detailed analytics coming soon!</div>'; }); });
+
+  document.getElementById('loginForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    sidebarUserName.innerText = document.getElementById('loginUsername').value.trim() || "Student";
+    showPage('app');
+    renderSubjects();
+  });
+  document.querySelectorAll('[data-view]').forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+      el.classList.add('active');
+      if (el.dataset.view === 'subjects') renderSubjects();
+      else if (el.dataset.view === 'bookmarks') renderBookmarksPage();
+      else if (el.dataset.view === 'analysis') mainContent.innerHTML = '<div style="padding:40px;text-align:center">📊 Performance analysis coming soon!</div>';
+    });
+  });
   document.getElementById('themeToggle').addEventListener('click', toggleTheme);
   initTheme();
-  window.renderSubjects = renderSubjects; window.renderChapters = renderChapters;
+  window.renderSubjects = renderSubjects;
+  window.renderChapters = renderChapters;
+  window.renderBookmarksPage = renderBookmarksPage;
 </script>
 </body>
 </html>
